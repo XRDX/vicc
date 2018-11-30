@@ -1,0 +1,287 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Linux 磁盘分区、格式化、目录挂载 &mdash; 维克笔记 alpha 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="折腾树莓派" href="../raspberry/index.html" />
+    <link rel="prev" title="文件管理" href="file.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> 维克笔记
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Linux 命令</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="file.html">文件管理</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Linux 磁盘分区、格式化、目录挂载</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#df">显示当前主机目录 df</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#">磁盘分区</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#fdisk">显示机器当前的磁盘 fdisk</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#">自动挂载</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#">格式化分区</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../raspberry/index.html">折腾树莓派</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/index.html">Tools</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">维克笔记</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Linux 命令</a> &raquo;</li>
+        
+      <li>Linux 磁盘分区、格式化、目录挂载</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/linux/disk.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="linux">
+<span id="linux"></span><h1>Linux 磁盘分区、格式化、目录挂载<a class="headerlink" href="#linux" title="永久链接至标题">¶</a></h1>
+<div class="section" id="df">
+<span id="df"></span><h2>显示当前主机目录 df<a class="headerlink" href="#df" title="永久链接至标题">¶</a></h2>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ df -h
+Filesystem            Size  Used Avail Use% Mounted on
+/dev/mapper/VolGroup-lv_root
+                       26G  <span class="m">2</span>.9G   22G  <span class="m">13</span>% /
+tmpfs                 <span class="m">1</span>.9G     <span class="m">0</span>  <span class="m">1</span>.9G   <span class="m">0</span>% /dev/shm
+/dev/xvda1            485M   32M  428M   <span class="m">7</span>% /boot
+</pre></div>
+</div>
+</div>
+<div class="section" id="">
+<span id="id1"></span><h2>磁盘分区<a class="headerlink" href="#" title="永久链接至标题">¶</a></h2>
+<div class="section" id="fdisk">
+<span id="fdisk"></span><h3>显示机器当前的磁盘 fdisk<a class="headerlink" href="#fdisk" title="永久链接至标题">¶</a></h3>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ fdisk -l /dev/xvdb 
+
+Disk /dev/xvdb: <span class="m">53</span>.7 GB, <span class="m">53687091200</span> bytes
+<span class="m">255</span> heads, <span class="m">63</span> sectors/track, <span class="m">6527</span> cylinders
+<span class="nv">Units</span> <span class="o">=</span> cylinders of <span class="m">16065</span> * <span class="nv">512</span> <span class="o">=</span> <span class="m">8225280</span> bytes
+Sector size <span class="o">(</span>logical/physical<span class="o">)</span>: <span class="m">512</span> bytes / <span class="m">512</span> bytes
+I/O size <span class="o">(</span>minimum/optimal<span class="o">)</span>: <span class="m">512</span> bytes / <span class="m">512</span> bytes
+Disk identifier: 0x00000000
+</pre></div>
+</div>
+<p>注:这里知道新增磁盘为/dev/xvdb,就直接指定了,缩减显示篇幅。</p>
+</div>
+</div>
+<div class="section" id="">
+<span id="id2"></span><h2>自动挂载<a class="headerlink" href="#" title="永久链接至标题">¶</a></h2>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo vim /etc/fstab
+</pre></div>
+</div>
+</div>
+<div class="section" id="">
+<span id="id3"></span><h2>格式化分区<a class="headerlink" href="#" title="永久链接至标题">¶</a></h2>
+<p>1.首先执行sudo fdisk -l查看你的u盘的序号，通常是/dev/sdb之类的，U盘分区通常是/dev/sdb1</p>
+<p>2.针对将要格式化的分区执行</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo umount  /dev/sdb1 <span class="c1"># 必须先卸载该分区</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li></li>
+</ol>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo mkfs.ext4 /dev/sdb1    <span class="c1"># 格式化为ext4分区</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../raspberry/index.html" class="btn btn-neutral float-right" title="折腾树莓派" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="file.html" class="btn btn-neutral" title="文件管理" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Vic.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'alpha',
+            LANGUAGE:'zh',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/GA.js"></script>
+      <script type="text/javascript" src="../_static/GA.vicc.wang.js"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

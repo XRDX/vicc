@@ -1,0 +1,279 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>SVN使用手册 &mdash; 维克笔记 alpha 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="PUTTY 使用" href="putty.html" />
+    <link rel="prev" title="GIT 常用命令" href="git.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> 维克笔记
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../linux/index.html">Linux 命令</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../raspberry/index.html">折腾树莓派</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Tools</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="git.html">GIT 常用命令</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">SVN使用手册</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#svn">SVN简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#svn">SVN使用步骤</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#">安装</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#">设置源</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#">更新文件</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#">提交文件</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="putty.html">PUTTY 使用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="google_analysis.html">谷歌分析 Google Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx.html">Sphnix使用手册</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">维克笔记</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Tools</a> &raquo;</li>
+        
+      <li>SVN使用手册</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/tools/svn.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="svn">
+<span id="svn"></span><h1>SVN使用手册<a class="headerlink" href="#svn" title="永久链接至标题">¶</a></h1>
+<div class="section" id="svn">
+<span id="id1"></span><h2>SVN简介<a class="headerlink" href="#svn" title="永久链接至标题">¶</a></h2>
+<p>管理文件版本，追溯文件历史，同步文件</p>
+</div>
+<div class="section" id="svn">
+<span id="id2"></span><h2>SVN使用步骤<a class="headerlink" href="#svn" title="永久链接至标题">¶</a></h2>
+<div class="section" id="">
+<span id="id3"></span><h3>安装<a class="headerlink" href="#" title="永久链接至标题">¶</a></h3>
+<p>下载安装SVN软件，下载地址：https://tortoisesvn.net/downloads.html</p>
+</div>
+<div class="section" id="">
+<span id="id4"></span><h3>设置源<a class="headerlink" href="#" title="永久链接至标题">¶</a></h3>
+<p>安装结束后，在任意一个文件夹下右键菜单，点击SVN Checkout...</p>
+<p><img alt="1" src="../_images/1.png" /></p>
+<p>输入源地址：https://192.168.0.30/svn/Leaplearner/LeapLearnerClass/常规课 Courses</p>
+<p>体验课地址：https://192.168.0.30/svn/Leaplearner/LeapLearnerClass/体验课 Demo Class</p>
+<p><img alt="1" src="../_images/2.png" /></p>
+<p>点击OK，这时候会弹出账号密码的输入框，输入自己的账号密码即可。</p>
+<p>等待资源下载完成，第一次同步需要花费比较长的时间，视文件大小及同步速度大概5~30分钟左右。</p>
+<p>下载完成后即可看到所有相关的文件，请阅读每个文件夹下面的<strong>readme</strong>以了解相关信息。</p>
+</div>
+<div class="section" id="">
+<span id="id5"></span><h3>更新文件<a class="headerlink" href="#" title="永久链接至标题">¶</a></h3>
+<p>当库文件有更新时，在该文件夹上右键，点击SVN Update即可</p>
+<p><img alt="1" src="../_images/3.png" /></p>
+<p>建议在每次使用前进行update。</p>
+</div>
+<div class="section" id="">
+<span id="id6"></span><h3>提交文件<a class="headerlink" href="#" title="永久链接至标题">¶</a></h3>
+<p>当你修改文件要提交到svn仓库时，使用commit。</p>
+<p><img alt="1" src="../_images/4.png" /></p>
+<p>按照下图提示的内容进行操作。</p>
+<p><img alt="1" src="../_images/5.png" /></p>
+<p>可以在网上找到更多svn的信息。</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="putty.html" class="btn btn-neutral float-right" title="PUTTY 使用" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="git.html" class="btn btn-neutral" title="GIT 常用命令" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Vic.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'alpha',
+            LANGUAGE:'zh',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/GA.js"></script>
+      <script type="text/javascript" src="../_static/GA.vicc.wang.js"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
