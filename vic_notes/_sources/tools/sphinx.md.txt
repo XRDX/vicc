@@ -25,6 +25,10 @@ pip install sphinx_rtd_theme
 sphnix-quickstart
 ```
 
+```shell
+make.bat clean
+make.bat html
+```
 
 ### 配置
 

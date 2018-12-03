@@ -4,7 +4,7 @@
 
 强大的功能，可以随时查看网站访问情况，添加代码非常简单，只要添加一小段html即可
 
-
+[后台访问地址](https://analytics.google.com/analytics/web/)
 
 ![](images/google_analysis.png)
 

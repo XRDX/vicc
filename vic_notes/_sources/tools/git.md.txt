@@ -49,6 +49,13 @@ git remote add github git@github.com:USERNAME/REPOSITORY.git
 $ git remote set-url origin git@github.com:USERNAME/REPOSITORY.git
 ```
 
+### tag
+
+列出所有tags
+```shell
+git tag -l
+```
+
 ### 一些常用的Git网站
 
 https://github.com

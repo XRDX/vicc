@@ -11,3 +11,4 @@ Linux 命令
 
    file
    disk
+   tools/index
