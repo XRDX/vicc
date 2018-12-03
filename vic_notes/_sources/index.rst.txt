@@ -10,9 +10,5 @@
    :maxdepth: 2
    
    linux/index
-   raspberry/index
    tools/index
-
-
-
-
+   raspberry/index
