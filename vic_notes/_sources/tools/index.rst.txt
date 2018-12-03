@@ -12,6 +12,7 @@ Tools
    git
    svn
    putty
+   zoom
    google_analysis
    sphinx
 
