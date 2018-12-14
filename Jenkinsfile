@@ -20,10 +20,10 @@ pipeline {
             steps {
                 echo "构建中..."
                 // 请在这里放置您项目代码的单元测试调用过程，例如 mvn package
-                pip install Sphnix
-                pip install recommonmark
-				pip install sphinx_rtd_theme
-                pip install sphinx_markdown_tables
+                pip3 install Sphnix
+                pip3 install recommonmark
+				pip3 install sphinx_rtd_theme
+                pip3 install sphinx_markdown_tables
                 echo "构建完成."
             }
         }
