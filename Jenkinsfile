@@ -26,7 +26,8 @@ pipeline {
 				sh 'pip install sphinx_rtd_theme'
                 sh 'pip install sphinx_markdown_tables'
               
-              	sh 'git clone git@git.dev.tencent.com:xrdpnx/vic_notes.git vicc'
+              	sh 'git clone git@github.com:XRDX/vic_notes.git vicc'
+                sh 'sphinx-build vicc vic_notes'
                 echo "构建完成."
             }
         }
