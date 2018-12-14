@@ -1,12 +1,125 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
 <head>
-    <title>VICC</title>
+  <title>杂物堆</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+
+  <script src="static/js/jquery.min.js"></script>
+  <script src="static/js/jquery.poptrox.min.js"></script>
+  <script src="static/js/skel.2.2.1.min.js"></script>
+  <script src="static/js/main.js"></script>
+  
+  <noscript>
+    <link rel="stylesheet" href="static/css/skel.min.css" >
+    <link rel="stylesheet" href="static/css/style.css" />
+    <link rel="stylesheet" href="static/css/style-xlarge.css" />
+  </noscript>
+
 </head>
-<body>
-    <p><a href="./vic_notes">Vic's Notes</a></p>
-    <p><a href="http://pi.vicc.wang:8888">Rpimonitor</a></p>
-    <p><a href="http://pi.vicc.wang:8889">Aria2</a></p>
-    <p><a href="http://pt.sjtu.edu.cn">PT</a></p>
+<body id="top">
+
+  <!-- Header -->
+  <header id="header">
+    <a href="#" class="image avatar"><img src="static/images/avatar.jpg" alt="" /></a>
+    <h1>Vic Wang</h1>
+    <p>From Xiaori Island</p>
+  </header>
+
+  <!-- Main -->
+  <div id="main">
+
+    <!-- One -->
+    <section id="one">
+      <header class="major"><h2>杂物堆</h2></header>
+      <p>这好像是个杂物堆，放着一堆没有什么用的东西</p>
+    </section>
+
+    <!-- Two -->
+    <section id="two">
+      <h2>Recent Work</h2>
+      <div id="articles">
+        <article class="6u 12u$(xsmall)">
+          <h2>维克笔记</h2>
+          <p><a href="./vic_notes">把我学习过程中的内容都记录下来</a></p>
+        </article>
+
+        <article class="6u 12u$(xsmall)">
+          <h2>小工具</h2>
+          <p><a href="http://pi.vicc.wang:8888">RPi-Monitor</a></p>
+          <p><a href="http://pi.vicc.wang:8889">Aria2</a></p>
+        </article>
+
+        <article class="6u 12u$(xsmall)">
+          <h3>我的简历</h3>
+          <p>很久没有更新的简历</p>
+          <a href="cv.html" target="_blank">
+            <img class="12u" src="static/images/cv.jpg" alt="" />
+          </a>
+          
+          
+        </article>
+     </div>
+
+      <ul class="actions">
+        <li><a href="#" class="button" id="more">More</a></li>
+      </ul>
+    </section>
+
+    <!-- Three -->
+    <section id="three">
+      <h2>Get In Touch</h2>
+      <div class="row">
+        <div class="4u$ 12u$(small)">
+          <ul class="labeled-icons">
+            <li>
+              <h3 class="icon fa-home"><span class="label">Address</span></h3>
+              A708, No 568, Tianshan Xi Road,<br/>
+              Changning District, Shanghai,<br/>
+              China
+            </li> 
+            <li>
+              <h3 class="icon fa-wechat"><span class="label">Wechat</span></h3>
+              xrdpnx
+            </li>
+            <li>
+              <h3 class="icon fa-envelope-o"><span class="label">Email</span></h3>
+              <a href=mailto:305880887@qq.com>305880887@qq.com</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Footer -->
+  <footer id="footer">
+   <ul class="icons">
+    <li>
+      <a href="/" class="icon fa-home">
+        <span class="label">Homepage></span>
+      </a>
+    </li>
+    <li>
+      <a href="#" class="icon fa-wechat">
+        <span class="label">Wechat</span>
+      </a>
+    </li>
+  </ul>
+  <ul class="copyright">
+    <li>Vicc &copy; 2016-2019. All rights reserved.</li>
+  </ul>
+  </footer>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-129766101-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-129766101-1');
+</script>
 </body>
 </html>
