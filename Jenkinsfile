@@ -19,11 +19,14 @@ pipeline {
         stage("构建") {
             steps {
                 echo "构建中..."
+                
                 // 请在这里放置您项目代码的单元测试调用过程，例如 mvn package
-                sh 'pip3 install Sphnix'
-                sh 'pip3 install recommonmark'
-				sh 'pip3 install sphinx_rtd_theme'
-                sh 'pip3 install sphinx_markdown_tables'
+                sh 'pip install Sphnix'
+                sh 'pip install recommonmark'
+				sh 'pip install sphinx_rtd_theme'
+                sh 'pip install sphinx_markdown_tables'
+              
+              	sh 'git clone git@git.dev.tencent.com:xrdpnx/vic_notes.git vicc'
                 echo "构建完成."
             }
         }
