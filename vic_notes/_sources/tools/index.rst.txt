@@ -12,7 +12,7 @@
    git
    svn
    putty
-
+   jenkins
 
 文本编辑软件
 --------------
