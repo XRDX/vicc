@@ -1,0 +1,258 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Jenkins &mdash; 维克笔记 alpha 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/my_style.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> 维克笔记
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../raspberry/index.html">折腾树莓派 Raspberry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithm/index.html">算法 Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">工具 Tools</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">维克笔记</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Jenkins</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/tools/Jenkins.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="jenkins">
+<span id="jenkins"></span><h1>Jenkins<a class="headerlink" href="#jenkins" title="永久链接至标题">¶</a></h1>
+<div class="section" id="install">
+<span id="install"></span><h2>Install<a class="headerlink" href="#install" title="永久链接至标题">¶</a></h2>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>wget -q -O - https://jenkins-ci.org/debian/jenkins-ci.org.key <span class="p">|</span> sudo apt-key add -
+sudo sh -c <span class="s1">&#39;echo deb http://pkg.jenkins-ci.org/debian binary/ &gt; /etc/apt/sources.list.d/jenkins.list&#39;</span>
+sudo apt-get update
+sudo apt-get install jenkins -y
+</pre></div>
+</div>
+<p>安装成功后</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>systemctl status jenkins.service
+</pre></div>
+</div>
+<p>运行成功的提示</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>jenkins.service - LSB: Start Jenkins at boot <span class="nb">time</span>
+   Loaded: loaded <span class="o">(</span>/etc/init.d/jenkins<span class="p">;</span> generated<span class="p">;</span> vendor preset: enabled<span class="o">)</span>
+   Active: active <span class="o">(</span>exited<span class="o">)</span> since Sat <span class="m">2018</span>-12-15 <span class="m">01</span>:21:35 HKT<span class="p">;</span> 16s ago
+     Docs: man:systemd-sysv-generator<span class="o">(</span><span class="m">8</span><span class="o">)</span>
+
+Dec <span class="m">15</span> <span class="m">01</span>:21:33 raspberrypi systemd<span class="o">[</span><span class="m">1</span><span class="o">]</span>: Starting LSB: Start Jenkins at boot <span class="nb">time</span>
+Dec <span class="m">15</span> <span class="m">01</span>:21:33 raspberrypi jenkins<span class="o">[</span><span class="m">3902</span><span class="o">]</span>: Correct java version found
+Dec <span class="m">15</span> <span class="m">01</span>:21:34 raspberrypi su<span class="o">[</span><span class="m">3933</span><span class="o">]</span>: Successful su <span class="k">for</span> jenkins by root
+Dec <span class="m">15</span> <span class="m">01</span>:21:34 raspberrypi su<span class="o">[</span><span class="m">3933</span><span class="o">]</span>: + ??? root:jenkins
+Dec <span class="m">15</span> <span class="m">01</span>:21:34 raspberrypi su<span class="o">[</span><span class="m">3933</span><span class="o">]</span>: pam_unix<span class="o">(</span>su:session<span class="o">)</span>: session opened <span class="k">for</span> u
+Dec <span class="m">15</span> <span class="m">01</span>:21:35 raspberrypi jenkins<span class="o">[</span><span class="m">3902</span><span class="o">]</span>: Starting Jenkins Automation Server: j
+Dec <span class="m">15</span> <span class="m">01</span>:21:35 raspberrypi systemd<span class="o">[</span><span class="m">1</span><span class="o">]</span>: Started LSB: Start Jenkins at boot time.
+</pre></div>
+</div>
+<p>安装成功后，打开localhost:8080就能看到Jenkins页面</p>
+</div>
+<div class="section" id="">
+<span id="id1"></span><h2>配置<a class="headerlink" href="#" title="永久链接至标题">¶</a></h2>
+<p>按提示输入管理密码，在这个文件中</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+</pre></div>
+</div>
+<p>提示离线，跳过代理，添加管理员账号，选择保存</p>
+<p>配置地址</p>
+</div>
+<div class="section" id="">
+<span id="id2"></span><h2>使用<a class="headerlink" href="#" title="永久链接至标题">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Vic.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'alpha',
+            LANGUAGE:'zh',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/GA.js"></script>
+      <script type="text/javascript" src="../_static/GA.vicc.wang.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

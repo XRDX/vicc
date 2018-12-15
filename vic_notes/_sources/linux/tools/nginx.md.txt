@@ -1,0 +1,11 @@
+### Nginx
+
+Nginx的发音是：Engine X
+
+```shell
+sudo nginx -t
+sudo nginx -s reload
+```
+
+nginx的配置文件在`etc/nginx
+

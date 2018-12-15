@@ -1,0 +1,437 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>将阿里云dns解析作为ddns使用 &mdash; 维克笔记 alpha 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/my_style.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="工具 Tools" href="../tools/index.html" />
+    <link rel="prev" title="使用PIL批量生成图片" href="pil.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> 维克笔记
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../raspberry/index.html">折腾树莓派 Raspberry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithm/index.html">算法 Algorithm</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Python应用</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="pil.html">使用PIL批量生成图片</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">将阿里云dns解析作为ddns使用</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#">原理</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#">步骤</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/index.html">工具 Tools</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">维克笔记</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Python应用</a> &raquo;</li>
+        
+      <li>将阿里云dns解析作为ddns使用</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/python/aliddns.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="dnsddns">
+<span id="dnsddns"></span><h1>将阿里云dns解析作为ddns使用<a class="headerlink" href="#dnsddns" title="永久链接至标题">¶</a></h1>
+<div class="section" id="">
+<span id="id1"></span><h2>原理<a class="headerlink" href="#" title="永久链接至标题">¶</a></h2>
+<p>定时运行监测脚本，通过访问ip.cn来监测本地的公网ip是否发生更改</p>
+<p>如果发现ip发生更改，更新Ali云上的DNS目标地址</p>
+</div>
+<div class="section" id="">
+<span id="id2"></span><h2>步骤<a class="headerlink" href="#" title="永久链接至标题">¶</a></h2>
+<p>安装阿里云的python SDK</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># apt-get install python-pip</span>
+<span class="c1"># pip install aliyun-python-sdk-alidns</span>
+</pre></div>
+</div>
+<p>在 <a class="reference external" href="https://ak-console.aliyun.com/#/accesskey">Aliyun Access Key管理控制台</a>里添加Api访问的 Access Key</p>
+<ul class="simple">
+<li>Access Key ID</li>
+<li>Access Key Secret</li>
+<li>以及你的阿里云账号ID</li>
+</ul>
+<p>将以上内容添加到config.ini文件中</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="c1">;config.ini</span>
+<span class="k">[keys]</span>
+<span class="na">access_key_id</span> <span class="o">=</span> <span class="s">ABCDEFGHIJKLMN</span>
+<span class="na">access_key_secret</span> <span class="o">=</span> <span class="s">abcdefghijklmnopqrstuvwxyz</span>
+<span class="na">account_id</span> <span class="o">=</span> <span class="s">myaccount@ali.com</span>
+
+<span class="k">[config]</span>
+<span class="na">format</span> <span class="o">=</span> <span class="s">json</span>
+<span class="na">domainname</span> <span class="o">=</span> <span class="s">qinyv.win</span>
+</pre></div>
+</div>
+<p>使用getAliDNS.py来获取当前的Records信息</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">ConfigParser</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="kn">from</span> <span class="nn">aliyunsdkalidns.request.v20150109</span> <span class="kn">import</span> <span class="n">UpdateDomainRecordRequest</span><span class="p">,</span> <span class="n">DescribeDomainRecordsRequest</span><span class="p">,</span> \
+    <span class="n">DescribeDomainRecordInfoRequest</span>
+<span class="kn">from</span> <span class="nn">aliyunsdkcore</span> <span class="kn">import</span> <span class="n">client</span>
+
+<span class="n">cp</span> <span class="o">=</span> <span class="n">ConfigParser</span><span class="o">.</span><span class="n">ConfigParser</span><span class="p">()</span>
+<span class="n">cp</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s2">&quot;config.ini&quot;</span><span class="p">)</span>
+
+<span class="n">access_key_id</span>       <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;keys&#39;</span><span class="p">,</span><span class="s1">&#39;access_key_id&#39;</span><span class="p">)</span>
+<span class="n">access_Key_secret</span>   <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;keys&#39;</span><span class="p">,</span><span class="s1">&#39;access_Key_secret&#39;</span><span class="p">)</span>
+<span class="n">account_id</span>          <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;keys&#39;</span><span class="p">,</span><span class="s1">&#39;account_id&#39;</span><span class="p">)</span>
+
+<span class="n">domain_name</span>         <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;config&#39;</span><span class="p">,</span> <span class="s1">&#39;DomainName&#39;</span><span class="p">)</span>
+<span class="n">record_format</span>       <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;config&#39;</span><span class="p">,</span> <span class="s1">&#39;format&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">check_records</span><span class="p">(</span><span class="n">dns_domain</span><span class="p">,</span> <span class="n">rc_format</span><span class="p">):</span>
+    <span class="n">clt</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">AcsClient</span><span class="p">(</span><span class="n">access_key_id</span><span class="p">,</span> <span class="n">access_Key_secret</span><span class="p">,</span> <span class="s1">&#39;cn-hangzhou&#39;</span><span class="p">)</span>
+    <span class="n">request</span> <span class="o">=</span> <span class="n">DescribeDomainRecordsRequest</span><span class="o">.</span><span class="n">DescribeDomainRecordsRequest</span><span class="p">()</span>
+    <span class="n">request</span><span class="o">.</span><span class="n">set_DomainName</span><span class="p">(</span><span class="n">dns_domain</span><span class="p">)</span>
+    <span class="n">request</span><span class="o">.</span><span class="n">set_accept_format</span><span class="p">(</span><span class="n">rc_format</span><span class="p">)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">clt</span><span class="o">.</span><span class="n">do_action_with_exception</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+    <span class="k">print</span> <span class="n">result</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">check_records</span><span class="p">(</span><span class="n">domain_name</span><span class="p">,</span> <span class="n">record_format</span><span class="p">)</span>
+
+</pre></div>
+</div>
+<p>如果一切正常，运行后输出类似于一下信息</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;PageNumber&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+  <span class="nt">&quot;TotalCount&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span>
+  <span class="nt">&quot;PageSize&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span>
+  <span class="nt">&quot;RequestId&quot;</span><span class="p">:</span><span class="s2">&quot;xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;DomainRecords&quot;</span><span class="p">:{</span>
+    <span class="nt">&quot;Record&quot;</span><span class="p">:[</span>
+      <span class="p">{</span>
+        <span class="nt">&quot;RR&quot;</span><span class="p">:</span><span class="s2">&quot;@&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;Status&quot;</span><span class="p">:</span><span class="s2">&quot;ENABLE&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;Value&quot;</span><span class="p">:</span><span class="s2">&quot;111.111.111.111&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;RecordId&quot;</span><span class="p">:</span><span class="s2">&quot;1234567878099&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="s2">&quot;A&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;DomainName&quot;</span><span class="p">:</span>
+        <span class="s2">&quot;qinyv.win&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;Locked&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+        <span class="nt">&quot;Line&quot;</span><span class="p">:</span><span class="s2">&quot;default&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;TTL&quot;</span><span class="p">:</span><span class="s2">&quot;600&quot;</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="nt">&quot;RR&quot;</span><span class="p">:</span><span class="s2">&quot;www&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;Status&quot;</span><span class="p">:</span><span class="s2">&quot;ENABLE&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;Value&quot;</span><span class="p">:</span><span class="s2">&quot;111.111.111.111&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;RecordId&quot;</span><span class="p">:</span><span class="s2">&quot;1234567878099&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="s2">&quot;A&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;DomainName&quot;</span><span class="p">:</span><span class="s2">&quot;qinyv.win&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;Locked&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+        <span class="nt">&quot;Line&quot;</span><span class="p">:</span><span class="s2">&quot;default&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;TTL&quot;</span><span class="p">:</span><span class="s2">&quot;600&quot;</span><span class="p">},</span>
+    <span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>将需要修改的Records信息添加到config.ini文件，添加后仍能够执行getAliDNS.py来获取最新的信息</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="c1">;config.ini</span>
+<span class="k">[keys]</span>
+<span class="na">access_key_id</span> <span class="o">=</span> <span class="s">ABCDEFGHIJKLMN</span>
+<span class="na">access_key_secret</span> <span class="o">=</span> <span class="s">abcdefghijklmnopqrstuvwxyz</span>
+<span class="na">account_id</span> <span class="o">=</span> <span class="s">myaccount@ali.com</span>
+
+<span class="k">[config]</span>
+<span class="na">ip</span> <span class="o">=</span> <span class="s">111.111.111.111</span>
+<span class="na">format</span> <span class="o">=</span> <span class="s">json</span>
+<span class="na">domainname</span> <span class="o">=</span> <span class="s">qinyv.win</span>
+<span class="na">type</span> <span class="o">=</span> <span class="s">A</span>
+<span class="na">ttl</span> <span class="o">=</span> <span class="s">600</span>
+
+<span class="k">[@]</span>
+<span class="na">recordid</span> <span class="o">=</span> <span class="s">1234567878099</span>
+
+<span class="k">[www]</span>
+<span class="na">recordid</span> <span class="o">=</span> <span class="s">1234567878000</span>
+</pre></div>
+</div>
+<p>使用updateAliDNS.py来检测本机的公网ip地址是否发生变动</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># -*- coding: UTF-8 -*-</span>
+
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">ConfigParser</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="kn">from</span> <span class="nn">aliyunsdkalidns.request.v20150109</span> <span class="kn">import</span> <span class="n">UpdateDomainRecordRequest</span><span class="p">,</span> <span class="n">DescribeDomainRecordsRequest</span><span class="p">,</span> \
+    <span class="n">DescribeDomainRecordInfoRequest</span>
+<span class="kn">from</span> <span class="nn">aliyunsdkcore</span> <span class="kn">import</span> <span class="n">client</span>
+
+<span class="n">cp</span> <span class="o">=</span> <span class="n">ConfigParser</span><span class="o">.</span><span class="n">ConfigParser</span><span class="p">()</span>
+<span class="n">cp</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s2">&quot;config.ini&quot;</span><span class="p">)</span>
+<span class="n">current_ip</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;config&#39;</span><span class="p">,</span> <span class="s2">&quot;ip&quot;</span><span class="p">)</span>
+
+<span class="n">access_key_id</span>       <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;keys&#39;</span><span class="p">,</span><span class="s1">&#39;access_key_id&#39;</span><span class="p">)</span>
+<span class="n">access_Key_secret</span>   <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;keys&#39;</span><span class="p">,</span><span class="s1">&#39;access_Key_secret&#39;</span><span class="p">)</span>
+<span class="n">account_id</span>          <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;keys&#39;</span><span class="p">,</span><span class="s1">&#39;account_id&#39;</span><span class="p">)</span>
+ 
+<span class="n">rc_format</span>       <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;config&#39;</span><span class="p">,</span> <span class="s1">&#39;Format&#39;</span><span class="p">)</span>
+<span class="n">rc_domain</span>       <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;config&#39;</span><span class="p">,</span> <span class="s1">&#39;DomainName&#39;</span><span class="p">)</span>
+<span class="n">rc_type</span>         <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;config&#39;</span><span class="p">,</span> <span class="s1">&#39;Type&#39;</span><span class="p">)</span>
+<span class="n">rc_ttl</span>          <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;config&#39;</span><span class="p">,</span> <span class="s1">&#39;TTL&#39;</span><span class="p">)</span>
+
+<span class="n">rc1_rr</span> <span class="o">=</span> <span class="s1">&#39;@&#39;</span>
+<span class="n">rc1_id</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">rc1_rr</span><span class="p">,</span> <span class="s1">&#39;RecordId&#39;</span><span class="p">)</span>
+<span class="n">rc2_rr</span> <span class="o">=</span> <span class="s1">&#39;www&#39;</span>
+<span class="n">rc2_id</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">rc2_rr</span><span class="p">,</span> <span class="s1">&#39;RecordId&#39;</span><span class="p">)</span>
+ 
+<span class="k">def</span> <span class="nf">my_ip</span><span class="p">():</span>
+    <span class="n">get_ip_method</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">popen</span><span class="p">(</span><span class="s1">&#39;curl -s ip.cn&#39;</span><span class="p">)</span>
+    <span class="n">get_ip_responses</span> <span class="o">=</span> <span class="n">get_ip_method</span><span class="o">.</span><span class="n">readlines</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">get_ip_pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\d+\.\d+\.\d+\.\d+&#39;</span><span class="p">)</span>
+    <span class="n">get_ip_value</span> <span class="o">=</span> <span class="n">get_ip_pattern</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">get_ip_responses</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">get_ip_value</span>
+
+<span class="k">def</span> <span class="nf">update_dns</span><span class="p">(</span><span class="n">dns_rc_rr</span><span class="p">,</span> <span class="n">dns_rc_id</span><span class="p">,</span> <span class="n">dns_value</span><span class="p">):</span>
+    <span class="n">clt</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">AcsClient</span><span class="p">(</span><span class="n">access_key_id</span><span class="p">,</span> <span class="n">access_Key_secret</span><span class="p">,</span> <span class="s1">&#39;cn-hangzhou&#39;</span><span class="p">)</span>
+    <span class="n">request</span> <span class="o">=</span> <span class="n">UpdateDomainRecordRequest</span><span class="o">.</span><span class="n">UpdateDomainRecordRequest</span><span class="p">()</span>
+    <span class="n">request</span><span class="o">.</span><span class="n">set_RR</span><span class="p">(</span><span class="n">dns_rc_rr</span><span class="p">)</span>
+    <span class="n">request</span><span class="o">.</span><span class="n">set_Type</span><span class="p">(</span><span class="n">rc_type</span><span class="p">)</span>
+    <span class="n">request</span><span class="o">.</span><span class="n">set_Value</span><span class="p">(</span><span class="n">dns_value</span><span class="p">)</span>
+    <span class="n">request</span><span class="o">.</span><span class="n">set_RecordId</span><span class="p">(</span><span class="n">dns_rc_id</span><span class="p">)</span>
+    <span class="n">request</span><span class="o">.</span><span class="n">set_TTL</span><span class="p">(</span><span class="n">rc_ttl</span><span class="p">)</span>
+    <span class="n">request</span><span class="o">.</span><span class="n">set_accept_format</span><span class="p">(</span><span class="n">rc_format</span><span class="p">)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">clt</span><span class="o">.</span><span class="n">do_action_with_exception</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
+ 
+<span class="k">def</span> <span class="nf">write_to_config</span><span class="p">(</span><span class="n">rc_value</span><span class="p">):</span>
+    <span class="n">cp</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;config&quot;</span><span class="p">,</span> <span class="s2">&quot;ip&quot;</span><span class="p">,</span> <span class="n">rc_value</span><span class="p">)</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;config.ini&quot;</span><span class="p">,</span><span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">cp</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">log</span><span class="p">(</span><span class="n">msg</span><span class="p">):</span>
+    <span class="n">time_now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1"> %H:%M:%S&#39;</span><span class="p">)</span>
+    <span class="n">current_script_path</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span>
+    <span class="n">log_file</span> <span class="o">=</span> <span class="n">current_script_path</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="s1">&#39;aliyun_ddns_log.txt&#39;</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">log_file</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">time_now</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="k">return</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">rc_value</span> <span class="o">=</span> <span class="n">my_ip</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">current_ip</span> <span class="o">!=</span> <span class="n">rc_value</span><span class="p">:</span>
+        <span class="n">update_dns</span><span class="p">(</span><span class="n">rc1_rr</span><span class="p">,</span> <span class="n">rc1_id</span><span class="p">,</span> <span class="n">rc_value</span><span class="p">)</span>
+        <span class="n">update_dns</span><span class="p">(</span><span class="n">rc2_rr</span><span class="p">,</span> <span class="n">rc2_id</span><span class="p">,</span> <span class="n">rc_value</span><span class="p">)</span>
+        <span class="n">write_to_config</span><span class="p">(</span><span class="n">rc_value</span><span class="p">)</span>
+        <span class="n">log</span><span class="p">(</span><span class="n">rc_value</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">log</span><span class="p">(</span><span class="s2">&quot;-_-&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>最后，使用crontab来定期执行该任务来达到监测公网ip地址变动的效果</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>crontab -e
+*/5 * * * * <span class="nv">$python</span> ~/ddns/updateAliDNS.py
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../tools/index.html" class="btn btn-neutral float-right" title="工具 Tools" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="pil.html" class="btn btn-neutral" title="使用PIL批量生成图片" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Vic.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'alpha',
+            LANGUAGE:'zh',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/GA.js"></script>
+      <script type="text/javascript" src="../_static/GA.vicc.wang.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

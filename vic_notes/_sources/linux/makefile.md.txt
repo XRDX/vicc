@@ -1,0 +1,50 @@
+## makefile
+
+make是Linux下的一个工具，可以帮我们自动构建项目，一般是c或者c++项目。但是我们也可以利用这个工具来做一些自动化构建，你所需要的，只是在目录下创建一个`makefile`文件。
+
+
+### 第一个例子
+```makefile
+hello:
+    @echo "Hello World"
+```
+
+```shell
+$ make
+Hello World
+```
+
+### 多个目标
+如果一件事情需要多个步骤来完成，那么我们需要下面的结构
+
+
+```text
+目标： 前置目标
+    执行的命令1
+    执行的命令2
+```
+
+举例说明
+```makefile
+all: html publish
+    @echo "make succesfully"
+
+html:
+    @echo "make html"
+    sphinx-build ../vic_notes vic_notes
+
+publish:
+    sudo cp -rf . /var/www/vicc/
+
+clean:
+    rm -rf vic_notes
+
+.PHONY: all html publish clean
+```
+
+`.PHONY` 意思为“假”，因为makefile会依据文件的修改时间来判断是否需要重新构建，而这些定义的名字，都是“假”的文件。
+
+如果要执行其中一个任务，只要执行`make task`就可以了
+```shell
+make html
+```

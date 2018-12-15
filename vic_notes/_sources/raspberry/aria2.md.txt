@@ -1,0 +1,13 @@
+## 树莓派做下载机，Aria2！
+
+[Aria2使用说明](https://aria2.github.io/)
+
+
+首先安装aria2
+
+```shell
+sudo apt-get install aria2
+```
+
+
+

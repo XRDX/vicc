@@ -1,0 +1,9 @@
+## reStructuredText 格式说明
+
+[rst wiki](https://en.wikipedia.org/wiki/ReStructuredText)
+
+```rst
+External hyperlinks, like Python_.
+.. _Python: http://www.python.org/
+```
+

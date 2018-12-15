@@ -1,0 +1,33 @@
+## 使用PIL批量生成图片
+
+使用pil模块写了一个批量生成证书的小程序
+
+x、y的计算是针对这个证书进行的，不同的图片需要单独调试
+
+name.txt中每个名字一行
+
+```python
+from PIL import Image, ImageDraw, ImageFont
+
+imageFile = "template.jpg"
+font_size = 64
+font = ImageFont.truetype(r'C:\Windows\Fonts\simkai.ttf', font_size)
+
+def product_image(name):
+    template = Image.open(imageFile)
+    
+    draw = ImageDraw.Draw(template)
+    x = template.size[0] - (875+len(name)*font_size/2)
+    y = template.size[1] - 775
+    draw.text((x, y), name, fill=(75, 75, 75), font=font)
+
+    template.save(name + ".jpg")
+
+
+f = open('name.txt', 'r')    
+for line in f.readlines():
+    line = line.strip('\n') #依次读取每行
+    product_image(line)
+    print(line)
+```
+

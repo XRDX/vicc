@@ -1,0 +1,275 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>其他一些命令 &mdash; 维克笔记 alpha 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/my_style.css" type="text/css" />
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="makefile" href="../makefile.html" />
+    <link rel="prev" title="screen" href="screen.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> 维克笔记
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Linux</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../file.html">Linux 文件管理命令</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../disk.html">Linux 磁盘分区、格式化、目录挂载</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Linux 小工具</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="nginx.html">Nginx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="screen.html">screen</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">其他一些命令</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#top">top</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../makefile.html">makefile</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../raspberry/index.html">折腾树莓派 Raspberry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../algorithm/index.html">算法 Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/index.html">Python应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tools/index.html">工具 Tools</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">维克笔记</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Linux</a> &raquo;</li>
+        
+          <li><a href="index.html">Linux 小工具</a> &raquo;</li>
+        
+      <li>其他一些命令</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/linux/tools/others.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="">
+<span id="id1"></span><h1>其他一些命令<a class="headerlink" href="#" title="永久链接至标题">¶</a></h1>
+<div class="section" id="top">
+<span id="top"></span><h2>top<a class="headerlink" href="#top" title="永久链接至标题">¶</a></h2>
+<p>实时显示资源使用情况</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>Tasks: <span class="m">137</span> total,   <span class="m">3</span> running,  <span class="m">89</span> sleeping,   <span class="m">0</span> stopped,   <span class="m">0</span> zombie
+%Cpu<span class="o">(</span>s<span class="o">)</span>:  <span class="m">0</span>.7 us, <span class="m">14</span>.5 sy,  <span class="m">0</span>.0 ni, <span class="m">62</span>.5 id, <span class="m">20</span>.8 wa,  <span class="m">0</span>.0 hi,  <span class="m">1</span>.5 si,  <span class="m">0</span>.0 st
+KiB Mem :   <span class="m">880424</span> total,    <span class="m">33000</span> free,   <span class="m">158272</span> used,   <span class="m">689152</span> buff/cache
+KiB Swap:   <span class="m">102396</span> total,    <span class="m">97276</span> free,     <span class="m">5120</span> used.   <span class="m">619028</span> avail Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+  <span class="m">159</span> root      <span class="m">20</span>   <span class="m">0</span>    <span class="m">4288</span>   <span class="m">2092</span>   <span class="m">1400</span> S  <span class="m">28</span>.2  <span class="m">0</span>.2 <span class="m">198</span>:37.66 plymouthd
+<span class="m">20314</span> root      <span class="m">20</span>   <span class="m">0</span>    <span class="m">4820</span>   <span class="m">1640</span>   <span class="m">1360</span> D  <span class="m">16</span>.4  <span class="m">0</span>.2   <span class="m">0</span>:08.61 mv
+  <span class="m">170</span> root      <span class="m">20</span>   <span class="m">0</span>       <span class="m">0</span>      <span class="m">0</span>      <span class="m">0</span> R  <span class="m">14</span>.4  <span class="m">0</span>.0 <span class="m">928</span>:42.19 w1_bus_mas+
+   <span class="m">44</span> root      <span class="m">20</span>   <span class="m">0</span>       <span class="m">0</span>      <span class="m">0</span>      <span class="m">0</span> S   <span class="m">3</span>.9  <span class="m">0</span>.0  <span class="m">19</span>:18.97 kswapd0
+   <span class="m">68</span> root      <span class="m">20</span>   <span class="m">0</span>       <span class="m">0</span>      <span class="m">0</span>      <span class="m">0</span> S   <span class="m">2</span>.0  <span class="m">0</span>.0   <span class="m">3</span>:27.46 mmcqd/0
+  <span class="m">434</span> root      <span class="m">20</span>   <span class="m">0</span>  <span class="m">108208</span>  <span class="m">69788</span>   <span class="m">5088</span> S   <span class="m">2</span>.0  <span class="m">7</span>.9 <span class="m">516</span>:48.16 aria2c
+  <span class="m">240</span> root      <span class="m">20</span>   <span class="m">0</span>       <span class="m">0</span>      <span class="m">0</span>      <span class="m">0</span> S   <span class="m">1</span>.3  <span class="m">0</span>.0  <span class="m">47</span>:48.96 usb-storage
+<span class="m">20747</span> pi        <span class="m">20</span>   <span class="m">0</span>    <span class="m">8108</span>   <span class="m">3304</span>   <span class="m">2824</span> R   <span class="m">1</span>.3  <span class="m">0</span>.4   <span class="m">0</span>:00.17 top
+  <span class="m">258</span> root      <span class="m">20</span>   <span class="m">0</span>       <span class="m">0</span>      <span class="m">0</span>      <span class="m">0</span> S   <span class="m">0</span>.3  <span class="m">0</span>.0   <span class="m">0</span>:22.21 jbd2/sda1-8
+<span class="m">17002</span> root      <span class="m">20</span>   <span class="m">0</span>       <span class="m">0</span>      <span class="m">0</span>      <span class="m">0</span> I   <span class="m">0</span>.3  <span class="m">0</span>.0   <span class="m">0</span>:00.49 kworker/0:1
+<span class="m">17534</span> pi        <span class="m">20</span>   <span class="m">0</span>    <span class="m">5760</span>   <span class="m">2516</span>   <span class="m">1692</span> S   <span class="m">0</span>.3  <span class="m">0</span>.3   <span class="m">0</span>:04.88 screen
+<span class="m">19343</span> root      <span class="m">20</span>   <span class="m">0</span>       <span class="m">0</span>      <span class="m">0</span>      <span class="m">0</span> I   <span class="m">0</span>.3  <span class="m">0</span>.0   <span class="m">0</span>:00.22 kworker/0:0
+<span class="m">19543</span> root      <span class="m">20</span>   <span class="m">0</span>       <span class="m">0</span>      <span class="m">0</span>      <span class="m">0</span> I   <span class="m">0</span>.3  <span class="m">0</span>.0   <span class="m">0</span>:01.66 kworker/u8+
+    <span class="m">1</span> root      <span class="m">20</span>   <span class="m">0</span>   <span class="m">27100</span>   <span class="m">3252</span>   <span class="m">2212</span> S   <span class="m">0</span>.0  <span class="m">0</span>.4   <span class="m">5</span>:16.37 systemd
+    <span class="m">2</span> root      <span class="m">20</span>   <span class="m">0</span>       <span class="m">0</span>      <span class="m">0</span>      <span class="m">0</span> S   <span class="m">0</span>.0  <span class="m">0</span>.0   <span class="m">0</span>:00.59 kthreadd
+    <span class="m">4</span> root       <span class="m">0</span> -20       <span class="m">0</span>      <span class="m">0</span>      <span class="m">0</span> I   <span class="m">0</span>.0  <span class="m">0</span>.0   <span class="m">0</span>:00.00 kworker/0:+
+    <span class="m">6</span> root       <span class="m">0</span> -20       <span class="m">0</span>      <span class="m">0</span>      <span class="m">0</span> I   <span class="m">0</span>.0  <span class="m">0</span>.0   <span class="m">0</span>:00.00 mm_percpu_+
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../makefile.html" class="btn btn-neutral float-right" title="makefile" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="screen.html" class="btn btn-neutral" title="screen" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Vic.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'alpha',
+            LANGUAGE:'zh',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/GA.js"></script>
+      <script type="text/javascript" src="../../_static/GA.vicc.wang.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

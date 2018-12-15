@@ -1,0 +1,295 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>在树莓派安装vsftpd服务器 &mdash; 维克笔记 alpha 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/my_style.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="树莓派做下载机，Aria2！" href="aria2.html" />
+    <link rel="prev" title="折腾树莓派 Raspberry" href="index.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> 维克笔记
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../linux/index.html">Linux</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">折腾树莓派 Raspberry</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">在树莓派安装vsftpd服务器</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduction">简介 Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-vsftdp">安装 install vsftdp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#start-ftp">启动 start ftp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#vsftdp-etc">编辑配置文件 vsftdp etc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#">修改默认目录</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#restart-vsftpd">重启服务 restart vsftpd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#test">测试 test</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="aria2.html">树莓派做下载机，Aria2！</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rpimonitor.html">RPi-Monitor</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithm/index.html">算法 Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/index.html">工具 Tools</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">维克笔记</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">折腾树莓派 Raspberry</a> &raquo;</li>
+        
+      <li>在树莓派安装vsftpd服务器</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/raspberry/vsftpd.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="vsftpd">
+<span id="vsftpd"></span><h1>在树莓派安装vsftpd服务器<a class="headerlink" href="#vsftpd" title="永久链接至标题">¶</a></h1>
+<div class="section" id="introduction">
+<span id="introduction"></span><h2>简介 Introduction<a class="headerlink" href="#introduction" title="永久链接至标题">¶</a></h2>
+<p>vsftpd是一个开源的轻量级的常用ftp服务器</p>
+</div>
+<div class="section" id="install-vsftdp">
+<span id="install-vsftdp"></span><h2>安装 install vsftdp<a class="headerlink" href="#install-vsftdp" title="永久链接至标题">¶</a></h2>
+<p>约400KB</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo apt-get install vsftpd
+</pre></div>
+</div>
+</div>
+<div class="section" id="start-ftp">
+<span id="start-ftp"></span><h2>启动 start ftp<a class="headerlink" href="#start-ftp" title="永久链接至标题">¶</a></h2>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo service vsftpd start
+</pre></div>
+</div>
+</div>
+<div class="section" id="vsftdp-etc">
+<span id="vsftdp-etc"></span><h2>编辑配置文件 vsftdp etc<a class="headerlink" href="#vsftdp-etc" title="永久链接至标题">¶</a></h2>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo vim /etc/vsftpd.conf
+</pre></div>
+</div>
+<p>找到以下行，修改一下，允许可写</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="c1">#设定可以进行写操作</span>
+<span class="na">write_enable</span><span class="o">=</span><span class="s">YES</span>
+
+<span class="c1">#设定上传后文件的权限掩码。</span>
+<span class="na">local_umask</span><span class="o">=</span><span class="s">022</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="">
+<span id="id1"></span><h2>修改默认目录<a class="headerlink" href="#" title="永久链接至标题">¶</a></h2>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="na">local_root</span><span class="o">=</span><span class="s">/path/to/the/dir</span>
+<span class="na">chroot_local_user</span><span class="o">=</span><span class="s">YES</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="restart-vsftpd">
+<span id="restart-vsftpd"></span><h2>重启服务 restart vsftpd<a class="headerlink" href="#restart-vsftpd" title="永久链接至标题">¶</a></h2>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo service vsftpd restart
+</pre></div>
+</div>
+</div>
+<div class="section" id="test">
+<span id="test"></span><h2>测试 test<a class="headerlink" href="#test" title="永久链接至标题">¶</a></h2>
+<p>通过ftp连接树莓派系统，以用户名pi登录，密码是pi的密码</p>
+<p><img alt="use_ftp" src="../_images/use_ftp.png" /></p>
+<p>ftp的根目录是<code class="docutils literal notranslate"><span class="pre">/home/pi</span></code>，即pi用户的HOME目录</p>
+<p>可上传或下载文件了</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="aria2.html" class="btn btn-neutral float-right" title="树莓派做下载机，Aria2！" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="折腾树莓派 Raspberry" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Vic.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'alpha',
+            LANGUAGE:'zh',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/GA.js"></script>
+      <script type="text/javascript" src="../_static/GA.vicc.wang.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
