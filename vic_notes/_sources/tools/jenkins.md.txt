@@ -1,0 +1,47 @@
+## Jenkins
+
+### Install 
+```shell
+wget -q -O - https://jenkins-ci.org/debian/jenkins-ci.org.key | sudo apt-key add -
+sudo sh -c 'echo deb http://pkg.jenkins-ci.org/debian binary/ > /etc/apt/sources.list.d/jenkins.list'
+sudo apt-get update
+sudo apt-get install jenkins -y
+```
+
+安装成功后
+
+```shell
+systemctl status jenkins.service
+```
+
+运行成功的提示
+```shell
+jenkins.service - LSB: Start Jenkins at boot time
+   Loaded: loaded (/etc/init.d/jenkins; generated; vendor preset: enabled)
+   Active: active (exited) since Sat 2018-12-15 01:21:35 HKT; 16s ago
+     Docs: man:systemd-sysv-generator(8)
+
+Dec 15 01:21:33 raspberrypi systemd[1]: Starting LSB: Start Jenkins at boot time
+Dec 15 01:21:33 raspberrypi jenkins[3902]: Correct java version found
+Dec 15 01:21:34 raspberrypi su[3933]: Successful su for jenkins by root
+Dec 15 01:21:34 raspberrypi su[3933]: + ??? root:jenkins
+Dec 15 01:21:34 raspberrypi su[3933]: pam_unix(su:session): session opened for u
+Dec 15 01:21:35 raspberrypi jenkins[3902]: Starting Jenkins Automation Server: j
+Dec 15 01:21:35 raspberrypi systemd[1]: Started LSB: Start Jenkins at boot time.
+```
+
+安装成功后，打开localhost:8080就能看到Jenkins页面
+
+### 配置
+
+按提示输入管理密码，在这个文件中
+```shell
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+```
+
+提示离线，跳过代理，添加管理员账号，选择保存
+
+配置地址
+
+### 使用
+
