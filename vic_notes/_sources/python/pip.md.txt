@@ -1,0 +1,9 @@
+## pip手册
+
+
+
+### 指定源
+
+-i
+
+pip install -U pyleap -i https://pypi.python.org/sample

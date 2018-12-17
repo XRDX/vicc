@@ -1,0 +1,24 @@
+## string
+
+```cpp
+#include <string>
+```
+
+
+
+### cctype
+
+| Functions        |                  |
+| ---------------- | ---------------- |
+| tolower(char c); | return lowercase |
+| toupper(char c); | return uppercase |
+|                  |                  |
+
+
+
+
+
+```cpp
+int i = std::stoi(str);
+```
+

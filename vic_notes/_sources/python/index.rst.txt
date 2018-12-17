@@ -7,5 +7,6 @@ Python最强大的地方在于它丰富的库，在这里，记录了我使用Py
 .. toctree::
    :maxdepth: 1
 
+   pip
    pil
    aliddns

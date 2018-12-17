@@ -1,0 +1,7 @@
+## cstring
+
+
+
+memset(target, 0, size)
+
+memcpy(target, source, size)

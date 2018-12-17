@@ -1,0 +1,422 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>容器 &mdash; 维克笔记 alpha 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/my_style.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="工具 Tools" href="../tools/index.html" />
+    <link rel="prev" title="cstring" href="cstring.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> 维克笔记
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../raspberry/index.html">折腾树莓派 Raspberry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithm/index.html">算法 Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python应用</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">C++ 语法基础</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="string.html">string</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cstring.html">cstring</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">容器</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#container-operations">容器运算 Container Operations</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#type-aliases">类型别名 Type Aliases</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#construction">构造方法 Construction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#assignment-and-swap">赋值和交换Assignment and swap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#size">长度 size</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#">增删元素</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#obtain-iterators">获取元素地址 Obtain Iterators</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/index.html">工具 Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../opengl/index.html">OpenGL 图形学</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">维克笔记</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">C++ 语法基础</a> &raquo;</li>
+        
+      <li>容器</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/cpp/containers.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="">
+<span id="id1"></span><h1>容器<a class="headerlink" href="#" title="永久链接至标题">¶</a></h1>
+<div class="section" id="container-operations">
+<span id="container-operations"></span><h2>容器运算 Container Operations<a class="headerlink" href="#container-operations" title="永久链接至标题">¶</a></h2>
+<div class="section" id="type-aliases">
+<span id="type-aliases"></span><h3>类型别名 Type Aliases<a class="headerlink" href="#type-aliases" title="永久链接至标题">¶</a></h3>
+<p>iterator一般翻译为迭代器，代表了容器中元素的地址。迭代器地址的范围为容器中第一个元素到最后一个元素，注意，end返回的是容器最后一个元素的后一个元素。</p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>iterator</td>
+<td>迭代器 iterator</td>
+</tr>
+<tr>
+<td>const_iterator</td>
+<td>const iterator</td>
+</tr>
+<tr>
+<td>reverse_iterator</td>
+<td>逆向迭代器</td>
+</tr>
+<tr>
+<td>value_type</td>
+<td></td>
+</tr>
+<tr>
+<td>reference</td>
+<td>value_type&amp;</td>
+</tr>
+<tr>
+<td>const_reference</td>
+<td>const value_type&amp;</td>
+</tr>
+</tbody>
+</table><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">begin</span> <span class="o">=</span> <span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">end</span> <span class="o">=</span> <span class="n">v</span><span class="p">.</span><span class="n">end</span><span class="p">();</span>
+
+<span class="k">while</span> <span class="p">(</span><span class="n">begin</span> <span class="o">!=</span> <span class="n">end</span><span class="p">){</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">begin</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="o">++</span><span class="n">begin</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="construction">
+<span id="construction"></span><h3>构造方法 Construction<a class="headerlink" href="#construction" title="永久链接至标题">¶</a></h3>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>构造方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C c;</td>
+<td></td>
+</tr>
+<tr>
+<td>C c1(c2);</td>
+<td>复制一个c2</td>
+</tr>
+<tr>
+<td>C c(it1, it2);</td>
+<td>复制地址it1到it2</td>
+</tr>
+<tr>
+<td>C c{a, b, c, d};</td>
+<td>初始化，注意是大括号</td>
+</tr>
+</tbody>
+</table></div>
+<div class="section" id="assignment-and-swap">
+<span id="assignment-and-swap"></span><h3>赋值和交换Assignment and swap<a class="headerlink" href="#assignment-and-swap" title="永久链接至标题">¶</a></h3>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>运算符</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>c1 = c2;</td>
+<td></td>
+</tr>
+<tr>
+<td>c1 = {a, b, c};</td>
+<td></td>
+</tr>
+<tr>
+<td>c1.swap(c2);</td>
+<td>对换c1和c2的所有元素</td>
+</tr>
+<tr>
+<td>swap(c1, c2);</td>
+<td>同上</td>
+</tr>
+</tbody>
+</table></div>
+<div class="section" id="size">
+<span id="size"></span><h3>长度 size<a class="headerlink" href="#size" title="永久链接至标题">¶</a></h3>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>长度</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>c.size()</td>
+<td>返回容易的元素个数</td>
+</tr>
+<tr>
+<td>c.empty()</td>
+<td>如果是空的返回true</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<div class="section" id="">
+<span id="id2"></span><h3>增删元素<a class="headerlink" href="#" title="永久链接至标题">¶</a></h3>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>c.insert(args)</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<div class="section" id="obtain-iterators">
+<span id="obtain-iterators"></span><h3>获取元素地址 Obtain Iterators<a class="headerlink" href="#obtain-iterators" title="永久链接至标题">¶</a></h3>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>c.begin(), c.end()</td>
+<td>获取第一个元素地址，获取最后一个元素的后一个地址</td>
+</tr>
+<tr>
+<td>c.cbegin(), c.cend()</td>
+<td>返回const_iterator</td>
+</tr>
+<tr>
+<td>c.rbegin(), c.rend()</td>
+<td>返回最后一个元素地址，获取第一个元素前一个地址</td>
+</tr>
+<tr>
+<td>c.crbegin(), c.crend()</td>
+<td>返回const_reverse_iterator</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../tools/index.html" class="btn btn-neutral float-right" title="工具 Tools" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="cstring.html" class="btn btn-neutral" title="cstring" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Vic
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/GA.js"></script>
+        <script type="text/javascript" src="../_static/GA.vicc.wang.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

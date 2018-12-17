@@ -1,0 +1,86 @@
+## 容器
+
+
+
+### 容器运算 Container Operations
+
+
+
+#### 类型别名 Type Aliases
+
+iterator一般翻译为迭代器，代表了容器中元素的地址。迭代器地址的范围为容器中第一个元素到最后一个元素，注意，end返回的是容器最后一个元素的后一个元素。
+
+| 类型             | 说明              |
+| ---------------- | ----------------- |
+| iterator         | 迭代器 iterator   |
+| const_iterator   | const iterator    |
+| reverse_iterator | 逆向迭代器        |
+| value_type       |                   |
+| reference        | value_type&       |
+| const_reference  | const value_type& |
+
+
+
+```cpp
+vector<int>::iterator begin = v.begin();
+vector<int>::iterator end = v.end();
+
+while (begin != end){
+    cout << *begin << endl;
+    ++begin;
+}
+```
+
+
+
+#### 构造方法 Construction
+
+| 构造方法         | 说明                 |
+| ---------------- | -------------------- |
+| C c;             |                      |
+| C c1(c2);        | 复制一个c2           |
+| C c(it1, it2);   | 复制地址it1到it2     |
+| C c{a, b, c, d}; | 初始化，注意是大括号 |
+
+
+
+#### 赋值和交换Assignment and swap
+
+| 运算符          | 说明                 |
+| --------------- | -------------------- |
+| c1 = c2;        |                      |
+| c1 = {a, b, c}; |                      |
+| c1.swap(c2);    | 对换c1和c2的所有元素 |
+| swap(c1, c2);   | 同上                 |
+
+
+
+#### 长度 size
+
+| 长度      | 说明               |
+| --------- | ------------------ |
+| c.size()  | 返回容易的元素个数 |
+| c.empty() | 如果是空的返回true |
+|           |                    |
+
+
+
+#### 增删元素
+
+| 方法           | 说明 |
+| -------------- | ---- |
+| c.insert(args) |      |
+|                |      |
+|                |      |
+
+
+
+#### 获取元素地址 Obtain Iterators
+
+| 方法                   | 说明                                             |
+| ---------------------- | ------------------------------------------------ |
+| c.begin(), c.end()     | 获取第一个元素地址，获取最后一个元素的后一个地址 |
+| c.cbegin(), c.cend()   | 返回const_iterator                               |
+| c.rbegin(), c.rend()   | 返回最后一个元素地址，获取第一个元素前一个地址   |
+| c.crbegin(), c.crend() | 返回const_reverse_iterator                       |
+

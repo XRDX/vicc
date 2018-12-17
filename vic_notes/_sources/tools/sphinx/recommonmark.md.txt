@@ -5,3 +5,19 @@ https://recommonmark.readthedocs.io
 使用recommonmark来解析markdown文本，使之能够在sphinx文档中使用。
 
 在sphinx中已经说明了如何使用sphinx搭配Markdown，但是，还有一些功能，需要额外的配置才能使用。
+
+
+
+### 突出显示
+
+
+````
+​``` important:: Its a note! in markdown!
+​```
+````
+
+
+````
+Its a note! in markdown!
+````
+

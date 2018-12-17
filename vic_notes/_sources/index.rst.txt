@@ -6,7 +6,7 @@
 维克笔记
 ==========================================
 
-走过路过看过，剩下才是得到的。 `返回主页`_ 
+在知识爆炸的年代，知识的整理和分类就显得更重要了。 `返回主页`_ 
 
 .. toctree::
    :maxdepth: 1
@@ -15,8 +15,9 @@
    raspberry/index
    algorithm/index
    python/index
+   cpp/index
    tools/index
-
+   opengl/index
 
 
 .. _返回主页: /
