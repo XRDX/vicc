@@ -1,0 +1,46 @@
+## 上传自己的模块到 pypi
+
+我们知道我们可以通过pip命令来快速安装python的模块，那么有没有办法可以上传自己的模块到pypi上呢，这样我们也可以通过pip来安装和更新模块
+
+### 注册账号
+
+
+### 安装twine
+
+```shell
+pip install twine
+```
+在
+VicWang
+PY********
+
+``` python
+import setuptools
+
+setuptools.setup(
+    name="pyleap",
+    version="0.1.21",
+    author="Vic Wang",
+    author_email="305880887@qq.com",
+    description='A simple 2D game engine base on pyglet',
+    long_description='A simple 2D game engine base on pyglet',
+    long_description_content_type="text/markdown",
+    url='http://github.com/XRDX/pyleap',
+    packages=setuptools.find_packages(),
+    install_requires=[
+        'pyglet',
+        'leapserver',
+        'leaptask'
+    ],
+    classifiers=(
+        "Programming Language :: Python :: 3",
+        "License :: OSI Approved :: BSD License",
+        "Operating System :: OS Independent",
+    ),
+)
+```
+
+```shell
+python setup.py sdist bdist_wheel
+twine upload dist/* -u VicWang -p PY********
+```

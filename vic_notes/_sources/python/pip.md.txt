@@ -1,9 +1,53 @@
 ## pip手册
 
+### 安装
 
+```shell
+pip install pyleap
+```
 
-### 指定源
+### 更新
 
--i
+如果模块的版本发生变化，通过上面的命令是无法更新的，那么就需要使用更新命令`--upgrade`或者`-U`
 
+```shell
+pip install --upgrade pyleap
+```
+
+### 安装本地源
+```shell
+pip install -e path/to/src
+```
+
+### 指定pypi源
+
+使用`-i`指令来制定pypi源
+
+如果官方的pypi源下载速度非常慢，可以使用其他地址的源来加速下载。一般其他源都是定期同步官方源，在发布自己的模块时，其他源的更新时间可能会滞后。
+
+```
 pip install -U pyleap -i https://pypi.python.org/sample
+```
+
+#### 直接配置源
+
+Linux
+`~/.pip/pip.conf`
+```ini
+[global]
+index-url = https://pypi.tuna.tsinghua.edu.cn/simple
+```
+
+Windows
+`C:\Users\xx\pip\pip.ini`
+```ini
+[global]
+index-url = https://pypi.tuna.tsinghua.edu.cn/simple
+```
+
+#### 参考源
+  阿里云 http://mirrors.aliyun.com/pypi/simple/ 
+  中国科技大学 https://pypi.mirrors.ustc.edu.cn/simple/ 
+  豆瓣(douban) http://pypi.douban.com/simple/ 
+  清华大学 https://pypi.tuna.tsinghua.edu.cn/simple/ 
+  中国科学技术大学 http://pypi.mirrors.ustc.edu.cn/simple/

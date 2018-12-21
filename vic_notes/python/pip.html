@@ -29,7 +29,7 @@
   <link rel="stylesheet" href="../_static/my_style.css" type="text/css" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
-    <link rel="next" title="使用PIL批量生成图片" href="pil.html" />
+    <link rel="next" title="上传自己的模块到 pypi" href="pypi.html" />
     <link rel="prev" title="Python应用" href="index.html" /> 
 
   
@@ -87,13 +87,23 @@
 <li class="toctree-l1"><a class="reference internal" href="../linux/index.html">Linux</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../raspberry/index.html">折腾树莓派 Raspberry</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../algorithm/index.html">算法 Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cs/index.html">计算机知识</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Python应用</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">pip手册</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#">指定源</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#">安装</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#">更新</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#">安装本地源</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pypi">指定pypi源</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#">直接配置源</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#">参考源</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pypi.html">上传自己的模块到 pypi</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pil.html">使用PIL批量生成图片</a></li>
 <li class="toctree-l2"><a class="reference internal" href="aliddns.html">将阿里云dns解析作为ddns使用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="others.html">Python 的一些库</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../cpp/index.html">C++ 语法基础</a></li>
@@ -168,9 +178,54 @@
   <div class="section" id="pip">
 <span id="pip"></span><h1>pip手册<a class="headerlink" href="#pip" title="永久链接至标题">¶</a></h1>
 <div class="section" id="">
-<span id="id1"></span><h2>指定源<a class="headerlink" href="#" title="永久链接至标题">¶</a></h2>
-<p>-i</p>
-<p>pip install -U pyleap -i https://pypi.python.org/sample</p>
+<span id="id1"></span><h2>安装<a class="headerlink" href="#" title="永久链接至标题">¶</a></h2>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip install pyleap
+</pre></div>
+</div>
+</div>
+<div class="section" id="">
+<span id="id2"></span><h2>更新<a class="headerlink" href="#" title="永久链接至标题">¶</a></h2>
+<p>如果模块的版本发生变化，通过上面的命令是无法更新的，那么就需要使用更新命令<code class="docutils literal notranslate"><span class="pre">--upgrade</span></code>或者<code class="docutils literal notranslate"><span class="pre">-U</span></code></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip install --upgrade pyleap
+</pre></div>
+</div>
+</div>
+<div class="section" id="">
+<span id="id3"></span><h2>安装本地源<a class="headerlink" href="#" title="永久链接至标题">¶</a></h2>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip install -e path/to/src
+</pre></div>
+</div>
+</div>
+<div class="section" id="pypi">
+<span id="pypi"></span><h2>指定pypi源<a class="headerlink" href="#pypi" title="永久链接至标题">¶</a></h2>
+<p>使用<code class="docutils literal notranslate"><span class="pre">-i</span></code>指令来制定pypi源</p>
+<p>如果官方的pypi源下载速度非常慢，可以使用其他地址的源来加速下载。一般其他源都是定期同步官方源，在发布自己的模块时，其他源的更新时间可能会滞后。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="n">pyleap</span> <span class="o">-</span><span class="n">i</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">pypi</span><span class="o">.</span><span class="n">python</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">sample</span>
+</pre></div>
+</div>
+<div class="section" id="">
+<span id="id4"></span><h3>直接配置源<a class="headerlink" href="#" title="永久链接至标题">¶</a></h3>
+<p>Linux
+<code class="docutils literal notranslate"><span class="pre">~/.pip/pip.conf</span></code></p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[global]</span>
+<span class="na">index-url</span> <span class="o">=</span> <span class="s">https://pypi.tuna.tsinghua.edu.cn/simple</span>
+</pre></div>
+</div>
+<p>Windows
+<code class="docutils literal notranslate"><span class="pre">C:\Users\xx\pip\pip.ini</span></code></p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[global]</span>
+<span class="na">index-url</span> <span class="o">=</span> <span class="s">https://pypi.tuna.tsinghua.edu.cn/simple</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="">
+<span id="id5"></span><h3>参考源<a class="headerlink" href="#" title="永久链接至标题">¶</a></h3>
+<p>阿里云 http://mirrors.aliyun.com/pypi/simple/
+  中国科技大学 https://pypi.mirrors.ustc.edu.cn/simple/
+  豆瓣(douban) http://pypi.douban.com/simple/
+  清华大学 https://pypi.tuna.tsinghua.edu.cn/simple/
+  中国科学技术大学 http://pypi.mirrors.ustc.edu.cn/simple/</p>
+</div>
 </div>
 </div>
 
@@ -182,7 +237,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="pil.html" class="btn btn-neutral float-right" title="使用PIL批量生成图片" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pypi.html" class="btn btn-neutral float-right" title="上传自己的模块到 pypi" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="index.html" class="btn btn-neutral" title="Python应用" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

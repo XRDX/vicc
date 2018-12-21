@@ -1,0 +1,29 @@
+## softwares
+
+那些好用的软件推荐
+
+
+### everything
+
+文件搜索神器
+[下载地址] http://www.voidtools.com/
+
+
+everything: 快速搜索文件
+rufus：U盘启动盘制作工具
+
+Aria2: 下载工具
+
+
+GifCam:  gif录制
+
+代码编辑：
+Sublime
+Anacanda
+vim
+
+Linux:
+    spcp:
+    rsync
+
+Cemu: Wii模拟器
