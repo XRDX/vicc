@@ -13,7 +13,7 @@
    
    linux/index
    raspberry/index
-   algorithm/index
+   math/index
    cs/index
    python/index
    cpp/index

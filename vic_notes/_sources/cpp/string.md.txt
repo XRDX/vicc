@@ -22,3 +22,6 @@
 int i = std::stoi(str);
 ```
 
+```cpp
+string to_string (int val);
+```

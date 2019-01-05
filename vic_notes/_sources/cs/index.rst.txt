@@ -4,5 +4,6 @@
 .. toctree::
    :maxdepth: 1
 
-   橡皮鸭调试法
+   rubber_duck
    cs_words
+   map_shift
