@@ -1,11 +1,12 @@
-## GIT 常用命令
+# GIT 常用命令
 
-### 获取
+## 获取
+
 ```shell
 git pull
 ```
 
-### 推送
+## 推送
 
 ```shell
 git status
@@ -25,9 +26,10 @@ git remote add origin git@github.com:USERNAME/REPOSITORY.git
 git push -u origin master
 ```
 
-### 远端相关 remote
+## 远端相关 remote
 
-#### 查看远端地址
+### 查看远端地址
+
 ```shell
 git remote -h
 ```
@@ -42,29 +44,27 @@ origin  git@github.com:USERNAME/REPOSITORY.git (push)
 git remote add github git@github.com:USERNAME/REPOSITORY.git
 ```
 
-
-#### 修改远端（remote）的地址（url）
+### 修改远端（remote）的地址（url）
 
 ```shell
-$ git remote set-url origin git@github.com:USERNAME/REPOSITORY.git
+git remote set-url origin git@github.com:USERNAME/REPOSITORY.git
 ```
 
-### 标签 tag
+## 标签 tag
 
 列出所有tags
+
 ```shell
 git tag -l
 ```
 
-### 子模块 submodule
+## 子模块 submodule
 
 添加子模块
 
 ```shell
 git submodule add git://github.com/XRDX/temp.git
 ```
-
-
 
 当你需要更新子模块时
 
@@ -75,9 +75,7 @@ git submodule init
 git submodule update
 ```
 
-
-
-### 一些常用的Git网站
+## 一些常用的Git网站
 
 https://github.com
 

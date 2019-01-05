@@ -4,4 +4,5 @@
 .. toctree::
    :maxdepth: 1
 
+   橡皮鸭调试法
    cs_words

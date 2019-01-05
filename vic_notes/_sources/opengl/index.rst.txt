@@ -4,3 +4,4 @@ OpenGL 图形学
    :maxdepth: 1  
 
    anti-aliasing
+   lineJoin

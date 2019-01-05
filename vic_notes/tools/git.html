@@ -95,7 +95,6 @@
 <li class="toctree-l3 current"><a class="current reference internal" href="#">GIT 常用命令</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#">获取</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#">推送</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#github">推送已有的项目到Github</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#remote">远端相关 remote</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#tag">标签 tag</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#submodule">子模块 submodule</a></li>
@@ -196,13 +195,13 @@ git commit -m <span class="s2">&quot;Comments&quot;</span>
 git push
 </pre></div>
 </div>
-</div>
 <div class="section" id="github">
-<span id="github"></span><h2>推送已有的项目到Github<a class="headerlink" href="#github" title="永久链接至标题">¶</a></h2>
+<span id="github"></span><h3>推送已有的项目到Github<a class="headerlink" href="#github" title="永久链接至标题">¶</a></h3>
 <p>首先在Github上创建项目</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git remote add origin git@github.com:USERNAME/REPOSITORY.git
 git push -u origin master
 </pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="remote">
@@ -223,7 +222,7 @@ origin  git@github.com:USERNAME/REPOSITORY.git <span class="o">(</span>push<span
 </div>
 <div class="section" id="remote-url">
 <span id="remote-url"></span><h3>修改远端（remote）的地址（url）<a class="headerlink" href="#remote-url" title="永久链接至标题">¶</a></h3>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ git remote set-url origin git@github.com:USERNAME/REPOSITORY.git
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git remote set-url origin git@github.com:USERNAME/REPOSITORY.git
 </pre></div>
 </div>
 </div>
