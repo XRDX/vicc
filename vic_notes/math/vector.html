@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>向量 &mdash; 维克笔记 alpha 文档</title>
+  <title>向量 Vector &mdash; 维克笔记 alpha 文档</title>
   
 
   
@@ -87,11 +87,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../linux/index.html">Linux 操作系统</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../raspberry/index.html">Raspberry 折腾树莓派</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Mathematics 数学知识</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">向量</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#">向量的基本概念</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#">向量的模（长度）</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#">向量的点乘</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#">向量的叉乘</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">向量 Vector</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#">向量与标量运算</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#">向量取反</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#">向量加减</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#">长度（向量的模）</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#">向量相乘</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#">点乘</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#">叉乘</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="matrix.html">矩阵 Matrix</a></li>
@@ -149,7 +152,7 @@
         
           <li><a href="index.html">Mathematics 数学知识</a> &raquo;</li>
         
-      <li>向量</li>
+      <li>向量 Vector</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -168,25 +171,66 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="">
-<span id="id1"></span><h1>向量<a class="headerlink" href="#" title="永久链接至标题">¶</a></h1>
+  <div class="section" id="vector">
+<span id="vector"></span><h1>向量 Vector<a class="headerlink" href="#vector" title="永久链接至标题">¶</a></h1>
+<p>向量最基本的定义就是一个方向。或者更正式的说，向量有一个方向（Direction）和大小（Magnitude，也称之为长度）。可以把向量想像成一个藏宝图上的指示：“向左走十步，向北走三步，然后向右走五步”；“左”就是方向，“十步”就是向量的长度。那么这个藏宝图的指示一共有三个向量。向量可以在任意维度（Dimension）上，但是我们通常只使用2~4维。如果一个向量有两个维度，它表示一个平面的方向（想像一下2D的图像），当它有三个维度的时候，它可以表达一个3D世界的方向。</p>
+<p>下图展示了三个向量，每个向量在2D图像中都用一个箭头<code class="docutils literal notranslate"><span class="pre">(x,y)</span></code>表示。我们在2D图片中展示这些向量，因为这样子会更直观一点。由于向量表示的是方向，起始于何处并不会改变它的值。</p>
+<p><img alt="vectors" src="../_images/vectors.png" /></p>
+<p>数学家喜欢在字母上面加一横表示向量，比如说在<code class="docutils literal notranslate"><span class="pre">v</span></code>的上面加<code class="docutils literal notranslate"><span class="pre">→</span></code>。当用在公式中时它们通常是这样的：</p>
+<p><img alt="vector2" src="../_images/vectors-2.png" /></p>
+<p>注：把2D向量当做z坐标轴为0的3D向量。</p>
+<p>由于向量是一个方向，所以有些时候会很难形象地将它们用位置表示出来。为了让其更为直观，通常设定这个方向的原点为(0,0,0)（在2D世界中，这个原点就是(0,0)），然后指向一个方向，对应一个点，使其变为位置向量（Position Vector）。比如上图中位置向量(3,2)在图像中的起点会是(0,0)，并会指向(3,2)。</p>
+<div class="section" id="">
+<span id="id1"></span><h2>向量与标量运算<a class="headerlink" href="#" title="永久链接至标题">¶</a></h2>
+<p>标量(Scalar)只是一个数字（或者说是仅有一个分量的向量）。当把一个向量加、减、乘或除一个标量，我们可以简单的把向量的每个分量分别进行该运算。对于加法来说会像这样：</p>
+<p><img alt="vector3" src="../_images/vectors-3.png" /></p>
+<p>其中的+可以是+，-，·或÷，其中·是乘号。注意，-和÷运算时不能颠倒（标量 -/÷向量），它为颠倒的运算是没有定义的。</p>
 </div>
 <div class="section" id="">
-<span id="id2"></span><h1>向量的基本概念<a class="headerlink" href="#" title="永久链接至标题">¶</a></h1>
-<p>（x,y）</p>
-<div class="section" id="">
-<span id="id3"></span><h2>向量的模（长度）<a class="headerlink" href="#" title="永久链接至标题">¶</a></h2>
-<p>即向量的长度</p>
+<span id="id2"></span><h2>向量取反<a class="headerlink" href="#" title="永久链接至标题">¶</a></h2>
+<p>对一个向量取反（Negate）会将其方向逆转。一个向东北的向量取反后就指向西南方向了。我们在一个向量的每个分量前加负号就可以实现取反了（或者说用-1数乘该向量）：</p>
+<p><img alt="vector" src="../_images/vectors-4.png" /></p>
 </div>
 <div class="section" id="">
-<span id="id4"></span><h2>向量的点乘<a class="headerlink" href="#" title="永久链接至标题">¶</a></h2>
-<p>dot = x1<em>x2 + y1</em>y2</p>
-<p>向量的模一致时，点乘的结果越大，说明2个向量越像。</p>
+<span id="id3"></span><h2>向量加减<a class="headerlink" href="#" title="永久链接至标题">¶</a></h2>
+<p>向量的加法可以被定义为是分量的(Component-wise)相加，即将一个向量中的每一个分量加上另一个向量的对应分量：</p>
+<p><img alt="vector" src="../_images/vectors-5.png" /></p>
+<p>向量v = (4, 2)和k = (1, 2)可以直观地表示为：</p>
+<p><img alt="vector" src="../_images/vectors-6.png" /></p>
+<p>就像普通数字的加减一样，向量的减法等于加上第二个向量的相反向量：</p>
+<p><img alt="vector" src="../_images/vectors-7.png" /></p>
+<p>两个向量的相减会得到这两个向量指向位置的差。这在我们想要获取两点的差会非常有用。</p>
+<p><img alt="vector" src="../_images/vectors-8.png" /></p>
 </div>
 <div class="section" id="">
-<span id="id5"></span><h2>向量的叉乘<a class="headerlink" href="#" title="永久链接至标题">¶</a></h2>
-<p>cross = x1<em>y2 + x2</em>y1</p>
-<p>当2个向量垂直时，叉乘结果为零</p>
+<span id="id4"></span><h2>长度（向量的模）<a class="headerlink" href="#" title="永久链接至标题">¶</a></h2>
+<p>我们使用勾股定理(Pythagoras Theorem)来获取向量的长度(Length)/大小(Magnitude)。如果你把向量的x与y分量画出来，该向量会和x与y分量为边形成一个三角形:</p>
+<p><img alt="vector" src="../_images/vectors-9.png" /></p>
+<p>因为两条边（x和y）是已知的，如果希望知道斜边v¯的长度，我们可以直接通过勾股定理来计算：</p>
+<p><img alt="vector" src="../_images/vectors-10.png" /></p>
+</div>
+<div class="section" id="">
+<span id="id5"></span><h2>向量相乘<a class="headerlink" href="#" title="永久链接至标题">¶</a></h2>
+<p>两个向量相乘是一种很奇怪的情况。普通的乘法在向量上是没有定义的，因为它在视觉上是没有意义的。但是在相乘的时候我们有两种特定情况可以选择：一个是点乘(Dot Product)，记作v¯⋅k¯，另一个是叉乘(Cross Product)，记作v¯×k¯。</p>
+</div>
+<div class="section" id="">
+<span id="id6"></span><h2>点乘<a class="headerlink" href="#" title="永久链接至标题">¶</a></h2>
+<p>两个向量的点乘等于它们的数乘结果乘以两个向量之间夹角的余弦值。可能听起来有点费解，我们来看一下公式：</p>
+<p><img alt="vector" src="../_images/vectors-11.png" /></p>
+<p>它们之间的夹角记作θ。为什么这很有用？想象如果v¯和k¯都是单位向量，它们的长度会等于1。这样公式会有效简化成：</p>
+<p><img alt="vector" src="../_images/vectors-12.png" /></p>
+<p>现在点积只定义了两个向量的夹角。你也许记得90度的余弦值是0，0度的余弦值是1。使用点乘可以很容易测试两个向量是否正交(Orthogonal)或平行（正交意味着两个向量互为直角）。如果你想要了解更多关于正弦或余弦函数的知识，我推荐你看可汗学院的基础三角学视频。</p>
+<p>所以，我们该如何计算点乘呢？点乘是通过将对应分量逐个相乘，然后再把所得积相加来计算的。两个单位向量的（你可以验证它们的长度都为1）点乘会像是这样：</p>
+<p><img alt="vector" src="../_images/vectors-13.png" /></p>
+<p>要计算两个单位向量间的夹角，我们可以使用反余弦函数cos−1 ，可得结果是143.1度。现在我们很快就计算出了这两个向量的夹角。点乘会在计算光照的时候非常有用。</p>
+</div>
+<div class="section" id="">
+<span id="id7"></span><h2>叉乘<a class="headerlink" href="#" title="永久链接至标题">¶</a></h2>
+<p>叉乘只在3D空间中有定义，它需要两个不平行向量作为输入，生成一个正交于两个输入向量的第三个向量。如果输入的两个向量也是正交的，那么叉乘之后将会产生3个互相正交的向量。接下来的教程中这会非常有用。下面的图片展示了3D空间中叉乘的样子：</p>
+<p><img alt="vector" src="../_images/vectors-14.png" /></p>
+<p>不同于其他运算，如果你没有钻研过线性代数，可能会觉得叉乘很反直觉，所以只记住公式就没问题啦（记不住也没问题）。下面你会看到两个正交向量A和B叉积：</p>
+<p><img alt="vector" src="../_images/vectors-15.png" /></p>
+<p>是不是看起来毫无头绪？不过只要你按照步骤来了，你就能得到一个正交于两个输入向量的第三个向量。</p>
 </div>
 </div>
 
