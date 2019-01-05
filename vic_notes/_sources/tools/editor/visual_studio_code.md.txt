@@ -1,0 +1,11 @@
+# Visual Studio Code 
+
+微软出的编辑器，轻量级，集成GIT
+
+## 插件推荐
+
+C/C++
+Python
+ESLint
+HTML CSS Support
+markdownlint

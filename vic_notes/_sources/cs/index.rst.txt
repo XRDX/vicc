@@ -1,4 +1,4 @@
-﻿计算机知识
+﻿Computer Science 计算机知识
 ==========================================
 
 .. toctree::
@@ -7,3 +7,4 @@
    rubber_duck
    cs_words
    map_shift
+   pt
