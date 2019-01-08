@@ -1,19 +1,23 @@
-## softwares
+# softwares
 
 那些好用的软件推荐
 
+## 文件处理
 
 ### everything
 
 文件搜索神器
-[下载地址] http://www.voidtools.com/
+[下载地址](http://www.voidtools.com/)
 
+### rufus
 
-everything: 快速搜索文件
-rufus：U盘启动盘制作工具
+U盘启动盘制作工具
 
-Aria2: 下载工具
+### Aria2
 
+下载工具
+
+### GifCam
 
 GifCam:  gif录制
 
@@ -22,8 +26,12 @@ Sublime
 Anacanda
 vim
 
-Linux:
-    spcp:
-    rsync
+### Cemu
 
-Cemu: Wii模拟器
+Wii模拟器
+
+## JavaScript
+
+### eslint
+
+代码格式检查工具

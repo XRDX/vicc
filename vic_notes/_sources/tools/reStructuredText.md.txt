@@ -7,3 +7,33 @@ External hyperlinks, like Python_.
 .. _Python: http://www.python.org/
 ```
 
+```rst
+
+Built-in services
+=================
+
+.. toctree::
+   :caption: Built-in services
+   :hidden:
+
+   topics/logging
+   topics/stats
+   topics/email
+   topics/telnetconsole
+   topics/webservice
+
+:doc:`topics/logging`
+    Learn how to use Python's builtin logging on Scrapy.
+
+:doc:`topics/stats`
+    Collect statistics about your scraping crawler.
+
+:doc:`topics/email`
+    Send email notifications when certain events occur.
+
+:doc:`topics/telnetconsole`
+    Inspect a running crawler using a built-in Python console.
+
+:doc:`topics/webservice`
+    Monitor and control a crawler using a web service.
+```

@@ -1,0 +1,52 @@
+# Scapy 爬虫框架
+
+Scrapy 是用 Python 实现的一个为了爬取网站数据、提取结构性数据而编写的应用框架。
+
+Scrapy 常应用在包括数据挖掘，信息处理或存储历史数据等一系列的程序中。
+
+通常我们可以很简单的通过 Scrapy 框架实现一个爬虫，抓取指定网站的内容或图片。
+
+## 安装
+
+```shell
+pip install scrapy
+```
+
+安装成功后，输入scrapy，出现下面的提示即安装成功
+
+```shell
+$ scrapy
+Scrapy 1.5.1 - no active project
+
+Usage:
+  scrapy <command> [options] [args]
+
+Available commands:
+  bench         Run quick benchmark test
+  fetch         Fetch a URL using the Scrapy downloader
+  genspider     Generate new spider using pre-defined templates
+  runspider     Run a self-contained spider (without creating a project)
+  settings      Get settings values
+  shell         Interactive scraping console
+  startproject  Create new project
+  version       Print Scrapy version
+  view          Open URL in browser, as seen by Scrapy
+
+  [ more ]      More commands available when run from project directory
+
+Use "scrapy <command> -h" to see more info about a command
+```
+
+安装前提：
+Microsoft Visual Studio 14.0
+Microsoft Visual Studio 14.0 Window 10 SDK
+
+
+错误提示：
+
+```shell
+C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE\basetsd.h(5): fatal error C1083: Cannot open include file: 'basetsd.h': No such file or directory
+    error: command 'C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\BIN\\x86_amd64\\cl.exe' failed with exit status 2
+```
+
+解决办法：安装Microsoft Visual Studio 14.0 Window 10 SDK

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>reStructuredText 格式说明 &mdash; 维克笔记 alpha 文档</title>
+  <title>Scapy 爬虫框架 &mdash; 维克笔记 alpha 文档</title>
   
 
   
@@ -29,8 +29,8 @@
   <link rel="stylesheet" href="../_static/my_style.css" type="text/css" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
-    <link rel="next" title="安装 Visual Studio" href="visual_studio.html" />
-    <link rel="prev" title="recommonmark" href="sphinx/recommonmark.html" /> 
+    <link rel="next" title="使用PIL批量生成图片" href="pil.html" />
+    <link rel="prev" title="上传自己的模块到 pypi" href="pypi.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -88,22 +88,20 @@
 <li class="toctree-l1"><a class="reference internal" href="../raspberry/index.html">Raspberry 折腾树莓派</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../math/index.html">Mathematics 数学知识</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cs/index.html">Computer Science 计算机知识</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python 应用</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Python 应用</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="pip.html">pip手册</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pypi.html">上传自己的模块到 pypi</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Scapy 爬虫框架</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#">安装</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pil.html">使用PIL批量生成图片</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aliddns.html">将阿里云dns解析作为ddns使用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="others.html">Python 的一些库</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../cpp/index.html">C++ 语法基础</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Tools 工具</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="index.html#id1">管理工具</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="index.html#id2">文本编辑软件</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="editor/sublime.html">Sublime Text</a></li>
-<li class="toctree-l3"><a class="reference internal" href="editor/visual_studio_code.html">Visual Studio Code</a></li>
-<li class="toctree-l3"><a class="reference internal" href="editor/vim.html">vim</a></li>
-<li class="toctree-l3"><a class="reference internal" href="sphinx/index.html">Sphinx 自动文档生成工具</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">reStructuredText 格式说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="visual_studio.html">安装 Visual Studio</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#id3">好用的产品</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/index.html">Tools 工具</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../opengl/index.html">OpenGL 图形学</a></li>
 </ul>
 
@@ -150,15 +148,15 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="index.html">Tools 工具</a> &raquo;</li>
+          <li><a href="index.html">Python 应用</a> &raquo;</li>
         
-      <li>reStructuredText 格式说明</li>
+      <li>Scapy 爬虫框架</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/tools/reStructuredText.md.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/python/scrapy.md.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -171,41 +169,48 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="restructuredtext">
-<span id="restructuredtext"></span><h1>reStructuredText 格式说明<a class="headerlink" href="#restructuredtext" title="永久链接至标题">¶</a></h1>
-<p><a class="reference external" href="https://en.wikipedia.org/wiki/ReStructuredText">rst wiki</a></p>
-<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span>External hyperlinks, like Python_.
-<span class="p">..</span> <span class="nt">_Python:</span> http://www.python.org/
+  <div class="section" id="scapy">
+<span id="scapy"></span><h1>Scapy 爬虫框架<a class="headerlink" href="#scapy" title="永久链接至标题">¶</a></h1>
+<p>Scrapy 是用 Python 实现的一个为了爬取网站数据、提取结构性数据而编写的应用框架。</p>
+<p>Scrapy 常应用在包括数据挖掘，信息处理或存储历史数据等一系列的程序中。</p>
+<p>通常我们可以很简单的通过 Scrapy 框架实现一个爬虫，抓取指定网站的内容或图片。</p>
+<div class="section" id="">
+<span id="id1"></span><h2>安装<a class="headerlink" href="#" title="永久链接至标题">¶</a></h2>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip install scrapy
 </pre></div>
 </div>
-<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="gh">Built-in services</span>
-<span class="gh">=================</span>
+<p>安装成功后，输入scrapy，出现下面的提示即安装成功</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ scrapy
+Scrapy <span class="m">1</span>.5.1 - no active project
 
-<span class="p">..</span> <span class="ow">toctree</span><span class="p">::</span>
-   <span class="nc">:caption:</span> <span class="nf">Built-in services</span>
-   <span class="nc">:hidden:</span>
+Usage:
+  scrapy &lt;command&gt; <span class="o">[</span>options<span class="o">]</span> <span class="o">[</span>args<span class="o">]</span>
 
-   topics/logging
-   topics/stats
-   topics/email
-   topics/telnetconsole
-   topics/webservice
+Available commands:
+  bench         Run quick benchmark <span class="nb">test</span>
+  fetch         Fetch a URL using the Scrapy downloader
+  genspider     Generate new spider using pre-defined templates
+  runspider     Run a self-contained spider <span class="o">(</span>without creating a project<span class="o">)</span>
+  settings      Get settings values
+  shell         Interactive scraping console
+  startproject  Create new project
+  version       Print Scrapy version
+  view          Open URL in browser, as seen by Scrapy
 
-<span class="na">:doc:</span><span class="nv">`topics/logging`</span>
-    Learn how to use Python&#39;s builtin logging on Scrapy.
+  <span class="o">[</span> more <span class="o">]</span>      More commands available when run from project directory
 
-<span class="na">:doc:</span><span class="nv">`topics/stats`</span>
-    Collect statistics about your scraping crawler.
-
-<span class="na">:doc:</span><span class="nv">`topics/email`</span>
-    Send email notifications when certain events occur.
-
-<span class="na">:doc:</span><span class="nv">`topics/telnetconsole`</span>
-    Inspect a running crawler using a built-in Python console.
-
-<span class="na">:doc:</span><span class="nv">`topics/webservice`</span>
-    Monitor and control a crawler using a web service.
+Use <span class="s2">&quot;scrapy &lt;command&gt; -h&quot;</span> to see more info about a <span class="nb">command</span>
 </pre></div>
+</div>
+<p>安装前提：
+Microsoft Visual Studio 14.0
+Microsoft Visual Studio 14.0 Window 10 SDK</p>
+<p>错误提示：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>C:<span class="se">\P</span>rogram Files <span class="o">(</span>x86<span class="o">)</span><span class="se">\M</span>icrosoft Visual Studio <span class="m">14</span>.0<span class="se">\V</span>C<span class="se">\I</span>NCLUDE<span class="se">\b</span>asetsd.h<span class="o">(</span><span class="m">5</span><span class="o">)</span>: fatal error C1083: Cannot open include file: <span class="s1">&#39;basetsd.h&#39;</span>: No such file or directory
+    error: <span class="nb">command</span> <span class="s1">&#39;C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\BIN\\x86_amd64\\cl.exe&#39;</span> failed with <span class="nb">exit</span> status <span class="m">2</span>
+</pre></div>
+</div>
+<p>解决办法：安装Microsoft Visual Studio 14.0 Window 10 SDK</p>
 </div>
 </div>
 
@@ -217,10 +222,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="visual_studio.html" class="btn btn-neutral float-right" title="安装 Visual Studio" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pil.html" class="btn btn-neutral float-right" title="使用PIL批量生成图片" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="sphinx/recommonmark.html" class="btn btn-neutral" title="recommonmark" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="pypi.html" class="btn btn-neutral" title="上传自己的模块到 pypi" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -170,6 +170,114 @@
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo apt-get install aria2
 </pre></div>
 </div>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>启动 ： /etc/init.d/aria2 start
+停止：/etc/init.d/aria2 stop
+重启：/etc/init.d/aria2 restart
+</pre></div>
+</div>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="c1">## &#39;#&#39;开头为注释内容, 选项都有相应的注释说明, 根据需要修改 ##</span>
+<span class="c1">## 被注释的选项填写的是默认值, 建议在需要修改时再取消注释  ##</span>
+ 
+<span class="c1">## 文件保存相关 ##</span>
+ 
+<span class="c1"># 文件的保存路径(可使用绝对路径或相对路径), 默认: 当前启动位置</span>
+<span class="na">dir</span><span class="o">=</span><span class="s">~/downloads</span>
+<span class="c1"># 启用磁盘缓存, 0为禁用缓存, 需1.16以上版本, 默认:16M</span>
+<span class="c1">#disk-cache=32M</span>
+<span class="c1"># 文件预分配方式, 能有效降低磁盘碎片, 默认:prealloc</span>
+<span class="c1"># 预分配所需时间: none &lt; falloc ? trunc &lt; prealloc</span>
+<span class="c1"># falloc和trunc则需要文件系统和内核支持</span>
+<span class="c1"># NTFS建议使用falloc, EXT3/4建议trunc, MAC 下需要注释此项</span>
+<span class="na">file-allocation</span><span class="o">=</span><span class="s">none</span>
+<span class="c1"># 断点续传</span>
+<span class="na">continue</span><span class="o">=</span><span class="s">true</span>
+ 
+<span class="c1">## 下载连接相关 ##</span>
+ 
+<span class="c1"># 最大同时下载任务数, 运行时可修改, 默认:5</span>
+<span class="na">max-concurrent-downloads</span><span class="o">=</span><span class="s">1</span>
+<span class="c1"># 同一服务器连接数, 添加时可指定, 默认:1</span>
+<span class="na">max-connection-per-server</span><span class="o">=</span><span class="s">5</span>
+<span class="c1"># 最小文件分片大小, 添加时可指定, 取值范围1M -1024M, 默认:20M</span>
+<span class="c1"># 假定size=10M, 文件为20MiB 则使用两个来源下载; 文件为15MiB 则使用一个来源下载</span>
+<span class="na">min-split-size</span><span class="o">=</span><span class="s">10M</span>
+<span class="c1"># 单个任务最大线程数, 添加时可指定, 默认:5</span>
+<span class="na">split</span><span class="o">=</span><span class="s">5</span>
+<span class="c1"># 整体下载速度限制, 运行时可修改, 默认:0</span>
+<span class="c1">#max-overall-download-limit=0</span>
+<span class="c1"># 单个任务下载速度限制, 默认:0</span>
+<span class="c1">#max-download-limit=0</span>
+<span class="c1"># 整体上传速度限制, 运行时可修改, 默认:0</span>
+<span class="c1">#max-overall-upload-limit=0</span>
+<span class="c1"># 单个任务上传速度限制, 默认:0</span>
+<span class="c1">#max-upload-limit=0</span>
+<span class="c1"># 禁用IPv6, 默认:false</span>
+<span class="na">disable-ipv6</span><span class="o">=</span><span class="s">true</span>
+ 
+<span class="c1">## 进度保存相关 ##</span>
+ 
+<span class="c1"># 从会话文件中读取下载任务</span>
+<span class="na">input-file</span><span class="o">=</span><span class="s">/etc/aria2/aria2.session</span>
+<span class="c1"># 在Aria2退出时保存`错误/未完成`的下载任务到会话文件</span>
+<span class="na">save-session</span><span class="o">=</span><span class="s">/etc/aria2/aria2.session</span>
+<span class="c1"># 定时保存会话, 0为退出时才保存, 需1.16.1以上版本, 默认:0</span>
+<span class="c1">#save-session-interval=60</span>
+ 
+<span class="c1">## RPC相关设置 ##</span>
+ 
+<span class="c1"># 启用RPC, 默认:false</span>
+<span class="na">enable-rpc</span><span class="o">=</span><span class="s">true</span>
+<span class="c1"># 允许所有来源, 默认:false</span>
+<span class="na">rpc-allow-origin-all</span><span class="o">=</span><span class="s">true</span>
+<span class="c1"># 允许非外部访问, 默认:false</span>
+<span class="na">rpc-listen-all</span><span class="o">=</span><span class="s">true</span>
+<span class="c1"># 事件轮询方式, 取值:[epoll, kqueue, port, poll, select], 不同系统默认值不同</span>
+<span class="c1">#event-poll=select</span>
+<span class="c1"># RPC监听端口, 端口被占用时可以修改, 默认:6800</span>
+<span class="na">rpc-listen-port</span><span class="o">=</span><span class="s">6800</span>
+<span class="c1"># 设置的RPC授权令牌, v1.18.4新增功能, 取代 --rpc-user 和 --rpc-passwd 选项</span>
+<span class="c1">#rpc-secret=&lt;TOKEN&gt;</span>
+<span class="c1"># 设置的RPC访问用户名, 此选项新版已废弃, 建议改用 --rpc-secret 选项</span>
+<span class="na">rpc-user</span><span class="o">=</span><span class="s">ruyo</span>
+<span class="c1"># 设置的RPC访问密码, 此选项新版已废弃, 建议改用 --rpc-secret 选项</span>
+<span class="na">rpc-passwd</span><span class="o">=</span><span class="s">RUYO.net</span>
+ 
+<span class="c1">## BT/PT下载相关 ##</span>
+ 
+<span class="c1"># 当下载的是一个种子(以.torrent结尾)时, 自动开始BT任务, 默认:true</span>
+<span class="c1">#follow-torrent=true</span>
+<span class="c1"># BT监听端口, 当端口被屏蔽时使用, 默认:6881-6999</span>
+<span class="na">listen-port</span><span class="o">=</span><span class="s">51413</span>
+<span class="c1"># 单个种子最大连接数, 默认:55</span>
+<span class="c1">#bt-max-peers=55</span>
+<span class="c1"># 打开DHT功能, PT需要禁用, 默认:true</span>
+<span class="na">enable-dht</span><span class="o">=</span><span class="s">true</span>
+<span class="c1"># 打开IPv6 DHT功能, PT需要禁用</span>
+<span class="c1">#enable-dht6=false</span>
+<span class="c1"># DHT网络监听端口, 默认:6881-6999</span>
+<span class="c1">#dht-listen-port=6881-6999</span>
+<span class="c1"># 本地节点查找, PT需要禁用, 默认:false</span>
+<span class="c1">#bt-enable-lpd=true</span>
+<span class="c1"># 种子交换, PT需要禁用, 默认:true</span>
+<span class="na">enable-peer-exchange</span><span class="o">=</span><span class="s">true</span>
+<span class="c1"># 每个种子限速, 对少种的PT很有用, 默认:50K</span>
+<span class="c1">#bt-request-peer-speed-limit=50K</span>
+<span class="c1"># 客户端伪装, PT需要</span>
+<span class="na">peer-id-prefix</span><span class="o">=</span><span class="s">-TR2770-</span>
+<span class="na">user-agent</span><span class="o">=</span><span class="s">Transmission/2.77</span>
+<span class="c1"># 当种子的分享率达到这个数时, 自动停止做种, 0为一直做种, 默认:1.0</span>
+<span class="na">seed-ratio</span><span class="o">=</span><span class="s">0</span>
+<span class="c1"># 强制保存会话, 即使任务已经完成, 默认:false</span>
+<span class="c1"># 较新的版本开启后会在任务完成后依然保留.aria2文件</span>
+<span class="c1">#force-save=false</span>
+<span class="c1"># BT校验相关, 默认:true</span>
+<span class="c1">#bt-hash-check-seed=true</span>
+<span class="c1"># 继续之前的BT任务时, 无需再次校验, 默认:false</span>
+<span class="na">bt-seed-unverified</span><span class="o">=</span><span class="s">true</span>
+<span class="c1"># 保存磁力链接元数据为种子文件(.torrent文件), 默认:false</span>
+<span class="na">bt-save-metadata</span><span class="o">=</span><span class="s">true</span>
+</pre></div>
+</div>
 </div>
 
 

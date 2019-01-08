@@ -1,0 +1,9 @@
+# 安装 Visual Studio
+
+[下载地址](https://visualstudio.microsoft.com/zh-hans/vs/older-downloads/)
+
+选择合适的版本进行安装，如Visual Studio Community 2014
+
+安装基本模块及对应系统的SDK。如果已经安装好VS，想要添加SDK，可以从软件管理页面进入修改
+
+![modify.png](images/modify.png)

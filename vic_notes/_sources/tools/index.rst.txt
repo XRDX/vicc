@@ -24,6 +24,7 @@ Tools 工具
    editor/vim
    sphinx/index
    reStructuredText
+   visual_studio
 
 
 好用的产品

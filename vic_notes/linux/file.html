@@ -86,9 +86,9 @@
               <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Linux 操作系统</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Linux 文件管理命令</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#shell">shell 操作</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#clear">清屏：<code class="docutils literal notranslate"><span class="pre">clear</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#">输出重定向命令：<code class="docutils literal notranslate"><span class="pre">&gt;</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#shell">shell 操作</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#clear">清屏：<code class="docutils literal notranslate"><span class="pre">clear</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#">输出重定向命令：<code class="docutils literal notranslate"><span class="pre">&gt;</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#more">分屏显示：<code class="docutils literal notranslate"><span class="pre">more</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#">管道：<code class="docutils literal notranslate"><span class="pre">|</span></code></a></li>
 </ul>
@@ -206,20 +206,18 @@
 <span id="linux"></span><h1>Linux 文件管理命令<a class="headerlink" href="#linux" title="永久链接至标题">¶</a></h1>
 <div class="section" id="shell">
 <span id="shell"></span><h2>shell 操作<a class="headerlink" href="#shell" title="永久链接至标题">¶</a></h2>
+</div>
 <div class="section" id="clear">
-<span id="clear"></span><h3>清屏：<code class="docutils literal notranslate"><span class="pre">clear</span></code><a class="headerlink" href="#clear" title="永久链接至标题">¶</a></h3>
+<span id="clear"></span><h2>清屏：<code class="docutils literal notranslate"><span class="pre">clear</span></code><a class="headerlink" href="#clear" title="永久链接至标题">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">clear</span></code> 作用为清除终端上的显示(类似于 DOS 的 cls 清屏功能)，也可使用快捷键：Ctrl + l ( “l” 为字母 “L” 的小写 )。</p>
 </div>
 <div class="section" id="">
-<span id="id1"></span><h3>输出重定向命令：<code class="docutils literal notranslate"><span class="pre">&gt;</span></code><a class="headerlink" href="#" title="永久链接至标题">¶</a></h3>
-<p><strong>简介：</strong></p>
+<span id="id1"></span><h2>输出重定向命令：<code class="docutils literal notranslate"><span class="pre">&gt;</span></code><a class="headerlink" href="#" title="永久链接至标题">¶</a></h2>
 <p>Linux 允许将命令执行结果重定向到一个文件，本应显示在终端上的内容保存到指定文件中。</p>
 <p>如：ls &gt; test.txt ( test.txt 如果不存在，则创建，存在则覆盖其内容 )</p>
-<p>注意：&nbsp;<code class="docutils literal notranslate"><span class="pre">&gt;</span> <span class="pre">输出重定向会覆盖原来的内容，</span> <span class="pre">&gt;&gt;</span> <span class="pre">输出重定向则会追加到文件的尾部。</span></code></p>
-</div>
+<p>注意：&nbsp;&gt; 输出重定向会覆盖原来的内容， &gt;&gt; 输出重定向则会追加到文件的尾部。</p>
 <div class="section" id="more">
 <span id="more"></span><h3>分屏显示：<code class="docutils literal notranslate"><span class="pre">more</span></code><a class="headerlink" href="#more" title="永久链接至标题">¶</a></h3>
-<p><strong>简介：</strong></p>
 <p>查看内容时，在信息过长无法在一屏上显示时，会出现快速滚屏，使得用户无法看清文件的内容，此时可以使用 <code class="docutils literal notranslate"><span class="pre">more</span></code> 命令，每次只显示一页，按下空格键可以显示下一页，按下 <code class="docutils literal notranslate"><span class="pre">q</span></code> 键退出显示，按下 <code class="docutils literal notranslate"><span class="pre">h</span></code> 键可以获取帮助。</p>
 <p>同样还有<code class="docutils literal notranslate"><span class="pre">less</span></code>指令，一般配合下面的管道<code class="docutils literal notranslate"><span class="pre">|</span></code>一起使用，如在文件多比较多的时候：</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ls -a <span class="p">|</span> more
@@ -228,7 +226,6 @@
 </div>
 <div class="section" id="">
 <span id="id2"></span><h3>管道：<code class="docutils literal notranslate"><span class="pre">|</span></code><a class="headerlink" href="#" title="永久链接至标题">¶</a></h3>
-<p><strong>简介：</strong></p>
 <p>管道：一个命令的输出可以通过管道做为另一个命令的输入。</p>
 <p>管道我们可以理解现实生活中的管子，管子的一头塞东西进去，另一头取出来，这里 <code class="docutils literal notranslate"><span class="pre">|</span></code> 的左右分为两端，左端塞东西(写)，右端取东西(读)。</p>
 </div>
@@ -237,20 +234,17 @@
 <span id="id3"></span><h2>文件目录操作<a class="headerlink" href="#" title="永久链接至标题">¶</a></h2>
 <div class="section" id="pwd">
 <span id="pwd"></span><h3>显示当前路径：<code class="docutils literal notranslate"><span class="pre">pwd</span></code><a class="headerlink" href="#pwd" title="永久链接至标题">¶</a></h3>
-<p><strong>简介：</strong></p>
 <p>使用 <code class="docutils literal notranslate"><span class="pre">pwd</span></code> 命令可以显示当前的工作目录，该命令很简单，直接输入 <code class="docutils literal notranslate"><span class="pre">pwd</span></code> 即可，后面不带参数。</p>
 </div>
 <div class="section" id="which">
 <span id="which"></span><h3>查看命令位置：<code class="docutils literal notranslate"><span class="pre">which</span></code><a class="headerlink" href="#which" title="永久链接至标题">¶</a></h3>
-<p><strong>简介：</strong></p>
 <p>查看命令的路径</p>
 </div>
 <div class="section" id="ls">
 <span id="ls"></span><h3>查看文件信息：<code class="docutils literal notranslate"><span class="pre">ls</span></code><a class="headerlink" href="#ls" title="永久链接至标题">¶</a></h3>
-<p><strong>简介：</strong></p>
 <p><code class="docutils literal notranslate"><span class="pre">ls</span></code> 是英文单词 list 的简写，其功能为列出目录的内容，是用户最常用的命令之一。</p>
 <p>Linux 文件或者目录名称最长可以有 265 个字符，“.” 代表当前目录，“..” 代表上一级目录，以 “.” 开头的文件为隐藏文件，需要用 -a 参数才能显示。</p>
-<p><strong>ls常用参数：</strong></p>
+<p>ls常用参数：</p>
 <table border="1" class="docutils">
 <thead>
 <tr>
@@ -272,7 +266,7 @@
 <td>配合 -l 以人性化的方式显示文件大小</td>
 </tr>
 </tbody>
-</table><p><strong>ls 匹配通配符：</strong></p>
+</table><p>ls 匹配通配符：</p>
 <p>与 DOS 下的文件操作类似，在 Unix/Linux 系统中，也同样允许使用特殊字符来同时引用多个文件名，这些特殊字符被称为通配符。</p>
 <table border="1" class="docutils">
 <thead>
@@ -338,10 +332,9 @@
 </table></div>
 <div class="section" id="cd">
 <span id="cd"></span><h3>切换工作目录：<code class="docutils literal notranslate"><span class="pre">cd</span></code><a class="headerlink" href="#cd" title="永久链接至标题">¶</a></h3>
-<p><strong>简介：</strong></p>
 <p>在使用 Unix/Linux 的时候，经常需要更换工作目录。<code class="docutils literal notranslate"><span class="pre">cd</span></code> 命令可以帮助用户切换工作目录。<code class="docutils literal notranslate"><span class="pre">Linux</span> <span class="pre">所有的目录和文件名大小写敏感</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">cd</span></code> 后面可跟绝对路径，也可以跟相对路径。如果省略目录，则默认切换到当前用户的主目录。</p>
-<p><strong>cd 常用命令：</strong></p>
+<p>cd 常用命令：</p>
 <table border="1" class="docutils">
 <thead>
 <tr>
@@ -378,20 +371,17 @@
 </div>
 <div class="section" id="mkdir">
 <span id="mkdir"></span><h3>创建目录：<code class="docutils literal notranslate"><span class="pre">mkdir</span></code><a class="headerlink" href="#mkdir" title="永久链接至标题">¶</a></h3>
-<p><strong>简介：</strong></p>
 <p>通过 <code class="docutils literal notranslate"><span class="pre">mkdir</span></code> 命令可以创建一个新的目录。参数 -p 可递归创建目录。</p>
 <p>需要注意的是新建目录的名称不能与当前目录中已有的目录或文件同名，并且目录创建者必须对当前目录具有写权限。</p>
 </div>
 <div class="section" id="rmdir">
 <span id="rmdir"></span><h3>删除目录：<code class="docutils literal notranslate"><span class="pre">rmdir</span></code><a class="headerlink" href="#rmdir" title="永久链接至标题">¶</a></h3>
-<p><strong>简介：</strong></p>
 <p>可使用 <code class="docutils literal notranslate"><span class="pre">rmdir</span></code> 命令删除一个目录。必须离开目录，并且目录必须为空目录，不然提示删除失败。</p>
 </div>
 <div class="section" id="rm">
 <span id="rm"></span><h3>删除文件：<code class="docutils literal notranslate"><span class="pre">rm</span></code><a class="headerlink" href="#rm" title="永久链接至标题">¶</a></h3>
-<p><strong>简介：</strong></p>
 <p>可通过 <code class="docutils literal notranslate"><span class="pre">rm</span></code> 删除文件或目录。使用 <code class="docutils literal notranslate"><span class="pre">rm</span></code> 命令要小心，因为文件删除后不能恢复。为了防止文件误删，可以在 <code class="docutils literal notranslate"><span class="pre">rm</span></code> 后使用 <code class="docutils literal notranslate"><span class="pre">-i</span></code> 参数以逐个确认要删除的文件。</p>
-<p><strong><code class="docutils literal notranslate"><span class="pre">rm</span></code> 常用参数：</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">rm</span></code> 常用参数：</p>
 <table border="1" class="docutils">
 <thead>
 <tr>
@@ -416,14 +406,13 @@
 </table></div>
 <div class="section" id="ln">
 <span id="ln"></span><h3>建立链接文件：<code class="docutils literal notranslate"><span class="pre">ln</span></code><a class="headerlink" href="#ln" title="永久链接至标题">¶</a></h3>
-<p><strong>简介：</strong></p>
 <p>Linux 链接文件类似于 Windows 下的快捷方式。</p>
 <p>链接文件分为软链接和硬链接。</p>
 <p>软链接：软链接不占用磁盘空间，源文件删除则软链接失效。</p>
 <p>硬链接：硬链接只能链接普通文件，不能链接目录。</p>
 <p>使用格式：</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ln</span> <span class="n">源文件</span> <span class="n">链接文件</span>
-<span class="n">ln</span> <span class="o">-</span><span class="n">s</span> <span class="n">源文件</span> <span class="n">链接文件</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ln 源文件 链接文件
+ln -s 源文件 链接文件
 </pre></div>
 </div>
 <p>如果<code class="docutils literal notranslate"><span class="pre">没有-s</span></code>选项代表建立一个硬链接文件，两个文件占用相同大小的硬盘空间，即使删除了源文件，链接文件还是存在，所以-s选项是更常见的形式。</p>
@@ -431,7 +420,6 @@
 </div>
 <div class="section" id="cat">
 <span id="cat"></span><h3>查看或者合并文件内容：<code class="docutils literal notranslate"><span class="pre">cat</span></code><a class="headerlink" href="#cat" title="永久链接至标题">¶</a></h3>
-<p><strong>简介：</strong></p>
 <p>查看文件内容</p>
 </div>
 </div>
@@ -439,14 +427,13 @@
 <span id="id4"></span><h2>搜索相关指令<a class="headerlink" href="#" title="永久链接至标题">¶</a></h2>
 <div class="section" id="grep">
 <span id="grep"></span><h3>文本搜索：<code class="docutils literal notranslate"><span class="pre">grep</span></code><a class="headerlink" href="#grep" title="永久链接至标题">¶</a></h3>
-<p><strong>简介：</strong></p>
 <p>Linux 系统中 grep 命令是一种强大的文本搜索工具，grep 允许对文本文件进行模式查找。如果找到匹配模式， grep 打印包含模式的所有行。</p>
 <p>grep一般格式为：</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>grep [-选项] ‘搜索内容串’文件名
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>grep <span class="o">[</span>-选项<span class="o">]</span> ‘搜索内容串’文件名
 </pre></div>
 </div>
 <p>在 grep 命令中输入字符串参数时，最好引号或双引号括起来。例如：grep‘a ’1.txt。</p>
-<p><strong><code class="docutils literal notranslate"><span class="pre">grep</span></code> 常用参数：</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">grep</span></code> 常用参数：</p>
 <table border="1" class="docutils">
 <thead>
 <tr>
@@ -469,7 +456,7 @@
 </tr>
 </tbody>
 </table><p>grep 搜索内容串可以是正则表达式。</p>
-<p><strong>grep 常用正则表达式：</strong></p>
+<p>grep 常用正则表达式：</p>
 <table border="1" class="docutils">
 <thead>
 <tr>
@@ -498,9 +485,8 @@
 </table></div>
 <div class="section" id="find">
 <span id="find"></span><h3>查找文件：<code class="docutils literal notranslate"><span class="pre">find</span></code><a class="headerlink" href="#find" title="永久链接至标题">¶</a></h3>
-<p><strong>简介：</strong></p>
 <p>find 命令功能非常强大，通常用来在特定的目录下搜索符合条件的文件，也可以用来搜索特定用户属主的文件。</p>
-<p><strong>常用用法：</strong></p>
+<p>常用用法：</p>
 <table border="1" class="docutils">
 <thead>
 <tr>
@@ -548,9 +534,8 @@
 <span id="id5"></span><h2>复制、移动、删除<a class="headerlink" href="#" title="永久链接至标题">¶</a></h2>
 <div class="section" id="cp">
 <span id="cp"></span><h3>复制文件：<code class="docutils literal notranslate"><span class="pre">cp</span></code><a class="headerlink" href="#cp" title="永久链接至标题">¶</a></h3>
-<p><strong>简介：</strong></p>
 <p><code class="docutils literal notranslate"><span class="pre">cp</span></code> 命令的功能是将给出的文件或目录复制到另一个文件或目录中，相当于 DOS 下的 copy 命令。</p>
-<p><strong>常用参数说明：</strong></p>
+<p>常用参数说明：</p>
 <table border="1" class="docutils">
 <thead>
 <tr>
@@ -583,9 +568,8 @@
 </table></div>
 <div class="section" id="mv">
 <span id="mv"></span><h3>移动文件：<code class="docutils literal notranslate"><span class="pre">mv</span></code><a class="headerlink" href="#mv" title="永久链接至标题">¶</a></h3>
-<p><strong>简介：</strong></p>
 <p>用户可以使用 <code class="docutils literal notranslate"><span class="pre">mv</span></code> 命令来移动文件或目录，也可以给文件或目录重命名。</p>
-<p><strong>常用参数说明：</strong></p>
+<p>常用参数说明：</p>
 <table border="1" class="docutils">
 <thead>
 <tr>
@@ -613,13 +597,12 @@
 <span id="id6"></span><h2>打包和压缩<a class="headerlink" href="#" title="永久链接至标题">¶</a></h2>
 <div class="section" id="tar">
 <span id="tar"></span><h3>归档管理：<code class="docutils literal notranslate"><span class="pre">tar</span></code><a class="headerlink" href="#tar" title="永久链接至标题">¶</a></h3>
-<p><strong>简介：</strong></p>
 <p>计算机中的数据经常需要备份，tar 是 Unix/Linux 中最常用的备份工具，此命令可以把一系列文件归档到一个大文件中，也可以把档案文件解开以恢复数据。其实说白了，就是打包。</p>
-<p><strong><code class="docutils literal notranslate"><span class="pre">tar</span></code> 使用格式：</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tar</span> <span class="p">[</span><span class="n">参数</span><span class="p">]</span> <span class="n">打包文件名</span> <span class="n">文件</span>
+<p><code class="docutils literal notranslate"><span class="pre">tar</span></code> 使用格式：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>tar <span class="o">[</span>参数<span class="o">]</span> 打包文件名 文件
 </pre></div>
 </div>
-<p><strong><code class="docutils literal notranslate"><span class="pre">tar</span></code> 常用参数：</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">tar</span></code> 常用参数：</p>
 <p>tar 命令很特殊，其参数前面可以使用“-”，也可以不使用。</p>
 <table border="1" class="docutils">
 <thead>
@@ -654,13 +637,12 @@
 </div>
 <div class="section" id="gzip">
 <span id="gzip"></span><h3>文件压缩解压：<code class="docutils literal notranslate"><span class="pre">gzip</span></code><a class="headerlink" href="#gzip" title="永久链接至标题">¶</a></h3>
-<p><strong>简介：</strong></p>
 <p>tar 与 gzip 命令结合使用实现文件打包、压缩。 tar 只负责打包文件，但不压缩，用 gzip 压缩 tar 打包后的文件，其扩展名一般用xxxx.tar.gz。</p>
-<p><strong><code class="docutils literal notranslate"><span class="pre">gzip</span></code> 使用格式如下：</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gzip</span>  <span class="p">[</span><span class="n">选项</span><span class="p">]</span>  <span class="n">被压缩文件</span>
+<p><code class="docutils literal notranslate"><span class="pre">gzip</span></code> 使用格式如下：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>gzip  <span class="o">[</span>选项<span class="o">]</span>  被压缩文件
 </pre></div>
 </div>
-<p><strong>常用选项：</strong></p>
+<p>常用选项：</p>
 <table border="1" class="docutils">
 <thead>
 <tr>
@@ -687,7 +669,6 @@
 </div>
 <div class="section" id="bzip2">
 <span id="bzip2"></span><h3>文件压缩解压：<code class="docutils literal notranslate"><span class="pre">bzip2</span></code><a class="headerlink" href="#bzip2" title="永久链接至标题">¶</a></h3>
-<p><strong>简介：</strong></p>
 <p>tar与bzip2命令结合使用实现文件打包、压缩(用法和gzip一样)。</p>
 <p>tar只负责打包文件，但不压缩，用bzip2压缩tar打包后的文件，其扩展名一般用xxxx.tar.gz2。</p>
 <p>在tar命令中增加一个选项(-j)可以调用bzip2实现了一个压缩的功能，实行一个先打包后压缩的过程。</p>
@@ -699,6 +680,9 @@
 <p>通过zip压缩文件的目标文件不需要指定扩展名，默认扩展名为zip。</p>
 <p>压缩文件：zip [-r] 目标文件(没有扩展名) 源文件</p>
 <p>解压文件：unzip -d 解压后目录文件 压缩文件</p>
+<p>Linux:
+spcp:
+rsync</p>
 </div>
 </div>
 </div>
