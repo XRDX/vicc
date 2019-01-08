@@ -30,7 +30,7 @@
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="SVN使用手册" href="svn.html" />
-    <link rel="prev" title="Tools 工具" href="index.html" /> 
+    <link rel="prev" title="工具 Tools" href="index.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -83,22 +83,24 @@
               
             
             
-              <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../linux/index.html">Linux 操作系统</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../raspberry/index.html">Raspberry 折腾树莓派</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../math/index.html">Mathematics 数学知识</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cs/index.html">Computer Science 计算机知识</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python 应用</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cpp/index.html">C++ 语法基础</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Tools 工具</a><ul class="current">
+              <p class="caption"><span class="caption-text">目录结构</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../linux/index.html">操作系统 Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../raspberry/index.html">折腾树莓派 Raspberry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../math/index.html">数学知识 Mathematics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cs/index.html">计算机知识 Computer Science</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">程序应用 Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cpp/index.html">语法基础 C++</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">工具 Tools</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="index.html#id1">管理工具</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">GIT 常用命令</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#">获取</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#">推送</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#git-pull">获取 git pull</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#git-push">推送 git push</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#remote">远端相关 remote</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#tag">标签 tag</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#submodule">子模块 submodule</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#git">一些常用的Git网站</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#git">Git更新其他目录</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="svn.html">SVN使用手册</a></li>
@@ -110,7 +112,7 @@
 <li class="toctree-l2"><a class="reference internal" href="index.html#id3">好用的产品</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../opengl/index.html">OpenGL 图形学</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../opengl/index.html">图形学 OpenGL</a></li>
 </ul>
 
             
@@ -156,7 +158,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="index.html">Tools 工具</a> &raquo;</li>
+          <li><a href="index.html">工具 Tools</a> &raquo;</li>
         
       <li>GIT 常用命令</li>
     
@@ -164,8 +166,6 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/tools/git.md.txt" rel="nofollow"> View page source</a>
-          
         
       </li>
     
@@ -179,14 +179,14 @@
             
   <div class="section" id="git">
 <span id="git"></span><h1>GIT 常用命令<a class="headerlink" href="#git" title="永久链接至标题">¶</a></h1>
-<div class="section" id="">
-<span id="id1"></span><h2>获取<a class="headerlink" href="#" title="永久链接至标题">¶</a></h2>
+<div class="section" id="git-pull">
+<span id="git-pull"></span><h2>获取 git pull<a class="headerlink" href="#git-pull" title="永久链接至标题">¶</a></h2>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git pull
 </pre></div>
 </div>
 </div>
-<div class="section" id="">
-<span id="id2"></span><h2>推送<a class="headerlink" href="#" title="永久链接至标题">¶</a></h2>
+<div class="section" id="git-push">
+<span id="git-push"></span><h2>推送 git push<a class="headerlink" href="#git-push" title="永久链接至标题">¶</a></h2>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git status
 
 git add .
@@ -207,7 +207,7 @@ git push -u origin master
 <div class="section" id="remote">
 <span id="remote"></span><h2>远端相关 remote<a class="headerlink" href="#remote" title="永久链接至标题">¶</a></h2>
 <div class="section" id="">
-<span id="id3"></span><h3>查看远端地址<a class="headerlink" href="#" title="永久链接至标题">¶</a></h3>
+<span id="id1"></span><h3>查看远端地址<a class="headerlink" href="#" title="永久链接至标题">¶</a></h3>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git remote -h
 </pre></div>
 </div>
@@ -249,10 +249,19 @@ git submodule update
 </div>
 </div>
 <div class="section" id="git">
-<span id="id4"></span><h2>一些常用的Git网站<a class="headerlink" href="#git" title="永久链接至标题">¶</a></h2>
-<p>https://github.com</p>
-<p>https://bitbucket.org</p>
-<p>https://dev.tencent.com/</p>
+<span id="id2"></span><h2>一些常用的Git网站<a class="headerlink" href="#git" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com">github</a></li>
+<li><a class="reference external" href="https://bitbucket.org">bitbucket</a></li>
+<li><a class="reference external" href="https://dev.tencent.com/">tencent</a> 原coding.net</li>
+</ul>
+</div>
+<div class="section" id="git">
+<span id="id3"></span><h2>Git更新其他目录<a class="headerlink" href="#git" title="永久链接至标题">¶</a></h2>
+<p>注意不要省略后面的.git</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">GIT_DIR</span><span class="o">=</span>path/to/workspace/.git git pull
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -267,7 +276,7 @@ git submodule update
         <a href="svn.html" class="btn btn-neutral float-right" title="SVN使用手册" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral" title="Tools 工具" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral" title="工具 Tools" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -279,8 +288,7 @@ git submodule update
         &copy; Copyright 2018, Vic
 
     </p>
-  </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  </div> 
 
 </footer>
 

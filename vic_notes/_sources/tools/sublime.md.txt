@@ -1,5 +1,0 @@
-## Sublime Text
-
-
-
-[官方地址](https://www.sublimetext.com/3)

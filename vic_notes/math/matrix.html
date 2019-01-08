@@ -29,7 +29,7 @@
   <link rel="stylesheet" href="../_static/my_style.css" type="text/css" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
-    <link rel="next" title="Computer Science 计算机知识" href="../cs/index.html" />
+    <link rel="next" title="快速幂求模" href="pow_mod.html" />
     <link rel="prev" title="向量 Vector" href="vector.html" /> 
 
   
@@ -83,10 +83,11 @@
               
             
             
-              <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../linux/index.html">Linux 操作系统</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../raspberry/index.html">Raspberry 折腾树莓派</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Mathematics 数学知识</a><ul class="current">
+              <p class="caption"><span class="caption-text">目录结构</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../linux/index.html">操作系统 Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../raspberry/index.html">折腾树莓派 Raspberry</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">数学知识 Mathematics</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="vector.html">向量 Vector</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">矩阵 Matrix</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#">矩阵的加减</a></li>
@@ -96,13 +97,14 @@
 <li class="toctree-l3"><a class="reference internal" href="#">单位矩阵</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="pow_mod.html">快速幂求模</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../cs/index.html">Computer Science 计算机知识</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../python/index.html">Python 应用</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cpp/index.html">C++ 语法基础</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tools/index.html">Tools 工具</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../opengl/index.html">OpenGL 图形学</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cs/index.html">计算机知识 Computer Science</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">程序应用 Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cpp/index.html">语法基础 C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/index.html">工具 Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../opengl/index.html">图形学 OpenGL</a></li>
 </ul>
 
             
@@ -148,7 +150,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="index.html">Mathematics 数学知识</a> &raquo;</li>
+          <li><a href="index.html">数学知识 Mathematics</a> &raquo;</li>
         
       <li>矩阵 Matrix</li>
     
@@ -156,8 +158,6 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/math/matrix.md.txt" rel="nofollow"> View page source</a>
-          
         
       </li>
     
@@ -172,22 +172,22 @@
   <div class="section" id="matrix">
 <span id="matrix"></span><h1>矩阵 Matrix<a class="headerlink" href="#matrix" title="永久链接至标题">¶</a></h1>
 <p>现在我们已经讨论了向量的全部内容，是时候看看矩阵了！简单来说矩阵就是一个矩形的数字、符号或表达式数组。矩阵中每一项叫做矩阵的元素(Element)。下面是一个2×3矩阵的例子：</p>
-<p><img alt="matrix" src="../_images/11.png" /></p>
+<p><img alt="matrix" src="../_images/1.png" /></p>
 <p>矩阵可以通过(i, j)进行索引，i是行，j是列，这就是上面的矩阵叫做2×3矩阵的原因（3列2行，也叫做矩阵的维度(Dimension)）。这与你在索引2D图像时的(x, y)相反，获取4的索引是(2, 1)（第二行，第一列）。</p>
 <p>矩阵基本也就是这些了，它就是一个矩形的数学表达式阵列。和向量一样，矩阵也有非常漂亮的数学属性。矩阵有几个运算，分别是：矩阵加法、减法和乘法。</p>
 <div class="section" id="">
 <span id="id1"></span><h2>矩阵的加减<a class="headerlink" href="#" title="永久链接至标题">¶</a></h2>
 <p>矩阵与标量之间的加减定义如下：</p>
-<p><img alt="matrix" src="../_images/21.png" /></p>
+<p><img alt="matrix" src="../_images/2.png" /></p>
 <p>标量值要加到矩阵的每一个元素上。矩阵与标量的减法也相似：</p>
-<p><img alt="matrix" src="../_images/31.png" /></p>
+<p><img alt="matrix" src="../_images/3.png" /></p>
 <p>矩阵与矩阵之间的加减就是两个矩阵对应元素的加减运算，所以总体的规则和与标量运算是差不多的，只不过在相同索引下的元素才能进行运算。这也就是说加法和减法只对同维度的矩阵才是有定义的。一个3×2矩阵和一个2×3矩阵（或一个3×3矩阵与4×4矩阵）是不能进行加减的。我们看看两个2×2矩阵是怎样相加的：</p>
-<p><img alt="matrix" src="../_images/41.png" /></p>
+<p><img alt="matrix" src="../_images/4.png" /></p>
 </div>
 <div class="section" id="">
 <span id="id2"></span><h2>矩阵的数乘<a class="headerlink" href="#" title="永久链接至标题">¶</a></h2>
 <p>和矩阵与标量的加减一样，矩阵与标量之间的乘法也是矩阵的每一个元素分别乘以该标量。下面的例子展示了乘法的过程：</p>
-<p><img alt="matrix" src="../_images/51.png" /></p>
+<p><img alt="matrix" src="../_images/5.png" /></p>
 <p>现在我们也就能明白为什么这些单独的数字要叫做标量(Scalar)了。简单来说，标量就是用它的值缩放(Scale)矩阵的所有元素。前面那个例子中，所有的元素都被放大了2倍。</p>
 <p>到目前为止都还好，我们的例子都不复杂。不过矩阵与矩阵的乘法就不一样了。</p>
 </div>
@@ -230,7 +230,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../cs/index.html" class="btn btn-neutral float-right" title="Computer Science 计算机知识" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pow_mod.html" class="btn btn-neutral float-right" title="快速幂求模" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="vector.html" class="btn btn-neutral" title="向量 Vector" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -245,8 +245,7 @@
         &copy; Copyright 2018, Vic
 
     </p>
-  </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  </div> 
 
 </footer>
 
