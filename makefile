@@ -2,7 +2,7 @@ all: update html publish
 
 update:
 	@echo "update vic_notes"
-	GIT_DIR=../vic_notes/.git git pull
+	cd ../vic_notes && git pull
 
 html:
 	@echo "start building"

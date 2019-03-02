@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>GIT 常用命令 &mdash; 维克笔记 alpha 文档</title>
+  <title>GIT 常用命令 &mdash; 维克笔记 beta 文档</title>
   
 
   
@@ -98,12 +98,14 @@
 <li class="toctree-l4"><a class="reference internal" href="#git-push">推送 git push</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#remote">远端相关 remote</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#tag">标签 tag</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#diff">比较 diff</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#submodule">子模块 submodule</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#git">一些常用的Git网站</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#git">Git更新其他目录</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="svn.html">SVN使用手册</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ssh.html">ssh</a></li>
 <li class="toctree-l3"><a class="reference internal" href="putty.html">PUTTY 使用</a></li>
 <li class="toctree-l3"><a class="reference internal" href="jenkins.html">Jenkins</a></li>
 </ul>
@@ -113,6 +115,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../opengl/index.html">图形学 OpenGL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ml/index.html">机器学习 Machine Learning</a></li>
 </ul>
 
             
@@ -231,6 +234,20 @@ origin  git@github.com:USERNAME/REPOSITORY.git <span class="o">(</span>push<span
 <span id="tag"></span><h2>标签 tag<a class="headerlink" href="#tag" title="永久链接至标题">¶</a></h2>
 <p>列出所有tags</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git tag -l
+</pre></div>
+</div>
+</div>
+<div class="section" id="diff">
+<span id="diff"></span><h2>比较 diff<a class="headerlink" href="#diff" title="永久链接至标题">¶</a></h2>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git diff                      <span class="o">(</span><span class="m">1</span><span class="o">)</span>：working tree和stage文件的差异
+git diff --cached             <span class="o">(</span><span class="m">2</span><span class="o">)</span>stage和commit文件的差异
+git diff HEAD                 <span class="o">(</span><span class="m">3</span><span class="o">)</span>：commit和working tree文件的差异
+
+git diff <span class="nb">test</span>                 <span class="o">(</span><span class="m">1</span><span class="o">)</span>：不是对比当前分支，而是对比test分支
+git diff HEAD -- ./test.py    <span class="o">(</span><span class="m">2</span><span class="o">)</span>：对比其中的test文件
+git diff HEAD^ HEAD           <span class="o">(</span><span class="m">3</span><span class="o">)</span>：对比最近两次提交之间的差异
+
+git diff topic master         <span class="o">(</span><span class="m">1</span><span class="o">)</span>：对比topic和master分支的差异
 </pre></div>
 </div>
 </div>

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Scapy 爬虫框架 &mdash; 维克笔记 alpha 文档</title>
+  <title>Scapy 爬虫框架 &mdash; 维克笔记 beta 文档</title>
   
 
   
@@ -94,6 +94,11 @@
 <li class="toctree-l2"><a class="reference internal" href="pypi.html">上传自己的模块到 pypi</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Scapy 爬虫框架</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#">安装</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scrapy">第一个 Scrapy 例子</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scrapy">Scrapy项目</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#">创建项目</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="pil.html">使用PIL批量生成图片</a></li>
@@ -104,6 +109,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../cpp/index.html">语法基础 C++</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tools/index.html">工具 Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../opengl/index.html">图形学 OpenGL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ml/index.html">机器学习 Machine Learning</a></li>
 </ul>
 
             
@@ -210,6 +216,87 @@ Microsoft Visual Studio 14.0 Window 10 SDK</p>
 </pre></div>
 </div>
 <p>解决办法：安装Microsoft Visual Studio 14.0 Window 10 SDK</p>
+</div>
+<div class="section" id="scrapy">
+<span id="scrapy"></span><h2>第一个 Scrapy 例子<a class="headerlink" href="#scrapy" title="永久链接至标题">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scrapy</span>
+
+<span class="k">class</span> <span class="nc">QuotesSpider</span><span class="p">(</span><span class="n">scrapy</span><span class="o">.</span><span class="n">Spider</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;quotes&quot;</span>
+    <span class="n">start_urls</span> <span class="o">=</span> <span class="p">[</span>
+      <span class="s1">&#39;http://quotes.toscrape.com/tag/humor/&#39;</span><span class="p">,</span>
+    <span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">res</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">quote</span> <span class="ow">in</span> <span class="n">res</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s1">&#39;div.quote&#39;</span><span class="p">):</span>
+            <span class="k">yield</span> <span class="p">{</span>
+              <span class="s1">&#39;text&#39;</span><span class="p">:</span> <span class="n">quote</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s1">&#39;span.text::text&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">extract_first</span><span class="p">(),</span>
+              <span class="s1">&#39;author&#39;</span><span class="p">:</span> <span class="n">quote</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s1">&#39;span/small/text()&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">extract_first</span><span class="p">(),</span>
+            <span class="p">}</span>
+
+        <span class="n">next_page</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s1">&#39;li.next a::attr(&quot;href&quot;)&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">extract_first</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">next_page</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">yield</span> <span class="n">res</span><span class="o">.</span><span class="n">follow</span><span class="p">(</span><span class="n">next_page</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">parse</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>在命令行中执行：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>scrapy runspider quotes_spider.py -o quotes.json
+</pre></div>
+</div>
+<p>因为历史原因（原文），输出为json格式，文本中非英文字符的的utf-8文本会以“\uXXXX”的形式显示</p>
+</div>
+<div class="section" id="scrapy">
+<span id="id2"></span><h2>Scrapy项目<a class="headerlink" href="#scrapy" title="永久链接至标题">¶</a></h2>
+<div class="section" id="">
+<span id="id3"></span><h3>创建项目<a class="headerlink" href="#" title="永久链接至标题">¶</a></h3>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>scrapy startproject tutorial
+</pre></div>
+</div>
+<p>生成的项目结构如下：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>tutorial/
+    scrapy.cfg            <span class="c1"># deploy configuration file</span>
+    tutorial/             <span class="c1"># project&#39;s Python module, you&#39;ll import your code from here</span>
+        __init__.py
+        items.py          <span class="c1"># project items definition file</span>
+        middlewares.py    <span class="c1"># project middlewares file</span>
+        pipelines.py      <span class="c1"># project pipelines file</span>
+        settings.py       <span class="c1"># project settings file</span>
+        spiders/          <span class="c1"># a directory where you&#39;ll later put your spiders</span>
+            __init__.py
+</pre></div>
+</div>
+<p>在spiders目录下创建爬虫文件，如<code class="docutils literal notranslate"><span class="pre">quotes_spider.py</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scrapy</span>
+
+<span class="k">class</span> <span class="nc">QuotesSpider</span><span class="p">(</span><span class="n">scrapy</span><span class="o">.</span><span class="n">Spider</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;quotes&quot;</span>
+
+    <span class="k">def</span> <span class="nf">start_requests</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">urls</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="s1">&#39;http://quotes.toscrape.com/page/1/&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;http://quotes.toscrape.com/page/2/&#39;</span><span class="p">,</span>
+        <span class="p">]</span>
+        <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">urls</span><span class="p">:</span>
+            <span class="k">yield</span> <span class="n">scrapy</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">parse</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
+        <span class="n">page</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">url</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+        <span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;quotes-</span><span class="si">%s</span><span class="s1">.html&#39;</span> <span class="o">%</span> <span class="n">page</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">body</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;Saved file </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">filename</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">name</span></code>: 爬虫的名字，必须唯一。</li>
+<li><code class="docutils literal notranslate"><span class="pre">start_requests()</span></code>: 必须是一个可迭代的函数，可以是数组，也可以是生成器，爬虫入口</li>
+<li><code class="docutils literal notranslate"><span class="pre">parse()</span></code>: 默认解析器名称，常用作回调函数</li>
+</ul>
+<p>如何运行爬虫呢</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>scrapy crawl quotes
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 
