@@ -95,6 +95,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#">多个目标</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#">在其他目录执行</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../raspberry/index.html">折腾树莓派 Raspberry</a></li>
@@ -104,7 +105,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../cpp/index.html">语法基础 C++</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tools/index.html">工具 Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../opengl/index.html">图形学 OpenGL</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ml/index.html">机器学习 Machine Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../machine_learning/index.html">机器学习 Machine Learning</a></li>
 </ul>
 
             
@@ -213,6 +214,15 @@ Hello World
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>make html
 </pre></div>
 </div>
+</div>
+</div>
+<div class="section" id="">
+<span id="id3"></span><h1>在其他目录执行<a class="headerlink" href="#" title="永久链接至标题">¶</a></h1>
+<p>如更新其他目录下的git库，使用&amp;&amp;来连接命令</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>update:
+    @echo <span class="s2">&quot;update git&quot;</span>
+    <span class="nb">cd</span> ../path <span class="o">&amp;&amp;</span> git pull
+</pre></div>
 </div>
 </div>
 

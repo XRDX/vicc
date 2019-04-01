@@ -1,0 +1,255 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Cost Function &mdash; 维克笔记 beta 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/my_style.css" type="text/css" />
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="Octave" href="../Octave/index.html" />
+    <link rel="prev" title="Decision Boundary" href="Decision Boundary.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> 维克笔记
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目录结构</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../linux/index.html">操作系统 Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../raspberry/index.html">折腾树莓派 Raspberry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../math/index.html">数学知识 Mathematics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cs/index.html">计算机知识 Computer Science</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/index.html">程序应用 Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpp/index.html">语法基础 C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tools/index.html">工具 Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opengl/index.html">图形学 OpenGL</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">机器学习 Machine Learning</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Introduction/index.html">Introduction to Machine Learning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Linear Regression with One Variable/index.html">Linear Regression with One Variable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Linear Regression with Multiple Variables/index.html">Introduction to Machine Learning</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Logistic Regression</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Classification.html">Classification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Hypothesis Representation.html">Hypothesis Representation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Decision Boundary.html">Decision Boundary</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Cost Function</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Octave/index.html">Octave</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">维克笔记</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">机器学习 Machine Learning</a> &raquo;</li>
+        
+          <li><a href="index.html">Logistic Regression</a> &raquo;</li>
+        
+      <li>Cost Function</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="cost-function">
+<span id="cost-function"></span><h1>Cost Function<a class="headerlink" href="#cost-function" title="永久链接至标题">¶</a></h1>
+<p>We cannot use the same cost function that we use for linear regression because the Logistic Function will cause the output to be wavy, causing many local optima. In other words, it will not be a convex function.</p>
+<p>Instead, our cost function for logistic regression looks like:</p>
+<p>$$
+\begin{align<em>}&amp; J(\theta) = \dfrac{1}{m} \sum_{i=1}^m \mathrm{Cost}(h_\theta(x^{(i)}),y^{(i)}) \newline &amp; \mathrm{Cost}(h_\theta(x),y) = -\log(h_\theta(x)) ; &amp; \text{if y = 1} \newline &amp; \mathrm{Cost}(h_\theta(x),y) = -\log(1-h_\theta(x)) ; &amp; \text{if y = 0}\end{align</em>}
+$$</p>
+<p>When y = 1, we get the following plot for J(\theta)J(θ) vs h_\theta (x)hθ(x):</p>
+<p>$$
+\begin{align<em>}&amp; \mathrm{Cost}(h_\theta(x),y) = 0 \text{ if } h_\theta(x) = y \newline &amp; \mathrm{Cost}(h_\theta(x),y) \rightarrow \infty \text{ if } y = 0 ; \mathrm{and} ; h_\theta(x) \rightarrow 1 \newline &amp; \mathrm{Cost}(h_\theta(x),y) \rightarrow \infty \text{ if } y = 1 ; \mathrm{and} ; h_\theta(x) \rightarrow 0 \newline \end{align</em>}
+$$</p>
+<p><img alt="img" src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/Q9sX8nnxEeamDApmnD43Fw_1cb67ecfac77b134606532f5caf98ee4_Logistic_regression_cost_function_positive_class.png?expiry=1554249600000&amp;hmac=88vef9197BVTSCOTOx8mrqIblo57IWs_evAqkLjXmbk" /></p>
+<p>Similarly, when y = 0, we get the following plot for J(\theta)J(θ) vs h_\theta (x)hθ(x):</p>
+<p><img alt="img" src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/Ut7vvXnxEead-BJkoDOYOw_f719f2858d78dd66d80c5ec0d8e6b3fa_Logistic_regression_cost_function_negative_class.png?expiry=1554249600000&amp;hmac=fjxNvJoWMJp21DPqHVrTjCvE6vPf4LRdwMpazqur_BM" /></p>
+<p>If our correct answer 'y' is 0, then the cost function will be 0 if our hypothesis function also outputs 0. If our hypothesis approaches 1, then the cost function will approach infinity.</p>
+<p>If our correct answer 'y' is 1, then the cost function will be 0 if our hypothesis function outputs 1. If our hypothesis approaches 0, then the cost function will approach infinity.</p>
+<p>Note that writing the cost function in this way guarantees that J(θ) is convex for logistic regression.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Octave/index.html" class="btn btn-neutral float-right" title="Octave" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Decision Boundary.html" class="btn btn-neutral" title="Decision Boundary" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Vic
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/GA.js"></script>
+        <script type="text/javascript" src="../../_static/GA.vicc.wang.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

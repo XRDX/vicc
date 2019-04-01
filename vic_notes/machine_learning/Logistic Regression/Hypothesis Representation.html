@@ -1,0 +1,252 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Hypothesis Representation &mdash; 维克笔记 beta 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/my_style.css" type="text/css" />
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="Decision Boundary" href="Decision Boundary.html" />
+    <link rel="prev" title="Classification" href="Classification.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> 维克笔记
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目录结构</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../linux/index.html">操作系统 Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../raspberry/index.html">折腾树莓派 Raspberry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../math/index.html">数学知识 Mathematics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cs/index.html">计算机知识 Computer Science</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/index.html">程序应用 Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpp/index.html">语法基础 C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tools/index.html">工具 Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opengl/index.html">图形学 OpenGL</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">机器学习 Machine Learning</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Introduction/index.html">Introduction to Machine Learning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Linear Regression with One Variable/index.html">Linear Regression with One Variable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Linear Regression with Multiple Variables/index.html">Introduction to Machine Learning</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Logistic Regression</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Classification.html">Classification</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Hypothesis Representation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Decision Boundary.html">Decision Boundary</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Cost Function.html">Cost Function</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Octave/index.html">Octave</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">维克笔记</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">机器学习 Machine Learning</a> &raquo;</li>
+        
+          <li><a href="index.html">Logistic Regression</a> &raquo;</li>
+        
+      <li>Hypothesis Representation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="hypothesis-representation">
+<span id="hypothesis-representation"></span><h1>Hypothesis Representation<a class="headerlink" href="#hypothesis-representation" title="永久链接至标题">¶</a></h1>
+<p>We could approach the classification problem ignoring the fact that y is discrete-valued, and use our old linear regression algorithm to try to predict y given x. However, it is easy to construct examples where this method performs very poorly. Intuitively, it also doesn’t make sense for h_\theta (x)hθ(x) to take values larger than 1 or smaller than 0 when we know that y ∈ {0, 1}. To fix this, let’s change the form for our hypotheses h_\theta (x)hθ(x) to satisfy 0 \leq h_\theta (x) \leq 10≤hθ(x)≤1. This is accomplished by plugging \theta^TxθTx into the Logistic Function.</p>
+<p>Our new form uses the &quot;Sigmoid Function,&quot; also called the &quot;Logistic Function&quot;:</p>
+<p>$$
+\begin{align<em>}&amp; h_\theta (x) = g ( \theta^T x ) \newline \newline&amp; z = \theta^T x \newline&amp; g(z) = \dfrac{1}{1 + e^{-z}}\end{align</em>}
+$$</p>
+<p>The following image shows us what the sigmoid function looks like:</p>
+<p><img alt="img" src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/1WFqZHntEead-BJkoDOYOw_2413fbec8ff9fa1f19aaf78265b8a33b_Logistic_function.png?expiry=1554249600000&amp;hmac=4Lf6nR-17yksdJrE97MCQAhewph1zVnCXB1-5ZtXr2o" /></p>
+<p>The function g(z), shown here, maps any real number to the (0, 1) interval, making it useful for transforming an arbitrary-valued function into a function better suited for classification.</p>
+<p>h_\theta(x)hθ(x) will give us the <strong>probability</strong> that our output is 1. For example, h_\theta(x)=0.7hθ(x)=0.7 gives us a probability of 70% that our output is 1. Our probability that our prediction is 0 is just the complement of our probability that it is 1 (e.g. if probability that it is 1 is 70%, then the probability that it is 0 is 30%).</p>
+<p>$$
+\begin{align<em>}&amp; h_\theta(x) = P(y=1 | x ; \theta) = 1 - P(y=0 | x ; \theta) \newline&amp; P(y = 0 | x;\theta) + P(y = 1 | x ; \theta) = 1\end{align</em>}
+$$</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Decision Boundary.html" class="btn btn-neutral float-right" title="Decision Boundary" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Classification.html" class="btn btn-neutral" title="Classification" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Vic
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/GA.js"></script>
+        <script type="text/javascript" src="../../_static/GA.vicc.wang.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,251 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Cost Function - Intuition I &mdash; 维克笔记 beta 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/my_style.css" type="text/css" />
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="Cost Function - Intuition II" href="Cost Function 2.html" />
+    <link rel="prev" title="Model Representation" href="Model and Cost Function.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> 维克笔记
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目录结构</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../linux/index.html">操作系统 Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../raspberry/index.html">折腾树莓派 Raspberry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../math/index.html">数学知识 Mathematics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cs/index.html">计算机知识 Computer Science</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/index.html">程序应用 Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpp/index.html">语法基础 C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tools/index.html">工具 Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opengl/index.html">图形学 OpenGL</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">机器学习 Machine Learning</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Introduction/index.html">Introduction to Machine Learning</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Linear Regression with One Variable</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Model and Cost Function.html">Model Representation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Model and Cost Function.html#cost-function">Cost Function</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Cost Function - Intuition I</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Cost Function 2.html">Cost Function - Intuition II</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Gradient Descent.html">Gradient Descent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Gradient Descent Intuition.html">Gradient Descent Intuition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Gradient Descent For Linear Regression.html">Gradient Descent For Linear Regression</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Linear Regression with Multiple Variables/index.html">Introduction to Machine Learning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Logistic Regression/index.html">Logistic Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Octave/index.html">Octave</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">维克笔记</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">机器学习 Machine Learning</a> &raquo;</li>
+        
+          <li><a href="index.html">Linear Regression with One Variable</a> &raquo;</li>
+        
+      <li>Cost Function - Intuition I</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="cost-function-intuition-i">
+<span id="cost-function-intuition-i"></span><h1>Cost Function - Intuition I<a class="headerlink" href="#cost-function-intuition-i" title="永久链接至标题">¶</a></h1>
+<p>If we try to think of it in visual terms, our training data set is scattered on the x-y plane. We are trying to make a straight line (defined by h_\theta(x)hθ(x)) which passes through these scattered data points.</p>
+<p>Our objective is to get the best possible line. The best possible line will be such so that the average squared vertical distances of the scattered points from the line will be the least. Ideally, the line should pass through all the points of our training data set. In such a case, the value of J(\theta_0, \theta_1)J(θ0,θ1) will be 0. The following example shows the ideal situation where we have a cost function of 0.</p>
+<p><img alt="img" src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/_B8TJZtREea33w76dwnDIg_3e3d4433e32478f8df446d0b6da26c27_Screenshot-2016-10-26-00.57.56.png?expiry=1554249600000&amp;hmac=cXdahsjH9SBmhfxFkpsVRtfZLj2AryU_VX53H_B5dWc" /></p>
+<p>When \theta_1 = 1θ1=1, we get a slope of 1 which goes through every single data point in our model. Conversely, when \theta_1 = 0.5θ1=0.5, we see the vertical distance from our fit to the data points increase.</p>
+<p><img alt="img" src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/8guexptSEeanbxIMvDC87g_3d86874dfd37b8e3c53c9f6cfa94676c_Screenshot-2016-10-26-01.03.07.png?expiry=1554249600000&amp;hmac=4PjF8tYA8i71iDHZLJ0jziHIp9XXqLrXCTEmPHWtKiE" /></p>
+<p>This increases our cost function to 0.58. Plotting several other points yields to the following graph:</p>
+<p><img alt="img" src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/fph0S5tTEeajtg5TyD0vYA_9b28bdfeb34b2d4914d0b64903735cf1_Screenshot-2016-10-26-01.09.05.png?expiry=1554249600000&amp;hmac=ObdQOGOwOhNuvKpnlnU0y1KDU0UpJSqnEKhhyqLxh_A" /></p>
+<p>Thus as a goal, we should try to minimize the cost function. In this case, \theta_1 = 1θ1=1 is our global minimum.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Cost Function 2.html" class="btn btn-neutral float-right" title="Cost Function - Intuition II" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Model and Cost Function.html" class="btn btn-neutral" title="Model Representation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Vic
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/GA.js"></script>
+        <script type="text/javascript" src="../../_static/GA.vicc.wang.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,285 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>What is Machine Learning? &mdash; 维克笔记 beta 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/my_style.css" type="text/css" />
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="Linear Regression with One Variable" href="../Linear Regression with One Variable/index.html" />
+    <link rel="prev" title="Introduction to Machine Learning" href="index.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> 维克笔记
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目录结构</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../linux/index.html">操作系统 Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../raspberry/index.html">折腾树莓派 Raspberry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../math/index.html">数学知识 Mathematics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cs/index.html">计算机知识 Computer Science</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/index.html">程序应用 Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpp/index.html">语法基础 C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tools/index.html">工具 Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opengl/index.html">图形学 OpenGL</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">机器学习 Machine Learning</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Introduction to Machine Learning</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">What is Machine Learning?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#supervised-learning">Supervised Learning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#unsupervised-learning">Unsupervised Learning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#supervised-learning">Supervised Learning 监督学习</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#unsupervised-learning">Unsupervised Learning 非监督学习</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#octave">Octave</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Linear Regression with One Variable/index.html">Linear Regression with One Variable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Linear Regression with Multiple Variables/index.html">Introduction to Machine Learning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Logistic Regression/index.html">Logistic Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Octave/index.html">Octave</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">维克笔记</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">机器学习 Machine Learning</a> &raquo;</li>
+        
+          <li><a href="index.html">Introduction to Machine Learning</a> &raquo;</li>
+        
+      <li>What is Machine Learning?</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="what-is-machine-learning">
+<span id="what-is-machine-learning"></span><h1>What is Machine Learning?<a class="headerlink" href="#what-is-machine-learning" title="永久链接至标题">¶</a></h1>
+<p>Two definitions of Machine Learning are offered. Arthur Samuel described it as: &quot;the field of study that gives computers the ability to learn without being explicitly programmed.&quot; This is an older, informal definition.</p>
+<p>Tom Mitchell provides a more modern definition: &quot;A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measured by P, improves with experience E.&quot;</p>
+<p>Example: playing checkers.</p>
+<p>E = the experience of playing many games of checkers</p>
+<p>T = the task of playing checkers.</p>
+<p>P = the probability that the program will win the next game.</p>
+<p>In general, any machine learning problem can be assigned to one of two broad classifications:</p>
+<p>Supervised learning and Unsupervised learning.</p>
+</div>
+<div class="section" id="supervised-learning">
+<span id="supervised-learning"></span><h1>Supervised Learning<a class="headerlink" href="#supervised-learning" title="永久链接至标题">¶</a></h1>
+<p>In supervised learning, we are given a data set and already know what our correct output should look like, having the idea that there is a relationship between the input and the output.</p>
+<p>Supervised learning problems are categorized into &quot;regression&quot; and &quot;classification&quot; problems. In a regression problem, we are trying to predict results within a continuous output, meaning that we are trying to map input variables to some continuous function. In a classification problem, we are instead trying to predict results in a discrete output. In other words, we are trying to map input variables into discrete categories.</p>
+<p><strong>Example 1:</strong></p>
+<p>Given data about the size of houses on the real estate market, try to predict their price. Price as a function of size is a continuous output, so this is a regression problem.</p>
+<p>We could turn this example into a classification problem by instead making our output about whether the house &quot;sells for more or less than the asking price.&quot; Here we are classifying the houses based on price into two discrete categories.</p>
+<p><strong>Example 2</strong>:</p>
+<p>(a) Regression - Given a picture of a person, we have to predict their age on the basis of the given picture</p>
+<p>(b) Classification - Given a patient with a tumor, we have to predict whether the tumor is malignant or benign.</p>
+</div>
+<div class="section" id="unsupervised-learning">
+<span id="unsupervised-learning"></span><h1>Unsupervised Learning<a class="headerlink" href="#unsupervised-learning" title="永久链接至标题">¶</a></h1>
+<p>Unsupervised learning allows us to approach problems with little or no idea what our results should look like. We can derive structure from data where we don't necessarily know the effect of the variables.</p>
+<p>We can derive this structure by clustering the data based on relationships among the variables in the data.</p>
+<p>With unsupervised learning there is no feedback based on the prediction results.</p>
+<p><strong>Example:</strong></p>
+<p>Clustering: Take a collection of 1,000,000 different genes, and find a way to automatically group these genes into groups that are somehow similar or related by different variables, such as lifespan, location, roles, and so on.</p>
+<p>Non-clustering: The &quot;Cocktail Party Algorithm&quot;, allows you to find structure in a chaotic environment. (i.e. identifying individual voices and music from a mesh of sounds at a cocktail party).</p>
+</div>
+<div class="section" id="supervised-learning">
+<span id="id1"></span><h1>Supervised Learning 监督学习<a class="headerlink" href="#supervised-learning" title="永久链接至标题">¶</a></h1>
+<p>分类学习
+根据特征分为特定的几类</p>
+</div>
+<div class="section" id="unsupervised-learning">
+<span id="id2"></span><h1>Unsupervised Learning 非监督学习<a class="headerlink" href="#unsupervised-learning" title="永久链接至标题">¶</a></h1>
+<p>让机器自动分类</p>
+</div>
+<div class="section" id="octave">
+<span id="octave"></span><h1>Octave<a class="headerlink" href="#octave" title="永久链接至标题">¶</a></h1>
+<p>类似于Matlab，开源
+用来建模
+学习【机器学习】时使用</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Linear Regression with One Variable/index.html" class="btn btn-neutral float-right" title="Linear Regression with One Variable" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Introduction to Machine Learning" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Vic
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/GA.js"></script>
+        <script type="text/javascript" src="../../_static/GA.vicc.wang.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

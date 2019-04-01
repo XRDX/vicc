@@ -29,7 +29,7 @@
   <link rel="stylesheet" href="../_static/my_style.css" type="text/css" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
-    <link rel="next" title="Linear Regression" href="linear_regression.html" />
+    <link rel="next" title="数据标准化/归一化 Normalization" href="normalization.html" />
     <link rel="prev" title="Machine Learning" href="introduction.html" /> 
 
   
@@ -106,6 +106,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#learning-rate">Learning Rate</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="normalization.html">数据标准化/归一化 Normalization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="linear_regression.html">Linear Regression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="octave.html">Octave</a></li>
 </ul>
@@ -186,11 +187,15 @@
 x's = &quot;input&quot; variable / features
 y's = &quot;output&quot; variable / &quot;target&quot; variable
 (x, y) - one training example
-x(i), y(i) - ith  training example</p>
+$$
+x^{(i)}, ,  y^{(i)} - ith  training example
+$$</p>
 <div class="section" id="hyppothesis">
 <span id="hyppothesis"></span><h3>hyppothesis<a class="headerlink" href="#hyppothesis" title="永久链接至标题">¶</a></h3>
-<p>拟合函数
-h(x) = θ0 + θ1x</p>
+<p>拟合函数</p>
+<p>$$
+h(x) = θ_0 + θ_1x
+$$</p>
 </div>
 </div>
 <div class="section" id="cost-function">
@@ -221,7 +226,7 @@ Batch Gradient Decent</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="linear_regression.html" class="btn btn-neutral float-right" title="Linear Regression" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="normalization.html" class="btn btn-neutral float-right" title="数据标准化/归一化 Normalization" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="introduction.html" class="btn btn-neutral" title="Machine Learning" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

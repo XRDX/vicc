@@ -95,8 +95,23 @@
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">机器学习 Machine Learning</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="introduction.html">Machine Learning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="model.html">Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="normalization.html">数据标准化/归一化 Normalization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="linear_regression.html">Linear Regression</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Octave</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Octave</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#start-octave">start octave</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#change-ps1">change ps1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#load-save-data">load/save data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#check-variables">check variables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#show-array">show Array</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#figure">Figure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create-a-function">create a function</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#addpath">addpath</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#help">help</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#save-data">save data</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -165,23 +180,109 @@
             
   <div class="section" id="octave">
 <span id="octave"></span><h1>Octave<a class="headerlink" href="#octave" title="永久链接至标题">¶</a></h1>
-<p>load()</p>
+<p>Octave is free software to replace Matlab.</p>
+<div class="section" id="start-octave">
+<span id="start-octave"></span><h2>start octave<a class="headerlink" href="#start-octave" title="永久链接至标题">¶</a></h2>
+<p>run octave-cli</p>
+<div class="section" id="change-ps1">
+<span id="change-ps1"></span><h3>change ps1<a class="headerlink" href="#change-ps1" title="永久链接至标题">¶</a></h3>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">PS1</span><span class="p">(</span><span class="s">&#39;&gt;&gt; &#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="load-save-data">
+<span id="load-save-data"></span><h3>load/save data<a class="headerlink" href="#load-save-data" title="永久链接至标题">¶</a></h3>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="nb">load</span> <span class="n">yourData</span><span class="p">.</span><span class="n">dat</span>
+<span class="nb">load</span><span class="p">(</span><span class="s">&#39;yourData.dat&#39;</span><span class="p">)</span>
+
+<span class="n">save</span> <span class="n">yourNewData</span><span class="p">.</span><span class="n">txt</span> <span class="n">variable</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="check-variables">
+<span id="check-variables"></span><h3>check variables<a class="headerlink" href="#check-variables" title="永久链接至标题">¶</a></h3>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="nb">who</span>
+<span class="nb">whos</span>
+</pre></div>
+</div>
 <p>size()</p>
+</div>
+<div class="section" id="show-array">
+<span id="show-array"></span><h3>show Array<a class="headerlink" href="#show-array" title="永久链接至标题">¶</a></h3>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="p">=</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">2</span><span class="p">;</span> <span class="mi">3</span> <span class="mi">4</span><span class="p">;</span> <span class="mi">5</span> <span class="mi">6</span><span class="p">]</span>
+<span class="n">A</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="n">A</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="p">:)</span>
+<span class="n">A</span><span class="p">(:,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">A</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">:)</span>
+
+<span class="n">A</span><span class="p">(:)</span> 
+</pre></div>
+</div>
+</div>
+<div class="section" id="figure">
+<span id="figure"></span><h3>Figure<a class="headerlink" href="#figure" title="永久链接至标题">¶</a></h3>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="p">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mf">0.01</span><span class="p">:</span><span class="mi">1</span><span class="p">];</span> 
+
+<span class="n">y1</span> <span class="p">=</span> <span class="nb">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="o">*</span><span class="n">t</span><span class="p">);</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y1</span><span class="p">);</span>
+
+<span class="n">y2</span> <span class="p">=</span> <span class="nb">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="o">*</span><span class="n">t</span><span class="p">);</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y2</span><span class="p">);</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s">&#39;rx&#39;</span><span class="p">,</span> <span class="s">&#39;MarkerSize&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span> <span class="c">% red cross</span>
+</pre></div>
+</div>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y1</span><span class="p">);</span>
+<span class="nb">hold</span> <span class="n">on</span><span class="p">;</span>                    <span class="c">% don&#39;t close figure</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y2</span><span class="p">);</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;time&#39;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;value&#39;</span><span class="p">)</span>
+<span class="nb">legend</span><span class="p">(</span><span class="s">&#39;sin&#39;</span><span class="p">,</span> <span class="s">&#39;cos&#39;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;my plot&#39;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="o">-</span><span class="n">dpng</span> <span class="s">&#39;myPlot.png&#39;</span>    <span class="c">% save as png</span>
+</pre></div>
+</div>
+<p>close the figure</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="nb">close</span>
+</pre></div>
+</div>
+<p>multi-figures</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="nb">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">):</span> <span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y1</span><span class="p">);</span>
+<span class="nb">figure</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span> <span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y2</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>subplot</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="nb">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>  <span class="c">% create 1x2 figure, use the 1st one</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y1</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="create-a-function">
+<span id="create-a-function"></span><h3>create a function<a class="headerlink" href="#create-a-function" title="永久链接至标题">¶</a></h3>
+<p>create a file with extension '.m'</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>function y = square()
+y = x^2
+end
+</pre></div>
+</div>
+</div>
+<div class="section" id="addpath">
+<span id="addpath"></span><h3>addpath<a class="headerlink" href="#addpath" title="永久链接至标题">¶</a></h3>
+<p>add the path so that octave can search under the directory</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="nb">addpath</span><span class="p">(</span><span class="s">&quot;path/you/want&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="help">
+<span id="help"></span><h3>help<a class="headerlink" href="#help" title="永久链接至标题">¶</a></h3>
 <p>help</p>
+</div>
+<div class="section" id="save-data">
+<span id="save-data"></span><h3>save data<a class="headerlink" href="#save-data" title="永久链接至标题">¶</a></h3>
 <p>save data.mat v
 save data.text v --ascii</p>
-<p>A = [1 2; 3 4; 5 6]
-A(3, 2)</p>
-<p>A(2, :)
-A(:, 2)
-A([1, 3], :)</p>
-<p>A(:) =&gt;
-1
-2
-3
-4
-5
-6</p>
+</div>
+</div>
 </div>
 
 

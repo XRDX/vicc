@@ -30,7 +30,7 @@
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="Octave" href="octave.html" />
-    <link rel="prev" title="Model" href="model.html" /> 
+    <link rel="prev" title="数据标准化/归一化 Normalization" href="normalization.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -96,8 +96,10 @@
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">机器学习 Machine Learning</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="introduction.html">Machine Learning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="model.html">Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="normalization.html">数据标准化/归一化 Normalization</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Linear Regression</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#design-matrix">Design Matrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cost-function">Cost Function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gradient-regression">Gradient Regression</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#normal-eqution">Normal Eqution</a></li>
 </ul>
 </li>
@@ -171,16 +173,36 @@
   <div class="section" id="linear-regression">
 <span id="linear-regression"></span><h1>Linear Regression<a class="headerlink" href="#linear-regression" title="永久链接至标题">¶</a></h1>
 <p>多项式线性回归</p>
-<div class="section" id="design-matrix">
-<span id="design-matrix"></span><h2>Design Matrix<a class="headerlink" href="#design-matrix" title="永久链接至标题">¶</a></h2>
+<div class="section" id="cost-function">
+<span id="cost-function"></span><h2>Cost Function<a class="headerlink" href="#cost-function" title="永久链接至标题">¶</a></h2>
+<p>$$
+J(θ)=\frac{1}{2m}\sum_{i=1}^{m} (h_θ(x^{(i)})-y^{(i)})^2
+$$</p>
+<p>$$
+h(θ) = θ^Tx
+$$</p>
+<p>对于一阶线性
+$$
+h(θ) = θ^Tx = θ_0 + θ_1x_1
+$$</p>
+</div>
+<div class="section" id="gradient-regression">
+<span id="gradient-regression"></span><h2>Gradient Regression<a class="headerlink" href="#gradient-regression" title="永久链接至标题">¶</a></h2>
+<p>$$
+θ<em>j := θ<em>j - α\frac{1}{m}\sum</em>{i=1}^{m} (h</em>θ(x^{(i)})-y^{(i)})x_j^{(i)}
+$$</p>
 </div>
 <div class="section" id="normal-eqution">
 <span id="normal-eqution"></span><h2>Normal Eqution<a class="headerlink" href="#normal-eqution" title="永久链接至标题">¶</a></h2>
 <p>通过逆矩阵来求解线性回归最优解</p>
-<p>θ = (XTX)-1XTy</p>
-<p>octave:
-pinv(X' * X) * X' * y</p>
-<p>求逆矩阵的复杂度：Θ(n^3)</p>
+<p>$$
+θ = (X^TX)^{-1}X^Ty
+$$</p>
+<p>在Octave:运行</p>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="nb">pinv</span><span class="p">(</span><span class="n">X</span><span class="o">&#39;</span> <span class="o">*</span> <span class="n">X</span><span class="p">)</span> <span class="o">*</span> <span class="n">X</span><span class="o">&#39;</span> <span class="o">*</span> <span class="n">y</span>
+</pre></div>
+</div>
+<p>求逆矩阵的复杂度为：<code class="docutils literal notranslate"><span class="pre">Θ(n^3)</span></code>, 当矩阵的复杂度比较大时候，不适合使用逆矩阵的方式来求解</p>
 </div>
 </div>
 
@@ -195,7 +217,7 @@ pinv(X' * X) * X' * y</p>
         <a href="octave.html" class="btn btn-neutral float-right" title="Octave" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="model.html" class="btn btn-neutral" title="Model" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="normalization.html" class="btn btn-neutral" title="数据标准化/归一化 Normalization" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

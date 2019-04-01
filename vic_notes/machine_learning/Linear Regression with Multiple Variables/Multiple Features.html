@@ -1,0 +1,260 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Multiple Features &mdash; 维克笔记 beta 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/my_style.css" type="text/css" />
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="Gradient Descent For Multiple Variables" href="Gradient Descent For Multiple Variables.html" />
+    <link rel="prev" title="Introduction to Machine Learning" href="index.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> 维克笔记
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目录结构</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../linux/index.html">操作系统 Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../raspberry/index.html">折腾树莓派 Raspberry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../math/index.html">数学知识 Mathematics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cs/index.html">计算机知识 Computer Science</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/index.html">程序应用 Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpp/index.html">语法基础 C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tools/index.html">工具 Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opengl/index.html">图形学 OpenGL</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">机器学习 Machine Learning</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Introduction/index.html">Introduction to Machine Learning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Linear Regression with One Variable/index.html">Linear Regression with One Variable</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Introduction to Machine Learning</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Multiple Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Gradient Descent For Multiple Variables.html">Gradient Descent For Multiple Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Gradient Descent in Practice I - Feature Scaling.html">Gradient Descent in Practice I - Feature Scaling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Gradient Descent in Practice II - Learning Rate.html">Gradient Descent in Practice II - Learning Rate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Features and Polynomial Regression.html">Features and Polynomial Regression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Normal Equation.html">Normal Equation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Normal Equation Noninvertibility.html">Normal Equation Noninvertibility</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Logistic Regression/index.html">Logistic Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Octave/index.html">Octave</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">维克笔记</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">机器学习 Machine Learning</a> &raquo;</li>
+        
+          <li><a href="index.html">Introduction to Machine Learning</a> &raquo;</li>
+        
+      <li>Multiple Features</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="multiple-features">
+<span id="multiple-features"></span><h1>Multiple Features<a class="headerlink" href="#multiple-features" title="永久链接至标题">¶</a></h1>
+<p><strong>Note:</strong> [7:25 - \theta^TθT is a 1 by (n+1) matrix and not an (n+1) by 1 matrix]</p>
+<p>Linear regression with multiple variables is also known as &quot;multivariate linear regression&quot;.</p>
+<p>We now introduce notation for equations where we can have any number of input variables.</p>
+<p>$$
+\begin{align<em>}x_j^{(i)} &amp;= \text{value of feature } j \text{ in the }i^{th}\text{ training example} \newline x^{(i)}&amp; = \text{the input (features) of the }i^{th}\text{ training example} \newline m &amp;= \text{the number of training examples} \newline n &amp;= \text{the number of features} \end{align</em>}
+$$</p>
+<p>The multivariable form of the hypothesis function accommodating these multiple features is as follows:</p>
+<p>$$
+h_\theta (x) = \theta_0 + \theta_1 x_1 + \theta_2 x_2 + \theta_3 x_3 + \cdots + \theta_n x_n
+$$</p>
+<p>In order to develop intuition about this function, we can think about \theta_0θ0 as the basic price of a house, \theta_1θ1 as the price per square meter, \theta_2θ2 as the price per floor, etc. x_1x1 will be the number of square meters in the house, x_2x2 the number of floors, etc.</p>
+<p>Using the definition of matrix multiplication, our multivariable hypothesis function can be concisely represented as:</p>
+<p>$$
+\begin{align<em>}h_\theta(x) =\begin{bmatrix}\theta_0 \hspace{2em} \theta_1 \hspace{2em} ... \hspace{2em} \theta_n\end{bmatrix}\begin{bmatrix}x_0 \newline x_1 \newline \vdots \newline x_n\end{bmatrix}= \theta^T x\end{align</em>}
+$$</p>
+<p>This is a vectorization of our hypothesis function for one training example; see the lessons on vectorization to learn more.</p>
+<p>Remark: Note that for convenience reasons in this course we assume x(i)0=1 for (i∈1,…,m). This allows us to do matrix operations with theta and x. Hence making the two vectors '\thetaθ' and x^{(i)}x(i) match each other element-wise (that is, have the same number of elements: n+1).]</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Gradient Descent For Multiple Variables.html" class="btn btn-neutral float-right" title="Gradient Descent For Multiple Variables" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Introduction to Machine Learning" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Vic
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/GA.js"></script>
+        <script type="text/javascript" src="../../_static/GA.vicc.wang.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
