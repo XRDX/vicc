@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Normal Equation &mdash; 维克笔记 beta 文档</title>
+  <title>Normal Equation &mdash; 维克笔记  文档</title>
   
 
   
@@ -180,9 +180,11 @@
 <span id="normal-equation"></span><h1>Normal Equation<a class="headerlink" href="#normal-equation" title="永久链接至标题">¶</a></h1>
 <p><strong>Note:</strong> [8:00 to 8:44 - The design matrix X (in the bottom right side of the slide) given in the example should have elements x with subscript 1 and superscripts varying from 1 to m because for all m training sets there are only 2 features x_0x0 and x_1x1. 12:56 - The X matrix is m by (n+1) and NOT n by n. ]</p>
 <p>Gradient descent gives one way of minimizing J. Let’s discuss a second way of doing so, this time performing the minimization explicitly and without resorting to an iterative algorithm. In the &quot;Normal Equation&quot; method, we will minimize J by explicitly taking its derivatives with respect to the θj ’s, and setting them to zero. This allows us to find the optimum theta without iteration. The normal equation formula is given below:</p>
-<p>\theta = (X^T X)^{-1}X^T yθ=(XTX)−1XTy</p>
-<p><img alt="img" src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/dykma6dwEea3qApInhZCFg_333df5f11086fee19c4fb81bc34d5125_Screenshot-2016-11-10-10.06.16.png?expiry=1554249600000&amp;hmac=FW_jqNr6eKYdRoxkSrhHDydduk--kkZz6jOLt4HPo7k" /></p>
-<p>There is <strong>no need</strong> to do feature scaling with the normal equation.</p>
+<p>
+$$
+\theta = (X^T X)^{-1}X^T yθ=(XTX)−1XTy
+$$
+</p><p>There is <strong>no need</strong> to do feature scaling with the normal equation.</p>
 <p>The following is a comparison of gradient descent and the normal equation:</p>
 <table border="1" class="docutils">
 <thead>
@@ -232,7 +234,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, Vic
+        &copy; Copyright 2019, Vic
 
     </p>
   </div> 
@@ -256,9 +258,10 @@
         <script type="text/javascript" src="../../_static/jquery.js"></script>
         <script type="text/javascript" src="../../_static/underscore.js"></script>
         <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
         <script type="text/javascript" src="../../_static/GA.js"></script>
         <script type="text/javascript" src="../../_static/GA.vicc.wang.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
 
   

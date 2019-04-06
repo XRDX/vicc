@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Gradient Descent For Linear Regression &mdash; 维克笔记 beta 文档</title>
+  <title>Gradient Descent For Linear Regression &mdash; 维克笔记  文档</title>
   
 
   
@@ -180,15 +180,14 @@
 <span id="gradient-descent-for-linear-regression"></span><h1>Gradient Descent For Linear Regression<a class="headerlink" href="#gradient-descent-for-linear-regression" title="永久链接至标题">¶</a></h1>
 <p><strong>Note:</strong> [At 6:15 &quot;h(x) = -900 - 0.1x&quot; should be &quot;h(x) = 900 - 0.1x&quot;]</p>
 <p>When specifically applied to the case of linear regression, a new form of the gradient descent equation can be derived. We can substitute our actual cost function and our actual hypothesis function and modify the equation to :</p>
-<p>$$
-\begin{align<em>} \text{repeat until convergence: } \lbrace &amp; \newline \theta_0 := &amp; \theta_0 - \alpha \frac{1}{m} \sum\limits_{i=1}^{m}(h_\theta(x_{i}) - y_{i}) \newline \theta_1 := &amp; \theta_1 - \alpha \frac{1}{m} \sum\limits_{i=1}^{m}\left((h_\theta(x_{i}) - y_{i}) x_{i}\right) \newline \rbrace&amp; \end{align</em>}
-$$</p>
-<p>where m is the size of the training set, \theta_0θ0 a constant that will be changing simultaneously with \theta_1θ1 and x_{i}, y_{i}xi,yiare values of the given training set (data).</p>
-<p>Note that we have separated out the two cases for \theta_jθj into separate equations for \theta_0θ0 and \theta_1θ1; and that for \theta_1θ1 we are multiplying x_{i}xiat the end due to the derivative. The following is a derivation of ∂∂θjJ(θ) for a single example :</p>
-<p><img alt="img" src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/QFpooaaaEea7TQ6MHcgMPA_cc3c276df7991b1072b2afb142a78da1_Screenshot-2016-11-09-08.30.54.png?expiry=1554249600000&amp;hmac=zti0qa_RkLLrmR51stTmFeSIGhMr-boyVw1_xac8QQk" /></p>
+<p>
+$$
+\begin{align*} \text{repeat until convergence: } \lbrace & \newline \theta_0 := & \theta_0 - \alpha \frac{1}{m} \sum\limits_{i=1}^{m}(h_\theta(x_{i}) - y_{i}) \newline \theta_1 := & \theta_1 - \alpha \frac{1}{m} \sum\limits_{i=1}^{m}\left((h_\theta(x_{i}) - y_{i}) x_{i}\right) \newline \rbrace& \end{align*}
+$$
+<p><p>where m is the size of the training set, \theta_0θ0 a constant that will be changing simultaneously with \theta_1θ1 and x_{i}, y_{i}xi,yiare values of the given training set (data).</p>
+<p>Note that we have separated out the two cases for (\theta_j) into separate equations for (\theta_0) and (\theta_1); and that for (\theta_1) we are multiplying (x_{i}) at the end due to the derivative. The following is a derivation of ) \frac{∂J(θ)}{∂θ}) for a single example :</p>
 <p>The point of all this is that if we start with a guess for our hypothesis and then repeatedly apply these gradient descent equations, our hypothesis will become more and more accurate.</p>
 <p>So, this is simply gradient descent on the original cost function J. This method looks at every example in the entire training set on every step, and is called <strong>batch gradient descent</strong>. Note that, while gradient descent can be susceptible to local minima in general, the optimization problem we have posed here for linear regression has only one global, and no other local, optima; thus gradient descent always converges (assuming the learning rate α is not too large) to the global minimum. Indeed, J is a convex quadratic function. Here is an example of gradient descent as it is run to minimize a quadratic function.</p>
-<p><img alt="img" src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/xAQBlqaaEeawbAp5ByfpEg_24e9420f16fdd758ccb7097788f879e7_Screenshot-2016-11-09-08.36.49.png?expiry=1554249600000&amp;hmac=cpSknd2WeNiAlcNASCgdyWw2iifyz4XMuyMnIPPPvjE" /></p>
 <p>The ellipses shown above are the contours of a quadratic function. Also shown is the trajectory taken by gradient descent, which was initialized at (48,30). The x’s in the figure (joined by straight lines) mark the successive values of θ that gradient descent went through as it converged to its minimum.</p>
 </div>
 
@@ -212,7 +211,7 @@ $$</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, Vic
+        &copy; Copyright 2019, Vic
 
     </p>
   </div> 
@@ -236,9 +235,10 @@ $$</p>
         <script type="text/javascript" src="../../_static/jquery.js"></script>
         <script type="text/javascript" src="../../_static/underscore.js"></script>
         <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
         <script type="text/javascript" src="../../_static/GA.js"></script>
         <script type="text/javascript" src="../../_static/GA.vicc.wang.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
 
   

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Normal Equation Noninvertibility &mdash; 维克笔记 beta 文档</title>
+  <title>Normal Equation Noninvertibility &mdash; 维克笔记  文档</title>
   
 
   
@@ -179,10 +179,11 @@
   <div class="section" id="normal-equation-noninvertibility">
 <span id="normal-equation-noninvertibility"></span><h1>Normal Equation Noninvertibility<a class="headerlink" href="#normal-equation-noninvertibility" title="永久链接至标题">¶</a></h1>
 <p>When implementing the normal equation in octave we want to use the 'pinv' function rather than 'inv.' The 'pinv' function will give you a value of \thetaθ even if X^TXXTX is not invertible.</p>
-<p>If X^TXXTX is <strong>noninvertible,</strong> the common causes might be having :</p>
-<ul class="simple">
-<li>Redundant features, where two features are very closely related (i.e. they are linearly dependent)</li>
-<li>Too many features (e.g. m ≤ n). In this case, delete some features or use &quot;regularization&quot; (to be explained in a later lesson).</li>
+<p>
+If \(X^TXXTX\) is **noninvertible,** the common causes might be having :
+</p><ul class="simple">
+<li><p>Redundant features, where two features are very closely related (i.e. they are linearly dependent)</p></li>
+<li><p>Too many features (e.g. m ≤ n). In this case, delete some features or use &quot;regularization&quot; (to be explained in a later lesson).</p></li>
 </ul>
 <p>Solutions to the above problems include deleting a feature that is linearly dependent with another or deleting one or more features when there are too many features.</p>
 </div>
@@ -207,7 +208,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, Vic
+        &copy; Copyright 2019, Vic
 
     </p>
   </div> 
@@ -231,9 +232,10 @@
         <script type="text/javascript" src="../../_static/jquery.js"></script>
         <script type="text/javascript" src="../../_static/underscore.js"></script>
         <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
         <script type="text/javascript" src="../../_static/GA.js"></script>
         <script type="text/javascript" src="../../_static/GA.vicc.wang.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
 
   

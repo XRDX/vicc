@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Scapy 爬虫框架 &mdash; 维克笔记 beta 文档</title>
+  <title>Scapy 爬虫框架 &mdash; 维克笔记  文档</title>
   
 
   
@@ -104,6 +104,8 @@
 <li class="toctree-l2"><a class="reference internal" href="pil.html">使用PIL批量生成图片</a></li>
 <li class="toctree-l2"><a class="reference internal" href="aliddns.html">将阿里云dns解析作为ddns使用</a></li>
 <li class="toctree-l2"><a class="reference internal" href="keep_on_top.html">保持窗口在最前</a></li>
+<li class="toctree-l2"><a class="reference internal" href="virtualenv.html">virtual environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="virtualenv.html#activate">activate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="others.html">Python 的一些库</a></li>
 </ul>
 </li>
@@ -289,9 +291,9 @@ Microsoft Visual Studio 14.0 Window 10 SDK</p>
 </pre></div>
 </div>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">name</span></code>: 爬虫的名字，必须唯一。</li>
-<li><code class="docutils literal notranslate"><span class="pre">start_requests()</span></code>: 必须是一个可迭代的函数，可以是数组，也可以是生成器，爬虫入口</li>
-<li><code class="docutils literal notranslate"><span class="pre">parse()</span></code>: 默认解析器名称，常用作回调函数</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: 爬虫的名字，必须唯一。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">start_requests()</span></code>: 必须是一个可迭代的函数，可以是数组，也可以是生成器，爬虫入口</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">parse()</span></code>: 默认解析器名称，常用作回调函数</p></li>
 </ul>
 <p>如何运行爬虫呢</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>scrapy crawl quotes
@@ -321,7 +323,7 @@ Microsoft Visual Studio 14.0 Window 10 SDK</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, Vic
+        &copy; Copyright 2019, Vic
 
     </p>
   </div> 
@@ -345,9 +347,10 @@ Microsoft Visual Studio 14.0 Window 10 SDK</p>
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
         <script type="text/javascript" src="../_static/GA.js"></script>
         <script type="text/javascript" src="../_static/GA.vicc.wang.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
 
   

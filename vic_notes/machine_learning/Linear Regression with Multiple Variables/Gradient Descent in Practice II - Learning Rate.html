@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Gradient Descent in Practice II - Learning Rate &mdash; 维克笔记 beta 文档</title>
+  <title>Gradient Descent in Practice II - Learning Rate &mdash; 维克笔记  文档</title>
   
 
   
@@ -181,12 +181,10 @@
 <p><strong>Note:</strong> [5:20 - the x -axis label in the right graph should be \thetaθ rather than No. of iterations ]</p>
 <p><strong>Debugging gradient descent.</strong> Make a plot with <em>number of iterations</em> on the x-axis. Now plot the cost function, J(θ) over the number of iterations of gradient descent. If J(θ) ever increases, then you probably need to decrease α.</p>
 <p><strong>Automatic convergence test.</strong> Declare convergence if J(θ) decreases by less than E in one iteration, where E is some small value such as 10−3. However in practice it's difficult to choose this threshold value.</p>
-<p><img alt="img" src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/FEfS3aajEea3qApInhZCFg_6be025f7ad145eb0974b244a7f5b3f59_Screenshot-2016-11-09-09.35.59.png?expiry=1554249600000&amp;hmac=TCZ80xlRAxKbjYGMbaS-6eRQ40Y78K6qqlC6ypXfGAo" /></p>
 <p>It has been proven that if learning rate α is sufficiently small, then J(θ) will decrease on every iteration.</p>
-<p><img alt="img" src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/rC2jGKgvEeamBAoLccicqA_ec9e40a58588382f5b6df60637b69470_Screenshot-2016-11-11-08.55.21.png?expiry=1554249600000&amp;hmac=zU-WJ3mHK96gvhMzpCe6pKDjdz5mSAqjj625eKYPvO8" /></p>
 <p>To summarize:</p>
-<p>If \alphaα is too small: slow convergence.</p>
-<p>If \alphaα is too large: ￼may not decrease on every iteration and thus may not converge.</p>
+<p>If α is too small: slow convergence.</p>
+<p>If α is too large: ￼may not decrease on every iteration and thus may not converge.</p>
 </div>
 
 
@@ -209,7 +207,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, Vic
+        &copy; Copyright 2019, Vic
 
     </p>
   </div> 
@@ -233,9 +231,10 @@
         <script type="text/javascript" src="../../_static/jquery.js"></script>
         <script type="text/javascript" src="../../_static/underscore.js"></script>
         <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
         <script type="text/javascript" src="../../_static/GA.js"></script>
         <script type="text/javascript" src="../../_static/GA.vicc.wang.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
 
   

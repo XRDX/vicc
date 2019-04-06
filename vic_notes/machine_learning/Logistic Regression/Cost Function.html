@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Cost Function &mdash; 维克笔记 beta 文档</title>
+  <title>Cost Function &mdash; 维克笔记  文档</title>
   
 
   
@@ -177,17 +177,16 @@
 <span id="cost-function"></span><h1>Cost Function<a class="headerlink" href="#cost-function" title="永久链接至标题">¶</a></h1>
 <p>We cannot use the same cost function that we use for linear regression because the Logistic Function will cause the output to be wavy, causing many local optima. In other words, it will not be a convex function.</p>
 <p>Instead, our cost function for logistic regression looks like:</p>
-<p>$$
-\begin{align<em>}&amp; J(\theta) = \dfrac{1}{m} \sum_{i=1}^m \mathrm{Cost}(h_\theta(x^{(i)}),y^{(i)}) \newline &amp; \mathrm{Cost}(h_\theta(x),y) = -\log(h_\theta(x)) ; &amp; \text{if y = 1} \newline &amp; \mathrm{Cost}(h_\theta(x),y) = -\log(1-h_\theta(x)) ; &amp; \text{if y = 0}\end{align</em>}
-$$</p>
-<p>When y = 1, we get the following plot for J(\theta)J(θ) vs h_\theta (x)hθ(x):</p>
-<p>$$
-\begin{align<em>}&amp; \mathrm{Cost}(h_\theta(x),y) = 0 \text{ if } h_\theta(x) = y \newline &amp; \mathrm{Cost}(h_\theta(x),y) \rightarrow \infty \text{ if } y = 0 ; \mathrm{and} ; h_\theta(x) \rightarrow 1 \newline &amp; \mathrm{Cost}(h_\theta(x),y) \rightarrow \infty \text{ if } y = 1 ; \mathrm{and} ; h_\theta(x) \rightarrow 0 \newline \end{align</em>}
-$$</p>
-<p><img alt="img" src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/Q9sX8nnxEeamDApmnD43Fw_1cb67ecfac77b134606532f5caf98ee4_Logistic_regression_cost_function_positive_class.png?expiry=1554249600000&amp;hmac=88vef9197BVTSCOTOx8mrqIblo57IWs_evAqkLjXmbk" /></p>
-<p>Similarly, when y = 0, we get the following plot for J(\theta)J(θ) vs h_\theta (x)hθ(x):</p>
-<p><img alt="img" src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/Ut7vvXnxEead-BJkoDOYOw_f719f2858d78dd66d80c5ec0d8e6b3fa_Logistic_regression_cost_function_negative_class.png?expiry=1554249600000&amp;hmac=fjxNvJoWMJp21DPqHVrTjCvE6vPf4LRdwMpazqur_BM" /></p>
-<p>If our correct answer 'y' is 0, then the cost function will be 0 if our hypothesis function also outputs 0. If our hypothesis approaches 1, then the cost function will approach infinity.</p>
+<p>
+$$
+\begin{align*}& J(\theta) = \dfrac{1}{m} \sum_{i=1}^m \mathrm{Cost}(h_\theta(x^{(i)}),y^{(i)}) \newline & \mathrm{Cost}(h_\theta(x),y) = -\log(h_\theta(x)) \; & \text{if y = 1} \newline & \mathrm{Cost}(h_\theta(x),y) = -\log(1-h_\theta(x)) \; & \text{if y = 0}\end{align*}
+$$
+</p><p>When y = 1, we get the following plot for J(\theta)J(θ) vs h_\theta (x)hθ(x):</p>
+<p>
+$$
+\begin{align*}& \mathrm{Cost}(h_\theta(x),y) = 0 \text{ if } h_\theta(x) = y \newline & \mathrm{Cost}(h_\theta(x),y) \rightarrow \infty \text{ if } y = 0 \; \mathrm{and} \; h_\theta(x) \rightarrow 1 \newline & \mathrm{Cost}(h_\theta(x),y) \rightarrow \infty \text{ if } y = 1 \; \mathrm{and} \; h_\theta(x) \rightarrow 0 \newline \end{align*}
+$$<p>Similarly, when y = 0, we get the following plot for (J(\theta)) vs (h_\theta (x)):</p>
+</p><p>If our correct answer 'y' is 0, then the cost function will be 0 if our hypothesis function also outputs 0. If our hypothesis approaches 1, then the cost function will approach infinity.</p>
 <p>If our correct answer 'y' is 1, then the cost function will be 0 if our hypothesis function outputs 1. If our hypothesis approaches 0, then the cost function will approach infinity.</p>
 <p>Note that writing the cost function in this way guarantees that J(θ) is convex for logistic regression.</p>
 </div>
@@ -212,7 +211,7 @@ $$</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, Vic
+        &copy; Copyright 2019, Vic
 
     </p>
   </div> 
@@ -236,9 +235,10 @@ $$</p>
         <script type="text/javascript" src="../../_static/jquery.js"></script>
         <script type="text/javascript" src="../../_static/underscore.js"></script>
         <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
         <script type="text/javascript" src="../../_static/GA.js"></script>
         <script type="text/javascript" src="../../_static/GA.vicc.wang.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
 
   

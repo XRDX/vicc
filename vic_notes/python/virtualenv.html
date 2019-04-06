@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Python 的一些库 &mdash; 维克笔记  文档</title>
+  <title>virtual environments &mdash; 维克笔记  文档</title>
   
 
   
@@ -29,8 +29,8 @@
   <link rel="stylesheet" href="../_static/my_style.css" type="text/css" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
-    <link rel="next" title="语法基础 C++" href="../cpp/index.html" />
-    <link rel="prev" title="virtual environments" href="virtualenv.html" /> 
+    <link rel="next" title="Python 的一些库" href="others.html" />
+    <link rel="prev" title="保持窗口在最前" href="keep_on_top.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -96,14 +96,19 @@
 <li class="toctree-l2"><a class="reference internal" href="pil.html">使用PIL批量生成图片</a></li>
 <li class="toctree-l2"><a class="reference internal" href="aliddns.html">将阿里云dns解析作为ddns使用</a></li>
 <li class="toctree-l2"><a class="reference internal" href="keep_on_top.html">保持窗口在最前</a></li>
-<li class="toctree-l2"><a class="reference internal" href="virtualenv.html">virtual environments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="virtualenv.html#activate">activate</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Python 的一些库</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#wxpy">wxpy</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#pyglet">Pyglet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#pyinstaller">pyinstaller</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">virtual environments</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#virtualenv">virtualenv</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#install">install</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#venv">venv</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#create-virtual-environments">Create virtual environments</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#activate">activate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="others.html">Python 的一些库</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../cpp/index.html">语法基础 C++</a></li>
@@ -157,7 +162,7 @@
         
           <li><a href="index.html">程序应用 Python</a> &raquo;</li>
         
-      <li>Python 的一些库</li>
+      <li>virtual environments</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -174,20 +179,71 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="python">
-<span id="python"></span><h1>Python 的一些库<a class="headerlink" href="#python" title="永久链接至标题">¶</a></h1>
-<div class="section" id="wxpy">
-<span id="wxpy"></span><h2>wxpy<a class="headerlink" href="#wxpy" title="永久链接至标题">¶</a></h2>
-<p>微信机器人的py库</p>
+  <div class="section" id="virtual-environments">
+<span id="virtual-environments"></span><h1>virtual environments<a class="headerlink" href="#virtual-environments" title="永久链接至标题">¶</a></h1>
+<div class="section" id="virtualenv">
+<span id="virtualenv"></span><h2>virtualenv<a class="headerlink" href="#virtualenv" title="永久链接至标题">¶</a></h2>
+<div class="section" id="install">
+<span id="install"></span><h3>install<a class="headerlink" href="#install" title="永久链接至标题">¶</a></h3>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip install virtualenv
+</pre></div>
 </div>
-<div class="section" id="pyglet">
-<span id="pyglet"></span><h2>Pyglet<a class="headerlink" href="#pyglet" title="永久链接至标题">¶</a></h2>
-<p>基于openGL的python图形库</p>
 </div>
-<div class="section" id="pyinstaller">
-<span id="pyinstaller"></span><h2>pyinstaller<a class="headerlink" href="#pyinstaller" title="永久链接至标题">¶</a></h2>
-<p>用于打包python程序</p>
 </div>
+<div class="section" id="venv">
+<span id="venv"></span><h2>venv<a class="headerlink" href="#venv" title="永久链接至标题">¶</a></h2>
+<p>New in version 3.3.</p>
+<div class="section" id="create-virtual-environments">
+<span id="create-virtual-environments"></span><h3>Create virtual environments<a class="headerlink" href="#create-virtual-environments" title="永久链接至标题">¶</a></h3>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python3 -m venv /path/to/new/virtual/environment
+</pre></div>
+</div>
+<p>On Windows, invoke the venv command as follows:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python3 -m venv /path/to/myenv
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="activate">
+<span id="activate"></span><h1>activate<a class="headerlink" href="#activate" title="永久链接至标题">¶</a></h1>
+<p>Once a virtual environment has been created, it can be “activated” using a script in the virtual environment’s binary directory. The invocation of the script is platform-specific (<venv> must be replaced by the path of the directory containing the virtual environment):</p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>Platform</th>
+<th>Shell</th>
+<th>Command to activate virtual environment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Posix</td>
+<td>bash/zsh</td>
+<td>$ source <venv>/bin/activate</td>
+</tr>
+<tr>
+<td></td>
+<td>fish</td>
+<td>$ . <venv>/bin/activate.fish</td>
+</tr>
+<tr>
+<td></td>
+<td>csh/tcsh</td>
+<td>$ source <venv>/bin/activate.csh</td>
+</tr>
+<tr>
+<td>Windows</td>
+<td>cmd.exe</td>
+<td>C:> <venv>\Scripts\activate.bat</td>
+</tr>
+<tr>
+<td></td>
+<td>PowerShell</td>
+<td>PS C:> <venv>\Scripts\Activate.ps1</td>
+</tr>
+</tbody>
+</table><p>Run the script to active/deactive the env.</p>
 </div>
 
 
@@ -198,10 +254,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../cpp/index.html" class="btn btn-neutral float-right" title="语法基础 C++" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="others.html" class="btn btn-neutral float-right" title="Python 的一些库" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="virtualenv.html" class="btn btn-neutral" title="virtual environments" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="keep_on_top.html" class="btn btn-neutral" title="保持窗口在最前" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

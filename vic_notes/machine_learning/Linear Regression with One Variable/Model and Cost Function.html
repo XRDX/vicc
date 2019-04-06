@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Model Representation &mdash; 维克笔记 beta 文档</title>
+  <title>Model Representation &mdash; 维克笔记  文档</title>
   
 
   
@@ -178,20 +178,26 @@
             
   <div class="section" id="model-representation">
 <span id="model-representation"></span><h1>Model Representation<a class="headerlink" href="#model-representation" title="永久链接至标题">¶</a></h1>
-<p>To establish notation for future use, we’ll use x<sup>(i)</sup> to denote the “input” variables (living area in this example), also called input features, and y<sup>(i)</sup> to denote the “output” or target variable that we are trying to predict (price). A pair (x^{(i)} , y^{(i)} )(x(i),y(i)) is called a training example, and the dataset that we’ll be using to learn—a list of m training examples (x(i),y(i));i=1,...,m—is called a training set. Note that the superscript “(i)” in the notation is simply an index into the training set, and has nothing to do with exponentiation. We will also use X to denote the space of input values, and Y to denote the space of output values. In this example, X = Y = ℝ.</p>
-<p>To describe the supervised learning problem slightly more formally, our goal is, given a training set, to learn a function h : X → Y so that h(x) is a “good” predictor for the corresponding value of y. For historical reasons, this function h is called a hypothesis. Seen pictorially, the process is therefore like this:</p>
-<p><img alt="img" src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/H6qTdZmYEeaagxL7xdFKxA_2f0f671110e8f7446bb2b5b2f75a8874_Screenshot-2016-10-23-20.14.58.png?expiry=1554249600000&amp;hmac=dXr7X8fSJNxcVwV5x6BfVsnyEaAaMGLrBhsHntRDps4" /></p>
+<p>
+  To establish notation for future use, we’ll use \(x^{(i)}\) to denote the “input” variables (living area in this example), also called input features, and \(y^{(i)}\) to denote the “output” or target variable that we are trying to predict (price). A pair \((x^{(i)}\) , \(y^{(i)})\) is called a training example, and the dataset that we’ll be using to learn—a list of m training examples (\(x^{(i)}, y^{(i)})  i = 1,...,m \); 
+<p>
+is called a training set. Note that the superscript “(i)” in the notation is simply an index into the training set, and has nothing to do with exponentiation. We will also use X to denote the space of input values, and Y to denote the space of output values. In this example, X = Y = ℝ.<p>To describe the supervised learning problem slightly more formally, our goal is, given a training set, to learn a function h : X → Y so that h(x) is a “good” predictor for the corresponding value of y. For historical reasons, this function h is called a hypothesis. Seen pictorially, the process is therefore like this:</p>
 <p>When the target variable that we’re trying to predict is continuous, such as in our housing example, we call the learning problem a regression problem. When y can take on only a small number of discrete values (such as if, given the living area, we wanted to predict if a dwelling is a house or an apartment, say), we call it a classification problem.</p>
 </div>
 <div class="section" id="cost-function">
 <span id="cost-function"></span><h1>Cost Function<a class="headerlink" href="#cost-function" title="永久链接至标题">¶</a></h1>
 <p>We can measure the accuracy of our hypothesis function by using a <strong>cost function</strong>. This takes an average difference (actually a fancier version of an average) of all the results of the hypothesis with inputs from x's and the actual output y's.</p>
-<p>$$
-J(\theta_0, \theta_1) = \dfrac {1}{2m} \displaystyle \sum <em>{i=1}^m \left ( \hat{y}</em>{i}- y_{i} \right)^2 = \dfrac {1}{2m} \displaystyle \sum <em>{i=1}^m \left (h</em>\theta (x_{i}) - y_{i} \right)^2
-$$</p>
-<p>To break it apart, it is \frac{1}{2}21 x¯ where x¯ is the mean of the squares of h_\theta (x_{i}) - y_{i}hθ(xi)−yi , or the difference between the predicted value and the actual value.</p>
-<p>This function is otherwise called the &quot;Squared error function&quot;, or &quot;Mean squared error&quot;. The mean is halved \left(\frac{1}{2}\right)(21) as a convenience for the computation of the gradient descent, as the derivative term of the square function will cancel out the \frac{1}{2}21term.</p>
-</div>
+<p>
+$$
+J(θ_0, θ_1) = \frac {1}{2m} \sum_{i=1}^m ( \bar{y}_{i}-{y_{i}} )^2 = \frac {1}{2m} \sum _{i=1}^m  (h_θ (x_{i}) - y_{i} )^2
+$$
+</p>
+<p>
+  When \(a \ne 0\),  To break it apart, it is \(\frac{1}{2}\bar{x}\)   where  \(\bar{x}\)  is the mean of the squares of \(h_θ (x_{i}) - y_{i}\) , or the difference between the predicted value and the actual value.
+</p>
+<p>
+  This function is otherwise called the "Squared error function", or "Mean squared error". The mean is halved \(\left(\frac{1}{2}\right)\)as a convenience for the computation of the gradient descent, as the derivative term of the square function will cancel out the\(\left(\frac{1}{2}\right)\)term. 
+</p></div>
 
 
            </div>
@@ -213,7 +219,7 @@ $$</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, Vic
+        &copy; Copyright 2019, Vic
 
     </p>
   </div> 
@@ -237,9 +243,10 @@ $$</p>
         <script type="text/javascript" src="../../_static/jquery.js"></script>
         <script type="text/javascript" src="../../_static/underscore.js"></script>
         <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
         <script type="text/javascript" src="../../_static/GA.js"></script>
         <script type="text/javascript" src="../../_static/GA.vicc.wang.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
 
   

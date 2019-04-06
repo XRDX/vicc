@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Gradient Descent &mdash; 维克笔记 beta 文档</title>
+  <title>Gradient Descent &mdash; 维克笔记  文档</title>
   
 
   
@@ -179,22 +179,25 @@
   <div class="section" id="gradient-descent">
 <span id="gradient-descent"></span><h1>Gradient Descent<a class="headerlink" href="#gradient-descent" title="永久链接至标题">¶</a></h1>
 <p>So we have our hypothesis function and we have a way of measuring how well it fits into the data. Now we need to estimate the parameters in the hypothesis function. That's where gradient descent comes in.</p>
-<p>Imagine that we graph our hypothesis function based on its fields \theta_0θ0 and \theta_1θ1 (actually we are graphing the cost function as a function of the parameter estimates). We are not graphing x and y itself, but the parameter range of our hypothesis function and the cost resulting from selecting a particular set of parameters.</p>
-<p>We put \theta_0θ0 on the x axis and \theta_1θ1 on the y axis, with the cost function on the vertical z axis. The points on our graph will be the result of the cost function using our hypothesis with those specific theta parameters. The graph below depicts such a setup.</p>
-<p><img alt="img" src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/bn9SyaDIEeav5QpTGIv-Pg_0d06dca3d225f3de8b5a4a7e92254153_Screenshot-2016-11-01-23.48.26.png?expiry=1554249600000&amp;hmac=KDg41xlBbSjGJr7icd3CUYHiHSO-V-tQmKBjoj1sQLo" /></p>
-<p>We will know that we have succeeded when our cost function is at the very bottom of the pits in our graph, i.e. when its value is the minimum. The red arrows show the minimum points in the graph.</p>
+<p>
+Imagine that we graph our hypothesis function based on its fields \(\theta_0\) and \(\theta_1\) (actually we are graphing the cost function as a function of the parameter estimates). We are not graphing x and y itself, but the parameter range of our hypothesis function and the cost resulting from selecting a particular set of parameters.
+</p><p>
+We put \(\theta_0\) on the x axis and \(\theta_1\) on the y axis, with the cost function on the vertical z axis. The points on our graph will be the result of the cost function using our hypothesis with those specific theta parameters. The graph below depicts such a setup.
+<p><p>We will know that we have succeeded when our cost function is at the very bottom of the pits in our graph, i.e. when its value is the minimum. The red arrows show the minimum points in the graph.</p>
 <p>The way we do this is by taking the derivative (the tangential line to a function) of our cost function. The slope of the tangent is the derivative at that point and it will give us a direction to move towards. We make steps down the cost function in the direction with the steepest descent. The size of each step is determined by the parameter α, which is called the learning rate.</p>
-<p>For example, the distance between each 'star' in the graph above represents a step determined by our parameter α. A smaller α would result in a smaller step and a larger α results in a larger step. The direction in which the step is taken is determined by the partial derivative of J(\theta_0,\theta_1)J(θ0,θ1). Depending on where one starts on the graph, one could end up at different points. The image above shows us two different starting points that end up in two different places.</p>
-<p>The gradient descent algorithm is:</p>
+<p>
+For example, the distance between each 'star' in the graph above represents a step determined by our parameter α. A smaller α would result in a smaller step and a larger α results in a larger step. The direction in which the step is taken is determined by the partial derivative of \(J(\theta_0,\theta_1)\). Depending on where one starts on the graph, one could end up at different points. The image above shows us two different starting points that end up in two different places.
+</p><p>The gradient descent algorithm is:</p>
 <p>repeat until convergence:</p>
-<p>$$
+<p>
+$$
 \theta_j := \theta_j - \alpha \frac{\partial}{\partial \theta_j} J(\theta_0, \theta_1)
-$$</p>
-<p>where</p>
+$$
+</p><p>where</p>
 <p>j=0,1 represents the feature index number.</p>
-<p>At each iteration j, one should simultaneously update the parameters \theta_1, \theta_2,...,\theta_nθ1,θ2,...,θn. Updating a specific parameter prior to calculating another one on the j^{(th)}j(th) iteration would yield to a wrong implementation.</p>
-<p><img alt="img" src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/yr-D1aDMEeai9RKvXdDYag_627e5ab52d5ff941c0fcc741c2b162a0_Screenshot-2016-11-02-00.19.56.png?expiry=1554249600000&amp;hmac=4ug5DHLm4H8ulBJBQHaego1EOYOrJ2Q7kriiG-9VjGs" /></p>
-</div>
+<p>
+At each iteration j, one should simultaneously update the parameters \(\theta_1, \theta_2,...,\theta_n\). Updating a specific parameter prior to calculating another one on the j^{(th)}j(th) iteration would yield to a wrong implementation.
+</p></div>
 
 
            </div>
@@ -216,7 +219,7 @@ $$</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, Vic
+        &copy; Copyright 2019, Vic
 
     </p>
   </div> 
@@ -240,9 +243,10 @@ $$</p>
         <script type="text/javascript" src="../../_static/jquery.js"></script>
         <script type="text/javascript" src="../../_static/underscore.js"></script>
         <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
         <script type="text/javascript" src="../../_static/GA.js"></script>
         <script type="text/javascript" src="../../_static/GA.vicc.wang.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
 
   

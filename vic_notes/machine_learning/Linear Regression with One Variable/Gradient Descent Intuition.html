@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Gradient Descent Intuition &mdash; 维克笔记 beta 文档</title>
+  <title>Gradient Descent Intuition &mdash; 维克笔记  文档</title>
   
 
   
@@ -102,7 +102,7 @@
 <li class="toctree-l3"><a class="reference internal" href="Cost Function 2.html">Cost Function - Intuition II</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Gradient Descent.html">Gradient Descent</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Gradient Descent Intuition</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#how-does-gradient-descent-converge-with-a-fixed-step-size-alpha">How does gradient descent converge with a fixed step size \alphaα?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#how-does-gradient-descent-converge-with-a-fixed-step-size">How does gradient descent converge with a fixed step size α?</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="Gradient Descent For Linear Regression.html">Gradient Descent For Linear Regression</a></li>
@@ -183,18 +183,16 @@
 <span id="gradient-descent-intuition"></span><h1>Gradient Descent Intuition<a class="headerlink" href="#gradient-descent-intuition" title="永久链接至标题">¶</a></h1>
 <p>In this video we explored the scenario where we used one parameter \theta_1θ1 and plotted its cost function to implement a gradient descent. Our formula for a single parameter was :</p>
 <p>Repeat until convergence:</p>
-<p>$$
+<p>
+$$
 \theta_1 := \theta_1 - \alpha \frac{d}{dθ_1}J(\theta_1)
-$$</p>
-<p>Regardless of the slope's sign for \frac{d}{d\theta_1} J(\theta_1)dθ1dJ(θ1), \theta_1θ1 eventually converges to its minimum value. The following graph shows that when the slope is negative, the value of \theta_1θ1 increases and when it is positive, the value of \theta_1θ1 decreases.</p>
-<p><img alt="img" src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/SMSIxKGUEeav5QpTGIv-Pg_ad3404010579ac16068105cfdc8e950a_Screenshot-2016-11-03-00.05.06.png?expiry=1554249600000&amp;hmac=Xyxtf-hEBWNaIQf5g3CgQtnGYGbvsPj_sGAzE3Vsuu4" /></p>
-<p>On a side note, we should adjust our parameter \alphaα to ensure that the gradient descent algorithm converges in a reasonable time. Failure to converge or too much time to obtain the minimum value imply that our step size is wrong.</p>
-<p><img alt="img" src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/UJpiD6GWEeai9RKvXdDYag_3c3ad6625a2a4ec8456f421a2f4daf2e_Screenshot-2016-11-03-00.05.27.png?expiry=1554249600000&amp;hmac=tAzoMdw3aQYdGR_m1OjVe-Bu55xfRQaAjysz8UlQzks" /></p>
-<div class="section" id="how-does-gradient-descent-converge-with-a-fixed-step-size-alpha">
-<span id="how-does-gradient-descent-converge-with-a-fixed-step-size-alpha"></span><h2>How does gradient descent converge with a fixed step size \alphaα?<a class="headerlink" href="#how-does-gradient-descent-converge-with-a-fixed-step-size-alpha" title="永久链接至标题">¶</a></h2>
-<p>The intuition behind the convergence is that \frac{d}{d\theta_1} J(\theta_1)dθ1dJ(θ1) approaches 0 as we approach the bottom of our convex function. At the minimum, the derivative will always be 0 and thus we get:</p>
-<p><img alt="img" src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/RDcJ-KGXEeaVChLw2Vaaug_cb782d34d272321e88f202940c36afe9_Screenshot-2016-11-03-00.06.00.png?expiry=1554249600000&amp;hmac=lJJRkf6EHvGJ78dWF2Y7EfGRJ9Udc0viF8DKzU70qoY" /></p>
-</div>
+$$<p>Regardless of the slope's sign for (\frac{d}{d\theta_1} J(\theta_1)), (\theta_1) eventually converges to its minimum value. The following graph shows that when the slope is negative, the value of (\theta_1) increases and when it is positive, the value of (\theta_1) decreases.</p>
+</p><p>On a side note, we should adjust our parameter α to ensure that the gradient descent algorithm converges in a reasonable time. Failure to converge or too much time to obtain the minimum value imply that our step size is wrong.</p>
+<div class="section" id="how-does-gradient-descent-converge-with-a-fixed-step-size">
+<span id="how-does-gradient-descent-converge-with-a-fixed-step-size"></span><h2>How does gradient descent converge with a fixed step size α?<a class="headerlink" href="#how-does-gradient-descent-converge-with-a-fixed-step-size" title="永久链接至标题">¶</a></h2>
+<p>
+The intuition behind the convergence is that \(\frac{d}{d\theta_1} J(\theta_1)\) approaches 0 as we approach the bottom of our convex function. At the minimum, the derivative will always be 0 and thus we get:
+</p></div>
 </div>
 
 
@@ -217,7 +215,7 @@ $$</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, Vic
+        &copy; Copyright 2019, Vic
 
     </p>
   </div> 
@@ -241,9 +239,10 @@ $$</p>
         <script type="text/javascript" src="../../_static/jquery.js"></script>
         <script type="text/javascript" src="../../_static/underscore.js"></script>
         <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
         <script type="text/javascript" src="../../_static/GA.js"></script>
         <script type="text/javascript" src="../../_static/GA.vicc.wang.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
 
   

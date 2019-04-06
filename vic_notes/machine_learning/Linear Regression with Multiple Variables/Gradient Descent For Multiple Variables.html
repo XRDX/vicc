@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Gradient Descent For Multiple Variables &mdash; 维克笔记 beta 文档</title>
+  <title>Gradient Descent For Multiple Variables &mdash; 维克笔记  文档</title>
   
 
   
@@ -184,15 +184,16 @@
 <div class="section" id="gradient-descent-for-multiple-variables">
 <span id="id1"></span><h2><strong>Gradient Descent for Multiple Variables</strong><a class="headerlink" href="#gradient-descent-for-multiple-variables" title="永久链接至标题">¶</a></h2>
 <p>The gradient descent equation itself is generally the same form; we just have to repeat it for our 'n' features:</p>
-<p>$$
-\begin{align<em>} &amp; \text{repeat until convergence:} ; \lbrace \newline ; &amp; \theta_0 := \theta_0 - \alpha \frac{1}{m} \sum\limits_{i=1}^{m} (h_\theta(x^{(i)}) - y^{(i)}) \cdot x_0^{(i)}\newline ; &amp; \theta_1 := \theta_1 - \alpha \frac{1}{m} \sum\limits_{i=1}^{m} (h_\theta(x^{(i)}) - y^{(i)}) \cdot x_1^{(i)} \newline ; &amp; \theta_2 := \theta_2 - \alpha \frac{1}{m} \sum\limits_{i=1}^{m} (h_\theta(x^{(i)}) - y^{(i)}) \cdot x_2^{(i)} \newline &amp; \cdots \newline \rbrace \end{align</em>}
-$$</p>
-<p>In other words:</p>
-<p>$$
-\begin{align<em>}&amp; \text{repeat until convergence:} ; \lbrace \newline ; &amp; \theta_j := \theta_j - \alpha \frac{1}{m} \sum\limits_{i=1}^{m} (h_\theta(x^{(i)}) - y^{(i)}) \cdot x_j^{(i)} ; &amp; \text{for j := 0...n}\newline \rbrace\end{align</em>}
-$$</p>
-<p>The following image compares gradient descent with one variable to gradient descent with multiple variables:</p>
-<p><img alt="img" src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/MYm8uqafEeaZoQ7hPZtKqg_c974c2e2953662e9578b38c7b04591ed_Screenshot-2016-11-09-09.07.04.png?expiry=1554249600000&amp;hmac=TeToV6CAcO84fSgZv5mLHkaxdx8RpmKIOrhus8F_htY" /></p>
+<p>
+$$
+\begin{align*} & \text{repeat until convergence:} \; \lbrace \newline \; & \theta_0 := \theta_0 - \alpha \frac{1}{m} \sum\limits_{i=1}^{m} (h_\theta(x^{(i)}) - y^{(i)}) \cdot x_0^{(i)}\newline \; & \theta_1 := \theta_1 - \alpha \frac{1}{m} \sum\limits_{i=1}^{m} (h_\theta(x^{(i)}) - y^{(i)}) \cdot x_1^{(i)} \newline \; & \theta_2 := \theta_2 - \alpha \frac{1}{m} \sum\limits_{i=1}^{m} (h_\theta(x^{(i)}) - y^{(i)}) \cdot x_2^{(i)} \newline & \cdots \newline \rbrace \end{align*}
+$$
+</p><p>In other words:</p>
+<p>
+$$
+\begin{align*}& \text{repeat until convergence:} \; \lbrace \newline \; & \theta_j := \theta_j - \alpha \frac{1}{m} \sum\limits_{i=1}^{m} (h_\theta(x^{(i)}) - y^{(i)}) \cdot x_j^{(i)} \; & \text{for j := 0...n}\newline \rbrace\end{align*}
+$$
+</p><p>The following image compares gradient descent with one variable to gradient descent with multiple variables:</p>
 </div>
 </div>
 
@@ -216,7 +217,7 @@ $$</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, Vic
+        &copy; Copyright 2019, Vic
 
     </p>
   </div> 
@@ -240,9 +241,10 @@ $$</p>
         <script type="text/javascript" src="../../_static/jquery.js"></script>
         <script type="text/javascript" src="../../_static/underscore.js"></script>
         <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
         <script type="text/javascript" src="../../_static/GA.js"></script>
         <script type="text/javascript" src="../../_static/GA.vicc.wang.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
 
   

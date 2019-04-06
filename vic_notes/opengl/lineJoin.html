@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>线段连接问题 Line Join &mdash; 维克笔记 beta 文档</title>
+  <title>线段连接问题 Line Join &mdash; 维克笔记  文档</title>
   
 
   
@@ -183,22 +183,22 @@
 <span id="line-join"></span><h1>线段连接问题 Line Join<a class="headerlink" href="#line-join" title="永久链接至标题">¶</a></h1>
 <p>OpenGL 中提供了一些基础的图形绘制功能</p>
 <ul class="simple">
-<li>GL_LINE: 绘制线条</li>
-<li>GL_LINE_LOOP: 绘制循环线条</li>
-<li>GL_TRIANGLE: 绘制三角形</li>
+<li><p>GL_LINE: 绘制线条</p></li>
+<li><p>GL_LINE_LOOP: 绘制循环线条</p></li>
+<li><p>GL_TRIANGLE: 绘制三角形</p></li>
 </ul>
 <p>有了这些功能，画线条看起来像是非常简单的一件事情，让我们来看看如何在OpenGL中绘制“线条”，以及把线条连接起来。</p>
 <div class="section" id="">
 <span id="id1"></span><h2>线条的基本要素<a class="headerlink" href="#" title="永久链接至标题">¶</a></h2>
 <p>2个顶点确定一个线条，这是我们所熟知的数学概念。绘制一个线条，最基本的就是要确定2个端点，我们用下面这两组坐标来定义这个线条。</p>
 <ul class="simple">
-<li>(x1, y1)</li>
-<li>(x2, y2)</li>
+<li><p>(x1, y1)</p></li>
+<li><p>(x2, y2)</p></li>
 </ul>
 <p>除此之外呢，作为计算机图形，还增加了以下属性，来让我们能够看清这条线段</p>
 <ul class="simple">
-<li>线条的样式，比如颜色、透明度</li>
-<li>线条的粗细程度</li>
+<li><p>线条的样式，比如颜色、透明度</p></li>
+<li><p>线条的粗细程度</p></li>
 </ul>
 </div>
 <div class="section" id="linewidth">
@@ -246,10 +246,10 @@
 <p>观察图形及辅助性，这里最最关键的是要计算出紫色的这个向量，然后就可以计算出内外2个相交点。而要计算出紫色向量，就要去计算出2条边的法向量。</p>
 <p>计算步骤：</p>
 <ol class="simple">
-<li>计算2条边的单位法向量，旋转90°</li>
-<li>法向量的长度为线宽的一半</li>
-<li>紫色向量的方向为2个法向量之和的方向</li>
-<li>紫色向量长度计算（法向量在紫色向量上的投影长度 / 法向量长度 = 法向量长度 / 紫色向量长度）</li>
+<li><p>计算2条边的单位法向量，旋转90°</p></li>
+<li><p>法向量的长度为线宽的一半</p></li>
+<li><p>紫色向量的方向为2个法向量之和的方向</p></li>
+<li><p>紫色向量长度计算（法向量在紫色向量上的投影长度 / 法向量长度 = 法向量长度 / 紫色向量长度）</p></li>
 </ol>
 <p>计算细节不在这里说明，要指出的是，在计算时要注意两条边的法向量的方向，确保是同时向外或者向内。如果是闭合图形，我们就可以循环计算所有的点，使用计算后的点来绘制图形。</p>
 </div>
@@ -290,7 +290,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, Vic
+        &copy; Copyright 2019, Vic
 
     </p>
   </div> 
@@ -314,9 +314,10 @@
         <script type="text/javascript" src="../_static/jquery.js"></script>
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
         <script type="text/javascript" src="../_static/GA.js"></script>
         <script type="text/javascript" src="../_static/GA.vicc.wang.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
 
   
