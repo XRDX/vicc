@@ -17,13 +17,23 @@
   
 
   
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/GA.js"></script>
+        <script type="text/javascript" src="../../_static/GA.vicc.wang.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/my_style.css" type="text/css" />
@@ -31,21 +41,16 @@
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="Decision Boundary" href="Decision Boundary.html" />
     <link rel="prev" title="Classification" href="Classification.html" /> 
-
-  
-  <script src="../../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -96,7 +101,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">机器学习 Machine Learning</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../Introduction/index.html">Introduction to Machine Learning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Linear Regression with One Variable/index.html">Linear Regression with One Variable</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Linear Regression with Multiple Variables/index.html">Introduction to Machine Learning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Linear Regression with Multiple Variables/index.html">Linear Regression with Multiple Variables</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Logistic Regression</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="Classification.html">Classification</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Hypothesis Representation</a></li>
@@ -104,6 +109,7 @@
 <li class="toctree-l3"><a class="reference internal" href="Cost Function.html">Cost Function</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../Neural Networks/index.html">Neural Networks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Octave/index.html">Octave</a></li>
 </ul>
 </li>
@@ -174,19 +180,24 @@
            <div itemprop="articleBody">
             
   <div class="section" id="hypothesis-representation">
-<span id="hypothesis-representation"></span><h1>Hypothesis Representation<a class="headerlink" href="#hypothesis-representation" title="永久链接至标题">¶</a></h1>
+<h1>Hypothesis Representation<a class="headerlink" href="#hypothesis-representation" title="永久链接至标题">¶</a></h1>
 <p>We could approach the classification problem ignoring the fact that y is discrete-valued, and use our old linear regression algorithm to try to predict y given x. However, it is easy to construct examples where this method performs very poorly. Intuitively, it also doesn’t make sense for h_\theta (x)hθ(x) to take values larger than 1 or smaller than 0 when we know that y ∈ {0, 1}. To fix this, let’s change the form for our hypotheses h_\theta (x)hθ(x) to satisfy 0 \leq h_\theta (x) \leq 10≤hθ(x)≤1. This is accomplished by plugging \theta^TxθTx into the Logistic Function.</p>
 <p>Our new form uses the &quot;Sigmoid Function,&quot; also called the &quot;Logistic Function&quot;:</p>
 <p>
 $$
-\begin{align*}& h_\theta (x) = g ( \theta^T x ) \newline \newline& z = \theta^T x \newline& g(z) = \dfrac{1}{1 + e^{-z}}\end{align*}
+h_\theta (x) = g ( \theta^T x )  \\
+z = \theta^T x  \\
+g(z) = \dfrac{1}{1 + e^{-z}}  \\
 $$
 </p><p>The following image shows us what the sigmoid function looks like:</p>
 <p>The function g(z), shown here, maps any real number to the (0, 1) interval, making it useful for transforming an arbitrary-valued function into a function better suited for classification.</p>
 <p>h_\theta(x)hθ(x) will give us the <strong>probability</strong> that our output is 1. For example, h_\theta(x)=0.7hθ(x)=0.7 gives us a probability of 70% that our output is 1. Our probability that our prediction is 0 is just the complement of our probability that it is 1 (e.g. if probability that it is 1 is 70%, then the probability that it is 0 is 30%).</p>
 <p>
 $$
-\begin{align*}& h_\theta(x) = P(y=1 | x ; \theta) = 1 - P(y=0 | x ; \theta) \newline& P(y = 0 | x;\theta) + P(y = 1 | x ; \theta) = 1\end{align*}
+\begin{align*}
+& h_\theta(x) = P(y=1 | x ; \theta) = 1 - P(y=0 | x ; \theta)  \\
+& P(y = 0 | x;\theta) + P(y = 1 | x ; \theta) = 1 \\
+\end{align*}
 $$
 </p></div>
 
@@ -201,7 +212,7 @@ $$
         <a href="Decision Boundary.html" class="btn btn-neutral float-right" title="Decision Boundary" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="Classification.html" class="btn btn-neutral" title="Classification" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="Classification.html" class="btn btn-neutral float-left" title="Classification" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -226,29 +237,16 @@ $$
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../_static/language_data.js"></script>
-        <script type="text/javascript" src="../../_static/GA.js"></script>
-        <script type="text/javascript" src="../../_static/GA.vicc.wang.js"></script>
-        <script async="async" type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-
-  
-
-  <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

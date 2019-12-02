@@ -1,0 +1,338 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>django &mdash; 维克笔记  文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/GA.js"></script>
+        <script type="text/javascript" src="../_static/GA.vicc.wang.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/my_style.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="Python 的一些库" href="others.html" />
+    <link rel="prev" title="pyodide" href="pyodide.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> 维克笔记
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目录结构</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../linux/index.html">操作系统 Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../raspberry/index.html">折腾树莓派 Raspberry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../math/index.html">数学知识 Mathematics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cs/index.html">计算机知识 Computer Science</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">程序应用 Python</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="pip.html">pip手册</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pypi.html">上传自己的模块到 pypi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scrapy.html">Scapy 爬虫框架</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pil.html">使用PIL批量生成图片</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aliddns.html">将阿里云dns解析作为ddns使用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="keep_on_top.html">保持窗口在最前</a></li>
+<li class="toctree-l2"><a class="reference internal" href="virtualenv.html">virtual environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="virtualenv.html#activate">activate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyodide.html">pyodide</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">django</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#install">install</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#check">check</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#start">start</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#create">create</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#run-server">run server</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#connect-to-mysql">connect to mysql</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#install-mysql-database-connector">Install MySQL Database Connector</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#setting-py">setting.py</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#create-app">create app</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#migration">migration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-admin">create admin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#script">script</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="others.html">Python 的一些库</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../cpp/index.html">语法基础 C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/index.html">工具 Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../opengl/index.html">图形学 OpenGL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../machine_learning/index.html">机器学习 Machine Learning</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">维克笔记</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">程序应用 Python</a> &raquo;</li>
+        
+      <li>django</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="django">
+<h1>django<a class="headerlink" href="#django" title="永久链接至标题">¶</a></h1>
+<div class="section" id="install">
+<h2>install<a class="headerlink" href="#install" title="永久链接至标题">¶</a></h2>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip install django
+</pre></div>
+</div>
+<div class="section" id="check">
+<h3>check<a class="headerlink" href="#check" title="永久链接至标题">¶</a></h3>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python -m django --version
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="start">
+<h2>start<a class="headerlink" href="#start" title="永久链接至标题">¶</a></h2>
+<div class="section" id="create">
+<h3>create<a class="headerlink" href="#create" title="永久链接至标题">¶</a></h3>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>django-admin startproject mysite
+</pre></div>
+</div>
+</div>
+<div class="section" id="run-server">
+<h3>run server<a class="headerlink" href="#run-server" title="永久链接至标题">¶</a></h3>
+<p>run at port 8000</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python manage.py runserver <span class="m">8000</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="connect-to-mysql">
+<h2>connect to mysql<a class="headerlink" href="#connect-to-mysql" title="永久链接至标题">¶</a></h2>
+<div class="section" id="install-mysql-database-connector">
+<h3>Install MySQL Database Connector<a class="headerlink" href="#install-mysql-database-connector" title="永久链接至标题">¶</a></h3>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo apt-get install python3-dev libmysqlclient-dev
+</pre></div>
+</div>
+</div>
+<div class="section" id="setting-py">
+<h3>setting.py<a class="headerlink" href="#setting-py" title="永久链接至标题">¶</a></h3>
+<p>/etc/mysql/my.cnf</p>
+<div class="highlight-config notranslate"><div class="highlight"><pre><span></span>[client]
+database = BI
+user = xxx
+password = xxxxxxxxx
+default-character-set = utf8
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Database</span>
+<span class="c1"># https://docs.djangoproject.com/en/2.0/ref/settings/#databases</span>
+
+<span class="n">DATABASES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;default&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;ENGINE&#39;</span><span class="p">:</span> <span class="s1">&#39;django.db.backends.mysql&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;OPTIONS&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;read_default_file&#39;</span><span class="p">:</span> <span class="s1">&#39;/etc/mysql/my.cnf&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="create-app">
+<h2>create app<a class="headerlink" href="#create-app" title="永久链接至标题">¶</a></h2>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python manage.py startapp lessons
+</pre></div>
+</div>
+</div>
+<div class="section" id="migration">
+<h2>migration<a class="headerlink" href="#migration" title="永久链接至标题">¶</a></h2>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python manage.py makemigrations xxxs
+python manage.py sqlmigrate xxxs <span class="m">0001</span>
+python manage.py migrate
+</pre></div>
+</div>
+</div>
+<div class="section" id="create-admin">
+<h2>create admin<a class="headerlink" href="#create-admin" title="永久链接至标题">¶</a></h2>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python manage.py createsuperuser
+</pre></div>
+</div>
+</div>
+<div class="section" id="script">
+<h2>script<a class="headerlink" href="#script" title="永久链接至标题">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">exec</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;myscript.py&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="others.html" class="btn btn-neutral float-right" title="Python 的一些库" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="pyodide.html" class="btn btn-neutral float-left" title="pyodide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Vic
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

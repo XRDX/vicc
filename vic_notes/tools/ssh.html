@@ -17,13 +17,23 @@
   
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/GA.js"></script>
+        <script type="text/javascript" src="../_static/GA.vicc.wang.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/my_style.css" type="text/css" />
@@ -31,21 +41,16 @@
     <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="PUTTY 使用" href="putty.html" />
     <link rel="prev" title="SVN使用手册" href="svn.html" /> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -175,9 +180,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="ssh">
-<span id="ssh"></span><h1>ssh<a class="headerlink" href="#ssh" title="永久链接至标题">¶</a></h1>
+<h1>ssh<a class="headerlink" href="#ssh" title="永久链接至标题">¶</a></h1>
 <div class="section" id="generating-a-new-ssh-key">
-<span id="generating-a-new-ssh-key"></span><h2>Generating a new SSH key<a class="headerlink" href="#generating-a-new-ssh-key" title="永久链接至标题">¶</a></h2>
+<h2>Generating a new SSH key<a class="headerlink" href="#generating-a-new-ssh-key" title="永久链接至标题">¶</a></h2>
 <p>Open Git Bash.</p>
 <p>Paste the text below, substituting in your GitHub email address.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ssh-keygen -t rsa -b <span class="m">4096</span> -C <span class="s2">&quot;your_email@example.com&quot;</span>
@@ -198,7 +203,7 @@
 </div>
 </div>
 <div class="section" id="adding-your-ssh-key-to-the-ssh-agent">
-<span id="adding-your-ssh-key-to-the-ssh-agent"></span><h2>Adding your SSH key to the ssh-agent<a class="headerlink" href="#adding-your-ssh-key-to-the-ssh-agent" title="永久链接至标题">¶</a></h2>
+<h2>Adding your SSH key to the ssh-agent<a class="headerlink" href="#adding-your-ssh-key-to-the-ssh-agent" title="永久链接至标题">¶</a></h2>
 <p>Before adding a new SSH key to the ssh-agent to manage your keys, you should have checked for existing SSH keys and generated a new SSH key.
 If you have GitHub Desktop installed, you can use it to clone repositories and not deal with SSH keys. It also comes with the Git Bash tool, which is the preferred way of running git commands on Windows.</p>
 <p>Ensure the ssh-agent is running:</p>
@@ -227,7 +232,7 @@ $ <span class="nb">eval</span> <span class="k">$(</span>ssh-agent -s<span class=
         <a href="putty.html" class="btn btn-neutral float-right" title="PUTTY 使用" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="svn.html" class="btn btn-neutral" title="SVN使用手册" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="svn.html" class="btn btn-neutral float-left" title="SVN使用手册" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -252,29 +257,16 @@ $ <span class="nb">eval</span> <span class="k">$(</span>ssh-agent -s<span class=
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/GA.js"></script>
-        <script type="text/javascript" src="../_static/GA.vicc.wang.js"></script>
-        <script async="async" type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

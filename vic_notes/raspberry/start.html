@@ -1,0 +1,348 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Start &mdash; 维克笔记  文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/GA.js"></script>
+        <script type="text/javascript" src="../_static/GA.vicc.wang.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/my_style.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="在树莓派安装vsftpd服务器" href="vsftpd.html" />
+    <link rel="prev" title="折腾树莓派 Raspberry" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> 维克笔记
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目录结构</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../linux/index.html">操作系统 Linux</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">折腾树莓派 Raspberry</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Start</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">安装</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#config">config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-password">update password</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-software">install software</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#install-oh-my-zsh">install oh-my-zsh</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#install-samba">install samba</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#install-aria2">install aria2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#install-docker-on-raspberry">install docker on raspberry</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#install-rpimonitor">install rpimonitor</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="vsftpd.html">在树莓派安装vsftpd服务器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aria2.html">树莓派做下载机，Aria2！</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rpimonitor.html">RPi-Monitor</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../math/index.html">数学知识 Mathematics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cs/index.html">计算机知识 Computer Science</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">程序应用 Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cpp/index.html">语法基础 C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/index.html">工具 Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../opengl/index.html">图形学 OpenGL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../machine_learning/index.html">机器学习 Machine Learning</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">维克笔记</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">折腾树莓派 Raspberry</a> &raquo;</li>
+        
+      <li>Start</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="start">
+<h1>Start<a class="headerlink" href="#start" title="永久链接至标题">¶</a></h1>
+<p>桌面虽好，使用树莓派，最主要的目的还是为了学习Linux系统的理念，因此不建议使用桌面版本。同时使用桌面版本需要消耗大量的计算，对树莓派来说增加了很多的负担，维持，从一开始，我们就抛弃了树莓派带桌面的版本，转向Lite版本，即没有带桌面的版本。</p>
+<div class="section" id="id1">
+<h2>安装<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<ol class="simple">
+<li>格式化SD卡</li>
+<li>写入img文件</li>
+<li>在boot中添加一个名为ssh的空文件（为了可以使用ssh来连接）</li>
+<li>用网线连接树莓派到路由器，启动，从路由器中找到树莓派的地址，使用putty通过ssh来访问</li>
+<li>初始用户名pi，密码raspberry</li>
+</ol>
+</div>
+<div class="section" id="config">
+<h2>config<a class="headerlink" href="#config" title="永久链接至标题">¶</a></h2>
+<p>树莓派自带很多设置功能，我们只要按照树莓派的设置就可以完成很多功能了，而不需要去修改配置文件，大大减少了初始错误。</p>
+<ol class="simple">
+<li>添加wifi密码，添加完wifi后，就不需要网线来连接了，通过wifi的ip地址来直接连接。</li>
+</ol>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo raspi-config
+</pre></div>
+</div>
+<p>参考wifi的ip地址：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ifconfig wlan0
+</pre></div>
+</div>
+</div>
+<div class="section" id="update-password">
+<h2>update password<a class="headerlink" href="#update-password" title="永久链接至标题">¶</a></h2>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>passwd
+</pre></div>
+</div>
+</div>
+<div class="section" id="install-software">
+<h2>install software<a class="headerlink" href="#install-software" title="永久链接至标题">¶</a></h2>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo apt-get install -y screen
+sudo apt-get install -y git
+sudo apt-get install -y vim
+sudo apt-get install -y nginx
+sudo apt-get install -y curl
+</pre></div>
+</div>
+<div class="section" id="install-oh-my-zsh">
+<h3>install oh-my-zsh<a class="headerlink" href="#install-oh-my-zsh" title="永久链接至标题">¶</a></h3>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo apt-get install -y zsh
+<span class="c1"># Install oh-my-zsh</span>
+sh -c <span class="s2">&quot;</span><span class="k">$(</span>curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh<span class="k">)</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="install-samba">
+<h3>install samba<a class="headerlink" href="#install-samba" title="永久链接至标题">¶</a></h3>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="install-aria2">
+<h3>install aria2<a class="headerlink" href="#install-aria2" title="永久链接至标题">¶</a></h3>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo apt-get install -y aria2 ca-certificates
+
+<span class="c1"># webui-aria2</span>
+wget https://github.com/ziahamza/webui-aria2/archive/master.zip
+unzip -qu master.zip
+<span class="nb">cd</span> webui-aria2-master/
+sudo cp docs /var/www/webui-aria2
+
+<span class="nb">cd</span> /etc/nginx/sites-avaiable
+cat &gt; aria2 <span class="s">&lt;&lt;-EOCFG</span>
+<span class="s">server {</span>
+<span class="s">        listen 8889 default_server;</span>
+<span class="s">        listen [::]:8889 default_server;</span>
+<span class="s">        root /var/www/webui-aria2;</span>
+<span class="s">        index index.html index.htm index.nginx-debian.html;</span>
+<span class="s">        server_name _;</span>
+<span class="s">        location / {</span>
+<span class="s">                try_files $uri $uri/ =404;</span>
+<span class="s">        }</span>
+<span class="s">}</span>
+<span class="s">EOCFG</span>
+<span class="nb">cd</span> ../sites-enabled
+sudo ln -s ../sites-avaiable/aria2
+sudo nginx -t 
+sudo nginx -s reload
+</pre></div>
+</div>
+</div>
+<div class="section" id="install-docker-on-raspberry">
+<h3>install docker on raspberry<a class="headerlink" href="#install-docker-on-raspberry" title="永久链接至标题">¶</a></h3>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install Docker</span>
+curl -sSL https://get.docker.com <span class="p">|</span> sh
+
+<span class="c1"># Add permission to Pi User to run Docker Commands</span>
+sudo usermod -aG docker pi
+
+<span class="c1"># Test Docker installation</span>
+docker run hello-world
+
+<span class="c1"># IMPORTANT! Install proper dependencies</span>
+sudo apt-get install -y libffi-dev libssl-dev
+sudo apt-get install -y python python-pip
+
+<span class="c1"># Install Docker Compose</span>
+sudo pip install docker-compose
+</pre></div>
+</div>
+</div>
+<div class="section" id="install-rpimonitor">
+<h3>install rpimonitor<a class="headerlink" href="#install-rpimonitor" title="永久链接至标题">¶</a></h3>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>docker run --device<span class="o">=</span>/dev/vchiq --device<span class="o">=</span>/dev/vcsm --volume<span class="o">=</span>/opt/vc:/opt/vc --volume<span class="o">=</span>/boot:/boot --volume<span class="o">=</span>/sys:/dockerhost/sys:ro --volume<span class="o">=</span>/etc:/dockerhost/etc:ro --volume<span class="o">=</span>/proc:/dockerhost/proc:ro --volume<span class="o">=</span>/usr/lib:/dockerhost/usr/lib:ro --restart<span class="o">=</span>always -p<span class="o">=</span><span class="m">8888</span>:8888 --name<span class="o">=</span><span class="s2">&quot;rpi-monitor&quot;</span> -d  michaelmiklis/rpi-monitor:latest
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="vsftpd.html" class="btn btn-neutral float-right" title="在树莓派安装vsftpd服务器" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="折腾树莓派 Raspberry" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Vic
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

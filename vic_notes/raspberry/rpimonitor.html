@@ -17,13 +17,23 @@
   
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/GA.js"></script>
+        <script type="text/javascript" src="../_static/GA.vicc.wang.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/my_style.css" type="text/css" />
@@ -31,21 +41,16 @@
     <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="数学知识 Mathematics" href="../math/index.html" />
     <link rel="prev" title="树莓派做下载机，Aria2！" href="aria2.html" /> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -87,9 +92,14 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../linux/index.html">操作系统 Linux</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">折腾树莓派 Raspberry</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="start.html">Start</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vsftpd.html">在树莓派安装vsftpd服务器</a></li>
 <li class="toctree-l2"><a class="reference internal" href="aria2.html">树莓派做下载机，Aria2！</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">RPi-Monitor</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">RPi-Monitor</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#rpi-monitor-running-in-docker-container">RPi-Monitor running in Docker container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#restart">Restart</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../math/index.html">数学知识 Mathematics</a></li>
@@ -164,9 +174,32 @@
            <div itemprop="articleBody">
             
   <div class="section" id="rpi-monitor">
-<span id="rpi-monitor"></span><h1>RPi-Monitor<a class="headerlink" href="#rpi-monitor" title="永久链接至标题">¶</a></h1>
+<h1>RPi-Monitor<a class="headerlink" href="#rpi-monitor" title="永久链接至标题">¶</a></h1>
 <p>树莓派资源使用情况监视工具</p>
 <p><a class="reference external" href="https://xavierberger.github.io/RPi-Monitor-docs/index.html">rpimonitor</a></p>
+<div class="section" id="rpi-monitor-running-in-docker-container">
+<h2>RPi-Monitor running in Docker container<a class="headerlink" href="#rpi-monitor-running-in-docker-container" title="永久链接至标题">¶</a></h2>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>docker run --device<span class="o">=</span>/dev/vchiq <span class="se">\</span>
+--device<span class="o">=</span>/dev/vcsm <span class="se">\</span>
+--volume<span class="o">=</span>/opt/vc:/opt/vc <span class="se">\</span>
+--volume<span class="o">=</span>/boot:/boot <span class="se">\</span>
+--volume<span class="o">=</span>/sys:/dockerhost/sys:ro <span class="se">\</span>
+--volume<span class="o">=</span>/etc:/dockerhost/etc:ro <span class="se">\</span>
+--volume<span class="o">=</span>/proc:/dockerhost/proc:ro <span class="se">\</span>
+--volume<span class="o">=</span>/usr/lib:/dockerhost/usr/lib:ro <span class="se">\</span>
+-p<span class="o">=</span><span class="m">8888</span>:8888 <span class="se">\</span>
+--name<span class="o">=</span><span class="s2">&quot;rpi-monitor&quot;</span> <span class="se">\</span>
+-d <span class="se">\</span>
+michaelmiklis/rpi-monitor:latest
+</pre></div>
+</div>
+</div>
+<div class="section" id="restart">
+<h2>Restart<a class="headerlink" href="#restart" title="永久链接至标题">¶</a></h2>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo server rpimonitor restart
+</pre></div>
+</div>
+</div>
 </div>
 
 
@@ -180,7 +213,7 @@
         <a href="../math/index.html" class="btn btn-neutral float-right" title="数学知识 Mathematics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="aria2.html" class="btn btn-neutral" title="树莓派做下载机，Aria2！" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="aria2.html" class="btn btn-neutral float-left" title="树莓派做下载机，Aria2！" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -205,29 +238,16 @@
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/GA.js"></script>
-        <script type="text/javascript" src="../_static/GA.vicc.wang.js"></script>
-        <script async="async" type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

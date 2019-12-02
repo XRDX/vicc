@@ -17,13 +17,23 @@
   
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/GA.js"></script>
+        <script type="text/javascript" src="../_static/GA.vicc.wang.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/my_style.css" type="text/css" />
@@ -31,21 +41,16 @@
     <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="Introduction to Machine Learning" href="Introduction/index.html" />
     <link rel="prev" title="线段连接问题 Line Join" href="../opengl/lineJoin.html" /> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -96,8 +101,9 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">机器学习 Machine Learning</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="Introduction/index.html">Introduction to Machine Learning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Linear Regression with One Variable/index.html">Linear Regression with One Variable</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Linear Regression with Multiple Variables/index.html">Introduction to Machine Learning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linear Regression with Multiple Variables/index.html">Linear Regression with Multiple Variables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Logistic Regression/index.html">Logistic Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Neural Networks/index.html">Neural Networks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Octave/index.html">Octave</a></li>
 </ul>
 </li>
@@ -173,8 +179,8 @@
 <li class="toctree-l2"><a class="reference internal" href="Introduction/Introduction.html">What is Machine Learning?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Introduction/Introduction.html#supervised-learning">Supervised Learning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Introduction/Introduction.html#unsupervised-learning">Unsupervised Learning</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Introduction/Introduction.html#supervised-learning">Supervised Learning 监督学习</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Introduction/Introduction.html#unsupervised-learning">Unsupervised Learning 非监督学习</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Introduction/Introduction.html#id1">Supervised Learning 监督学习</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Introduction/Introduction.html#id2">Unsupervised Learning 非监督学习</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Introduction/Introduction.html#octave">Octave</a></li>
 </ul>
 </li>
@@ -188,7 +194,7 @@
 <li class="toctree-l2"><a class="reference internal" href="Linear Regression with One Variable/Gradient Descent For Linear Regression.html">Gradient Descent For Linear Regression</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="Linear Regression with Multiple Variables/index.html">Introduction to Machine Learning</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="Linear Regression with Multiple Variables/index.html">Linear Regression with Multiple Variables</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="Linear Regression with Multiple Variables/Multiple Features.html">Multiple Features</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Linear Regression with Multiple Variables/Gradient Descent For Multiple Variables.html">Gradient Descent For Multiple Variables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Linear Regression with Multiple Variables/Gradient Descent in Practice I - Feature Scaling.html">Gradient Descent in Practice I - Feature Scaling</a></li>
@@ -203,6 +209,11 @@
 <li class="toctree-l2"><a class="reference internal" href="Logistic Regression/Hypothesis Representation.html">Hypothesis Representation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Logistic Regression/Decision Boundary.html">Decision Boundary</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Logistic Regression/Cost Function.html">Cost Function</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Neural Networks/index.html">Neural Networks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Neural Networks/Model Representation I.html">Model Representation I</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Neural Networks/Model Representation II.html">Model Representation II</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Octave/index.html">Octave</a><ul>
@@ -224,7 +235,7 @@
         <a href="Introduction/index.html" class="btn btn-neutral float-right" title="Introduction to Machine Learning" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../opengl/lineJoin.html" class="btn btn-neutral" title="线段连接问题 Line Join" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../opengl/lineJoin.html" class="btn btn-neutral float-left" title="线段连接问题 Line Join" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -249,29 +260,16 @@
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/GA.js"></script>
-        <script type="text/javascript" src="../_static/GA.vicc.wang.js"></script>
-        <script async="async" type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

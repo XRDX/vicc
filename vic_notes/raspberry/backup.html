@@ -1,0 +1,337 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>backup &mdash; 维克笔记  文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/GA.js"></script>
+        <script type="text/javascript" src="../_static/GA.vicc.wang.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/my_style.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> 维克笔记
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目录结构</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../linux/index.html">操作系统 Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">折腾树莓派 Raspberry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../math/index.html">数学知识 Mathematics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cs/index.html">计算机知识 Computer Science</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">程序应用 Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cpp/index.html">语法基础 C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/index.html">工具 Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../opengl/index.html">图形学 OpenGL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../machine_learning/index.html">机器学习 Machine Learning</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">维克笔记</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>backup</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="backup">
+<h1>backup<a class="headerlink" href="#backup" title="永久链接至标题">¶</a></h1>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/sh</span>
+
+<span class="nb">echo</span> <span class="o">=====================</span> part <span class="m">1</span>, install <span class="nv">tools</span> <span class="o">===============================</span>
+sudo apt-get -y install rsync dosfstools parted kpartx exfat-fuse pv
+
+<span class="nb">echo</span> <span class="o">=====================</span> part <span class="m">2</span>, choose <span class="nv">USB</span> <span class="o">===============================</span>
+<span class="c1">#mount USB device</span>
+<span class="nv">usbmount</span><span class="o">=</span>/mnt
+sudo mkdir -p <span class="nv">$usbmount</span>
+<span class="k">if</span> <span class="o">[</span> -z <span class="nv">$1</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+	<span class="nb">echo</span> <span class="s2">&quot;no argument, assume the mount device is /dev/sda1 ? Y/N&quot;</span>
+	<span class="nb">read</span> key
+	<span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$key</span><span class="s2">&quot;</span> <span class="o">=</span> <span class="s2">&quot;y&quot;</span> -o <span class="s2">&quot;</span><span class="nv">$key</span><span class="s2">&quot;</span> <span class="o">=</span> <span class="s2">&quot;Y&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+		sudo mount -o <span class="nv">uid</span><span class="o">=</span><span class="m">1000</span> /dev/sda1 <span class="nv">$usbmount</span>
+	<span class="k">else</span>
+		<span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$0</span><span class="s2"> [backup dest device name], e.g. </span><span class="nv">$0</span><span class="s2"> /dev/sda1&quot;</span>
+		<span class="nb">exit</span> <span class="m">0</span>
+	<span class="k">fi</span>
+<span class="k">else</span>
+	sudo mount -o <span class="nv">uid</span><span class="o">=</span><span class="m">1000</span> <span class="nv">$1</span> <span class="nv">$usbmount</span>
+<span class="k">fi</span>
+<span class="k">if</span> <span class="o">[</span> -z <span class="s2">&quot;`grep </span><span class="nv">$usbmount</span><span class="s2"> /etc/mtab`&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+	<span class="nb">echo</span> <span class="s2">&quot;mount fail, exit now&quot;</span>
+	<span class="nb">exit</span> <span class="m">0</span>
+<span class="k">fi</span> 
+
+<span class="nv">img</span><span class="o">=</span><span class="nv">$usbmount</span>/rpi-back-<span class="sb">`</span>date +%Y%m%d-%H%M<span class="sb">`</span>.img
+<span class="nb">echo</span> <span class="s2">&quot;备份文件位置：</span><span class="nv">$img</span><span class="s2">&quot;</span>
+
+<span class="nb">echo</span> <span class="o">=====================</span> part <span class="m">3</span>, create a new blank <span class="nv">img</span> <span class="o">===============================</span>
+<span class="c1"># New img file</span>
+<span class="c1">#sudo rm $img</span>
+<span class="nv">bootsz</span><span class="o">=</span><span class="sb">`</span>df -P <span class="p">|</span> grep /boot <span class="p">|</span> awk <span class="s1">&#39;{print $2}&#39;</span><span class="sb">`</span>
+<span class="nv">rootsz</span><span class="o">=</span><span class="sb">`</span>df -P <span class="p">|</span> grep /dev/root <span class="p">|</span> awk <span class="s1">&#39;{print $3}&#39;</span><span class="sb">`</span>
+<span class="nv">totalsz</span><span class="o">=</span><span class="sb">`</span><span class="nb">echo</span> <span class="nv">$bootsz</span> <span class="nv">$rootsz</span> <span class="p">|</span> awk <span class="s1">&#39;{print int(($1+$2)*1.3)}&#39;</span><span class="sb">`</span>
+<span class="nb">echo</span> <span class="s2">&quot;start create img，total size=</span><span class="si">${</span><span class="nv">totalsz</span><span class="si">}</span><span class="s2">K&quot;</span>
+<span class="c1">#sudo dd if=/dev/zero of=$img bs=1K count=$totalsz</span>
+pv -tpreb /dev/zero <span class="p">|</span>sudo dd <span class="nv">of</span><span class="o">=</span><span class="nv">$img</span> <span class="nv">bs</span><span class="o">=</span>1K <span class="nv">count</span><span class="o">=</span><span class="nv">$totalsz</span>
+
+<span class="c1"># format virtual disk</span>
+<span class="nv">bootstart</span><span class="o">=</span><span class="sb">`</span>sudo fdisk -l /dev/mmcblk0 <span class="p">|</span> grep mmcblk0p1 <span class="p">|</span> awk <span class="s1">&#39;{print $2}&#39;</span><span class="sb">`</span>
+<span class="nv">bootend</span><span class="o">=</span><span class="sb">`</span>sudo fdisk -l /dev/mmcblk0 <span class="p">|</span> grep mmcblk0p1 <span class="p">|</span> awk <span class="s1">&#39;{print $3}&#39;</span><span class="sb">`</span>
+<span class="nv">rootstart</span><span class="o">=</span><span class="sb">`</span>sudo fdisk -l /dev/mmcblk0 <span class="p">|</span> grep mmcblk0p2 <span class="p">|</span> awk <span class="s1">&#39;{print $2}&#39;</span><span class="sb">`</span>
+<span class="nb">echo</span> <span class="s2">&quot;format virtual disk:    boot: </span><span class="nv">$bootstart</span><span class="s2"> &gt;&gt;&gt; </span><span class="nv">$bootend</span><span class="s2">, root: </span><span class="nv">$rootstart</span><span class="s2"> &gt;&gt;&gt; end&quot;</span>
+<span class="c1">#rootend=`sudo fdisk -l /dev/mmcblk0 | grep mmcblk0p2 | awk &#39;{print $3}&#39;`</span>
+sudo parted <span class="nv">$img</span> --script -- mklabel msdos
+sudo parted <span class="nv">$img</span> --script -- mkpart primary fat32 <span class="si">${</span><span class="nv">bootstart</span><span class="si">}</span>s <span class="si">${</span><span class="nv">bootend</span><span class="si">}</span>s
+sudo parted <span class="nv">$img</span> --script -- mkpart primary ext4 <span class="si">${</span><span class="nv">rootstart</span><span class="si">}</span>s -1
+<span class="nv">loopdevice</span><span class="o">=</span><span class="sb">`</span>sudo losetup -f --show <span class="nv">$img</span><span class="sb">`</span>
+<span class="nv">device</span><span class="o">=</span>/dev/mapper/<span class="sb">`</span>sudo kpartx -va <span class="nv">$loopdevice</span> <span class="p">|</span> sed -E <span class="s1">&#39;s/.*(loop[0-9])p.*/\1/g&#39;</span> <span class="p">|</span> head -1<span class="sb">`</span>
+sleep <span class="m">5</span>
+sudo mkfs.vfat <span class="si">${</span><span class="nv">device</span><span class="si">}</span>p1 -n boot
+sudo mkfs.ext4 <span class="si">${</span><span class="nv">device</span><span class="si">}</span>p2
+<span class="nb">echo</span> <span class="s2">&quot;format finish&quot;</span>
+
+<span class="nb">echo</span> <span class="o">=====================</span> part <span class="m">4</span>, fill the data to <span class="nv">img</span> <span class="o">=========================</span>
+<span class="c1"># mount partitions</span>
+<span class="nv">mountb</span><span class="o">=</span><span class="nv">$usbmount</span>/backup_boot/
+<span class="nv">mountr</span><span class="o">=</span><span class="nv">$usbmount</span>/backup_root/
+sudo mkdir -p <span class="nv">$mountb</span> <span class="nv">$mountr</span>
+<span class="c1"># backup /boot</span>
+sudo mount -t vfat <span class="si">${</span><span class="nv">device</span><span class="si">}</span>p1 <span class="nv">$mountb</span>
+sudo cp -rfp /boot/* <span class="nv">$mountb</span>
+sync
+<span class="nb">echo</span> <span class="s2">&quot;...Boot partition done&quot;</span>
+<span class="c1"># backup /root</span>
+sudo mount -t ext4 <span class="si">${</span><span class="nv">device</span><span class="si">}</span>p2 <span class="nv">$mountr</span>
+<span class="k">if</span> <span class="o">[</span> -f /etc/dphys-swapfile <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+        <span class="nv">SWAPFILE</span><span class="o">=</span><span class="sb">`</span>cat /etc/dphys-swapfile <span class="p">|</span> grep ^CONF_SWAPFILE <span class="p">|</span> cut -f <span class="m">2</span> -d<span class="o">=</span><span class="sb">`</span>
+	<span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$SWAPFILE</span><span class="s2">&quot;</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+		<span class="nv">SWAPFILE</span><span class="o">=</span>/var/swap
+	<span class="k">fi</span>
+	<span class="nv">EXCLUDE_SWAPFILE</span><span class="o">=</span><span class="s2">&quot;--exclude </span><span class="nv">$SWAPFILE</span><span class="s2">&quot;</span>
+<span class="k">fi</span>
+sudo rsync --force -rltWDEgop --delete --stats --progress <span class="se">\</span>
+	--exclude <span class="s1">&#39;/var/swap&#39;</span> <span class="se">\</span>
+	--exclude <span class="s1">&#39;.gvfs&#39;</span> <span class="se">\</span>
+	--exclude <span class="s1">&#39;/dev&#39;</span> <span class="se">\</span>
+        --exclude <span class="s1">&#39;/media&#39;</span> <span class="se">\</span>
+	--exclude <span class="s1">&#39;/mnt&#39;</span> <span class="se">\</span>
+	--exclude <span class="s1">&#39;/proc&#39;</span> <span class="se">\</span>
+        --exclude <span class="s1">&#39;/run&#39;</span> <span class="se">\</span>
+	--exclude <span class="s1">&#39;/sys&#39;</span> <span class="se">\</span>
+	--exclude <span class="s1">&#39;/tmp&#39;</span> <span class="se">\</span>
+        --exclude <span class="s1">&#39;lost\+found&#39;</span> <span class="se">\</span>
+	--exclude <span class="s1">&#39;$usbmount&#39;</span> <span class="se">\</span>
+	// <span class="nv">$mountr</span>
+<span class="c1"># special dirs </span>
+<span class="k">for</span> i in dev media mnt proc run sys boot<span class="p">;</span> <span class="k">do</span>
+	<span class="k">if</span> <span class="o">[</span> ! -d <span class="nv">$mountr</span>/<span class="nv">$i</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+		sudo mkdir <span class="nv">$mountr</span>/<span class="nv">$i</span>
+	<span class="k">fi</span>
+<span class="k">done</span>
+<span class="k">if</span> <span class="o">[</span> ! -d <span class="nv">$mountr</span>/tmp <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+	sudo mkdir <span class="nv">$mountr</span>/tmp
+	sudo chmod a+w <span class="nv">$mountr</span>/tmp
+<span class="k">fi</span>
+
+<span class="c1">#移除网络配置</span>
+<span class="c1">#sudo rm -f $mountr/etc/udev/rules.d/70-persistent-net.rules</span>
+
+sync 
+ls -lia <span class="nv">$mountr</span>/home/pi/
+<span class="nb">echo</span> <span class="s2">&quot;...Root partition done&quot;</span>
+<span class="c1"># if using the dump/restore </span>
+<span class="c1"># tmp=$usbmount/root.ext4</span>
+<span class="c1"># sudo chattr +d $img $mountb $mountr $tmp</span>
+<span class="c1"># sudo mount -t ext4 ${device}p2 $mountr</span>
+<span class="c1"># cd $mountr</span>
+<span class="c1"># sudo dump -0uaf - / | sudo restore -rf -</span>
+<span class="c1"># cd</span>
+
+<span class="c1"># replace PARTUUID</span>
+<span class="nv">opartuuidb</span><span class="o">=</span><span class="sb">`</span>sudo blkid -o <span class="nb">export</span> /dev/mmcblk0p1 <span class="p">|</span> grep PARTUUID<span class="sb">`</span>
+<span class="nv">opartuuidr</span><span class="o">=</span><span class="sb">`</span>sudo blkid -o <span class="nb">export</span> /dev/mmcblk0p2 <span class="p">|</span> grep PARTUUID<span class="sb">`</span>
+<span class="nv">npartuuidb</span><span class="o">=</span><span class="sb">`</span>sudo blkid -o <span class="nb">export</span> <span class="si">${</span><span class="nv">device</span><span class="si">}</span>p1 <span class="p">|</span> grep PARTUUID<span class="sb">`</span>
+<span class="nv">npartuuidr</span><span class="o">=</span><span class="sb">`</span>sudo blkid -o <span class="nb">export</span> <span class="si">${</span><span class="nv">device</span><span class="si">}</span>p2 <span class="p">|</span> grep PARTUUID<span class="sb">`</span>
+sudo sed -i <span class="s2">&quot;s/</span><span class="nv">$opartuuidr</span><span class="s2">/</span><span class="nv">$npartuuidr</span><span class="s2">/g&quot;</span> <span class="nv">$mountb</span>/cmdline.txt
+sudo sed -i <span class="s2">&quot;s/</span><span class="nv">$opartuuidb</span><span class="s2">/</span><span class="nv">$npartuuidb</span><span class="s2">/g&quot;</span> <span class="nv">$mountr</span>/etc/fstab
+sudo sed -i <span class="s2">&quot;s/</span><span class="nv">$opartuuidr</span><span class="s2">/</span><span class="nv">$npartuuidr</span><span class="s2">/g&quot;</span> <span class="nv">$mountr</span>/etc/fstab
+
+sudo umount <span class="nv">$mountb</span>
+sudo umount <span class="nv">$mountr</span>
+
+<span class="c1"># umount loop device</span>
+sudo kpartx -d <span class="nv">$loopdevice</span>
+sudo losetup -d <span class="nv">$loopdevice</span>
+sudo umount <span class="nv">$usbmount</span>
+rm -rf <span class="nv">$mountb</span> <span class="nv">$mountr</span>
+<span class="nb">echo</span> <span class="s2">&quot;==== All done. You can un-plug the backup device&quot;</span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Vic
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

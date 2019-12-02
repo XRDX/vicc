@@ -17,13 +17,23 @@
   
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/GA.js"></script>
+        <script type="text/javascript" src="../_static/GA.vicc.wang.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/my_style.css" type="text/css" />
@@ -31,21 +41,16 @@
     <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="SVN使用手册" href="svn.html" />
     <link rel="prev" title="工具 Tools" href="index.html" /> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -100,8 +105,8 @@
 <li class="toctree-l4"><a class="reference internal" href="#tag">标签 tag</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#diff">比较 diff</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#submodule">子模块 submodule</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#git">一些常用的Git网站</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#git">Git更新其他目录</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">一些常用的Git网站</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">Git更新其他目录</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="svn.html">SVN使用手册</a></li>
@@ -181,15 +186,15 @@
            <div itemprop="articleBody">
             
   <div class="section" id="git">
-<span id="git"></span><h1>GIT 常用命令<a class="headerlink" href="#git" title="永久链接至标题">¶</a></h1>
+<h1>GIT 常用命令<a class="headerlink" href="#git" title="永久链接至标题">¶</a></h1>
 <div class="section" id="git-pull">
-<span id="git-pull"></span><h2>获取 git pull<a class="headerlink" href="#git-pull" title="永久链接至标题">¶</a></h2>
+<h2>获取 git pull<a class="headerlink" href="#git-pull" title="永久链接至标题">¶</a></h2>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git pull
 </pre></div>
 </div>
 </div>
 <div class="section" id="git-push">
-<span id="git-push"></span><h2>推送 git push<a class="headerlink" href="#git-push" title="永久链接至标题">¶</a></h2>
+<h2>推送 git push<a class="headerlink" href="#git-push" title="永久链接至标题">¶</a></h2>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git status
 
 git add .
@@ -199,7 +204,7 @@ git push
 </pre></div>
 </div>
 <div class="section" id="github">
-<span id="github"></span><h3>推送已有的项目到Github<a class="headerlink" href="#github" title="永久链接至标题">¶</a></h3>
+<h3>推送已有的项目到Github<a class="headerlink" href="#github" title="永久链接至标题">¶</a></h3>
 <p>首先在Github上创建项目</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git remote add origin git@github.com:USERNAME/REPOSITORY.git
 git push -u origin master
@@ -208,9 +213,9 @@ git push -u origin master
 </div>
 </div>
 <div class="section" id="remote">
-<span id="remote"></span><h2>远端相关 remote<a class="headerlink" href="#remote" title="永久链接至标题">¶</a></h2>
-<div class="section" id="">
-<span id="id1"></span><h3>查看远端地址<a class="headerlink" href="#" title="永久链接至标题">¶</a></h3>
+<h2>远端相关 remote<a class="headerlink" href="#remote" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id1">
+<h3>查看远端地址<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h3>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git remote -h
 </pre></div>
 </div>
@@ -224,21 +229,21 @@ origin  git@github.com:USERNAME/REPOSITORY.git <span class="o">(</span>push<span
 </div>
 </div>
 <div class="section" id="remote-url">
-<span id="remote-url"></span><h3>修改远端（remote）的地址（url）<a class="headerlink" href="#remote-url" title="永久链接至标题">¶</a></h3>
+<h3>修改远端（remote）的地址（url）<a class="headerlink" href="#remote-url" title="永久链接至标题">¶</a></h3>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git remote set-url origin git@github.com:USERNAME/REPOSITORY.git
 </pre></div>
 </div>
 </div>
 </div>
 <div class="section" id="tag">
-<span id="tag"></span><h2>标签 tag<a class="headerlink" href="#tag" title="永久链接至标题">¶</a></h2>
+<h2>标签 tag<a class="headerlink" href="#tag" title="永久链接至标题">¶</a></h2>
 <p>列出所有tags</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git tag -l
 </pre></div>
 </div>
 </div>
 <div class="section" id="diff">
-<span id="diff"></span><h2>比较 diff<a class="headerlink" href="#diff" title="永久链接至标题">¶</a></h2>
+<h2>比较 diff<a class="headerlink" href="#diff" title="永久链接至标题">¶</a></h2>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git diff                      <span class="o">(</span><span class="m">1</span><span class="o">)</span>：working tree和stage文件的差异
 git diff --cached             <span class="o">(</span><span class="m">2</span><span class="o">)</span>stage和commit文件的差异
 git diff HEAD                 <span class="o">(</span><span class="m">3</span><span class="o">)</span>：commit和working tree文件的差异
@@ -252,7 +257,7 @@ git diff topic master         <span class="o">(</span><span class="m">1</span>
 </div>
 </div>
 <div class="section" id="submodule">
-<span id="submodule"></span><h2>子模块 submodule<a class="headerlink" href="#submodule" title="永久链接至标题">¶</a></h2>
+<h2>子模块 submodule<a class="headerlink" href="#submodule" title="永久链接至标题">¶</a></h2>
 <p>添加子模块</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git submodule add git://github.com/XRDX/temp.git
 </pre></div>
@@ -265,16 +270,16 @@ git submodule update
 </pre></div>
 </div>
 </div>
-<div class="section" id="git">
-<span id="id2"></span><h2>一些常用的Git网站<a class="headerlink" href="#git" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id2">
+<h2>一些常用的Git网站<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com">github</a></p></li>
-<li><p><a class="reference external" href="https://bitbucket.org">bitbucket</a></p></li>
-<li><p><a class="reference external" href="https://dev.tencent.com/">tencent</a> 原coding.net</p></li>
+<li><a class="reference external" href="https://github.com">github</a></li>
+<li><a class="reference external" href="https://bitbucket.org">bitbucket</a></li>
+<li><a class="reference external" href="https://dev.tencent.com/">tencent</a> 原coding.net</li>
 </ul>
 </div>
-<div class="section" id="git">
-<span id="id3"></span><h2>Git更新其他目录<a class="headerlink" href="#git" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id3">
+<h2>Git更新其他目录<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>注意不要省略后面的.git</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">GIT_DIR</span><span class="o">=</span>path/to/workspace/.git git pull
 </pre></div>
@@ -293,7 +298,7 @@ git submodule update
         <a href="svn.html" class="btn btn-neutral float-right" title="SVN使用手册" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral" title="工具 Tools" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral float-left" title="工具 Tools" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -318,29 +323,16 @@ git submodule update
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/GA.js"></script>
-        <script type="text/javascript" src="../_static/GA.vicc.wang.js"></script>
-        <script async="async" type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

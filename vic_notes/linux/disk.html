@@ -17,13 +17,23 @@
   
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/GA.js"></script>
+        <script type="text/javascript" src="../_static/GA.vicc.wang.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/my_style.css" type="text/css" />
@@ -31,21 +41,16 @@
     <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="Linux 小工具" href="tools/index.html" />
     <link rel="prev" title="Linux 文件管理命令" href="file.html" /> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -91,17 +96,17 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Linux 磁盘分区、格式化、目录挂载</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#df">显示当前主机存储情况 df</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#du">显示当前主机目录大小 du</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#">磁盘分区</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">磁盘分区</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#fdisk">显示机器当前的磁盘 fdisk</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#">自动挂载</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#">格式化分区</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">自动挂载</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">格式化分区</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="tools/index.html">Linux 小工具</a></li>
 <li class="toctree-l2"><a class="reference internal" href="makefile.html">makefile</a></li>
-<li class="toctree-l2"><a class="reference internal" href="makefile.html#">在其他目录执行</a></li>
+<li class="toctree-l2"><a class="reference internal" href="makefile.html#id3">在其他目录执行</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../raspberry/index.html">折腾树莓派 Raspberry</a></li>
@@ -177,9 +182,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="linux">
-<span id="linux"></span><h1>Linux 磁盘分区、格式化、目录挂载<a class="headerlink" href="#linux" title="永久链接至标题">¶</a></h1>
+<h1>Linux 磁盘分区、格式化、目录挂载<a class="headerlink" href="#linux" title="永久链接至标题">¶</a></h1>
 <div class="section" id="df">
-<span id="df"></span><h2>显示当前主机存储情况 df<a class="headerlink" href="#df" title="永久链接至标题">¶</a></h2>
+<h2>显示当前主机存储情况 df<a class="headerlink" href="#df" title="永久链接至标题">¶</a></h2>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ df -h
 Filesystem            Size  Used Avail Use% Mounted on
 /dev/mapper/VolGroup-lv_root
@@ -190,7 +195,7 @@ tmpfs                 <span class="m">1</span>.9G     <span class="m">0</span>  
 </div>
 </div>
 <div class="section" id="du">
-<span id="du"></span><h2>显示当前主机目录大小 du<a class="headerlink" href="#du" title="永久链接至标题">¶</a></h2>
+<h2>显示当前主机目录大小 du<a class="headerlink" href="#du" title="永久链接至标题">¶</a></h2>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>du -d <span class="m">1</span> -h
 </pre></div>
 </div>
@@ -213,10 +218,10 @@ tmpfs                 <span class="m">1</span>.9G     <span class="m">0</span>  
 </tr>
 </tbody>
 </table></div>
-<div class="section" id="">
-<span id="id1"></span><h2>磁盘分区<a class="headerlink" href="#" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id1">
+<h2>磁盘分区<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <div class="section" id="fdisk">
-<span id="fdisk"></span><h3>显示机器当前的磁盘 fdisk<a class="headerlink" href="#fdisk" title="永久链接至标题">¶</a></h3>
+<h3>显示机器当前的磁盘 fdisk<a class="headerlink" href="#fdisk" title="永久链接至标题">¶</a></h3>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ fdisk -l /dev/xvdb 
 
 Disk /dev/xvdb: <span class="m">53</span>.7 GB, <span class="m">53687091200</span> bytes
@@ -230,14 +235,14 @@ Disk identifier: 0x00000000
 <p>注:这里知道新增磁盘为/dev/xvdb,就直接指定了,缩减显示篇幅。</p>
 </div>
 </div>
-<div class="section" id="">
-<span id="id2"></span><h2>自动挂载<a class="headerlink" href="#" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id2">
+<h2>自动挂载<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo vim /etc/fstab
 </pre></div>
 </div>
 </div>
-<div class="section" id="">
-<span id="id3"></span><h2>格式化分区<a class="headerlink" href="#" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id3">
+<h2>格式化分区<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>1.首先执行sudo fdisk -l查看你的u盘的序号，通常是/dev/sdb之类的，U盘分区通常是/dev/sdb1</p>
 <p>2.针对将要格式化的分区执行</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo umount  /dev/sdb1 <span class="c1"># 必须先卸载该分区</span>
@@ -258,7 +263,7 @@ sudo mkfs.ext4 /dev/sdb1    <span class="c1"># 格式化为ext4分区</span>
         <a href="tools/index.html" class="btn btn-neutral float-right" title="Linux 小工具" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="file.html" class="btn btn-neutral" title="Linux 文件管理命令" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="file.html" class="btn btn-neutral float-left" title="Linux 文件管理命令" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -283,29 +288,16 @@ sudo mkfs.ext4 /dev/sdb1    <span class="c1"># 格式化为ext4分区</span>
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/GA.js"></script>
-        <script type="text/javascript" src="../_static/GA.vicc.wang.js"></script>
-        <script async="async" type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

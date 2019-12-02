@@ -17,13 +17,23 @@
   
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/GA.js"></script>
+        <script type="text/javascript" src="../_static/GA.vicc.wang.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/my_style.css" type="text/css" />
@@ -31,21 +41,16 @@
     <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="集合 set" href="set.html" />
     <link rel="prev" title="cstring" href="cstring.html" /> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -99,7 +104,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#construction">构造方法 Construction</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#assignment-and-swap">赋值和交换Assignment and swap</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#size">长度 size</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#">增删元素</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">增删元素</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#obtain-iterators">获取元素地址 Obtain Iterators</a></li>
 </ul>
 </li>
@@ -175,12 +180,12 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="">
-<span id="id1"></span><h1>容器<a class="headerlink" href="#" title="永久链接至标题">¶</a></h1>
+  <div class="section" id="id1">
+<h1>容器<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <div class="section" id="container-operations">
-<span id="container-operations"></span><h2>容器运算 Container Operations<a class="headerlink" href="#container-operations" title="永久链接至标题">¶</a></h2>
+<h2>容器运算 Container Operations<a class="headerlink" href="#container-operations" title="永久链接至标题">¶</a></h2>
 <div class="section" id="type-aliases">
-<span id="type-aliases"></span><h3>类型别名 Type Aliases<a class="headerlink" href="#type-aliases" title="永久链接至标题">¶</a></h3>
+<h3>类型别名 Type Aliases<a class="headerlink" href="#type-aliases" title="永久链接至标题">¶</a></h3>
 <p>iterator一般翻译为迭代器，代表了容器中元素的地址。迭代器地址的范围为容器中第一个元素到最后一个元素，注意，end返回的是容器最后一个元素的后一个元素。</p>
 <table border="1" class="docutils">
 <thead>
@@ -226,7 +231,7 @@
 </div>
 </div>
 <div class="section" id="construction">
-<span id="construction"></span><h3>构造方法 Construction<a class="headerlink" href="#construction" title="永久链接至标题">¶</a></h3>
+<h3>构造方法 Construction<a class="headerlink" href="#construction" title="永久链接至标题">¶</a></h3>
 <table border="1" class="docutils">
 <thead>
 <tr>
@@ -254,7 +259,7 @@
 </tbody>
 </table></div>
 <div class="section" id="assignment-and-swap">
-<span id="assignment-and-swap"></span><h3>赋值和交换Assignment and swap<a class="headerlink" href="#assignment-and-swap" title="永久链接至标题">¶</a></h3>
+<h3>赋值和交换Assignment and swap<a class="headerlink" href="#assignment-and-swap" title="永久链接至标题">¶</a></h3>
 <table border="1" class="docutils">
 <thead>
 <tr>
@@ -282,7 +287,7 @@
 </tbody>
 </table></div>
 <div class="section" id="size">
-<span id="size"></span><h3>长度 size<a class="headerlink" href="#size" title="永久链接至标题">¶</a></h3>
+<h3>长度 size<a class="headerlink" href="#size" title="永久链接至标题">¶</a></h3>
 <table border="1" class="docutils">
 <thead>
 <tr>
@@ -305,8 +310,8 @@
 </tr>
 </tbody>
 </table></div>
-<div class="section" id="">
-<span id="id2"></span><h3>增删元素<a class="headerlink" href="#" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id2">
+<h3>增删元素<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
 <table border="1" class="docutils">
 <thead>
 <tr>
@@ -330,7 +335,7 @@
 </tbody>
 </table></div>
 <div class="section" id="obtain-iterators">
-<span id="obtain-iterators"></span><h3>获取元素地址 Obtain Iterators<a class="headerlink" href="#obtain-iterators" title="永久链接至标题">¶</a></h3>
+<h3>获取元素地址 Obtain Iterators<a class="headerlink" href="#obtain-iterators" title="永久链接至标题">¶</a></h3>
 <table border="1" class="docutils">
 <thead>
 <tr>
@@ -371,7 +376,7 @@
         <a href="set.html" class="btn btn-neutral float-right" title="集合 set" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="cstring.html" class="btn btn-neutral" title="cstring" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="cstring.html" class="btn btn-neutral float-left" title="cstring" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -396,29 +401,16 @@
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/GA.js"></script>
-        <script type="text/javascript" src="../_static/GA.vicc.wang.js"></script>
-        <script async="async" type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

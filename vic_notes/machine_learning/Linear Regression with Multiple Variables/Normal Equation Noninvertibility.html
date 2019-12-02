@@ -17,13 +17,23 @@
   
 
   
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/GA.js"></script>
+        <script type="text/javascript" src="../../_static/GA.vicc.wang.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/my_style.css" type="text/css" />
@@ -31,21 +41,16 @@
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="Logistic Regression" href="../Logistic Regression/index.html" />
     <link rel="prev" title="Normal Equation" href="Normal Equation.html" /> 
-
-  
-  <script src="../../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -177,13 +182,13 @@
            <div itemprop="articleBody">
             
   <div class="section" id="normal-equation-noninvertibility">
-<span id="normal-equation-noninvertibility"></span><h1>Normal Equation Noninvertibility<a class="headerlink" href="#normal-equation-noninvertibility" title="永久链接至标题">¶</a></h1>
+<h1>Normal Equation Noninvertibility<a class="headerlink" href="#normal-equation-noninvertibility" title="永久链接至标题">¶</a></h1>
 <p>When implementing the normal equation in octave we want to use the 'pinv' function rather than 'inv.' The 'pinv' function will give you a value of \thetaθ even if X^TXXTX is not invertible.</p>
 <p>
 If \(X^TXXTX\) is **noninvertible,** the common causes might be having :
 </p><ul class="simple">
-<li><p>Redundant features, where two features are very closely related (i.e. they are linearly dependent)</p></li>
-<li><p>Too many features (e.g. m ≤ n). In this case, delete some features or use &quot;regularization&quot; (to be explained in a later lesson).</p></li>
+<li>Redundant features, where two features are very closely related (i.e. they are linearly dependent)</li>
+<li>Too many features (e.g. m ≤ n). In this case, delete some features or use &quot;regularization&quot; (to be explained in a later lesson).</li>
 </ul>
 <p>Solutions to the above problems include deleting a feature that is linearly dependent with another or deleting one or more features when there are too many features.</p>
 </div>
@@ -199,7 +204,7 @@ If \(X^TXXTX\) is **noninvertible,** the common causes might be having :
         <a href="../Logistic Regression/index.html" class="btn btn-neutral float-right" title="Logistic Regression" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="Normal Equation.html" class="btn btn-neutral" title="Normal Equation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="Normal Equation.html" class="btn btn-neutral float-left" title="Normal Equation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -224,29 +229,16 @@ If \(X^TXXTX\) is **noninvertible,** the common causes might be having :
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../_static/language_data.js"></script>
-        <script type="text/javascript" src="../../_static/GA.js"></script>
-        <script type="text/javascript" src="../../_static/GA.vicc.wang.js"></script>
-        <script async="async" type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-
-  
-
-  <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

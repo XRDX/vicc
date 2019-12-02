@@ -17,35 +17,40 @@
   
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/GA.js"></script>
+        <script type="text/javascript" src="../_static/GA.vicc.wang.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/my_style.css" type="text/css" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="语法基础 C++" href="../cpp/index.html" />
-    <link rel="prev" title="virtual environments" href="virtualenv.html" /> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
+    <link rel="prev" title="django" href="django.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -98,10 +103,13 @@
 <li class="toctree-l2"><a class="reference internal" href="keep_on_top.html">保持窗口在最前</a></li>
 <li class="toctree-l2"><a class="reference internal" href="virtualenv.html">virtual environments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="virtualenv.html#activate">activate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyodide.html">pyodide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="django.html">django</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Python 的一些库</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#wxpy">wxpy</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#pyglet">Pyglet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#pyinstaller">pyinstaller</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#print">print</a></li>
 </ul>
 </li>
 </ul>
@@ -175,18 +183,23 @@
            <div itemprop="articleBody">
             
   <div class="section" id="python">
-<span id="python"></span><h1>Python 的一些库<a class="headerlink" href="#python" title="永久链接至标题">¶</a></h1>
+<h1>Python 的一些库<a class="headerlink" href="#python" title="永久链接至标题">¶</a></h1>
 <div class="section" id="wxpy">
-<span id="wxpy"></span><h2>wxpy<a class="headerlink" href="#wxpy" title="永久链接至标题">¶</a></h2>
+<h2>wxpy<a class="headerlink" href="#wxpy" title="永久链接至标题">¶</a></h2>
 <p>微信机器人的py库</p>
 </div>
 <div class="section" id="pyglet">
-<span id="pyglet"></span><h2>Pyglet<a class="headerlink" href="#pyglet" title="永久链接至标题">¶</a></h2>
+<h2>Pyglet<a class="headerlink" href="#pyglet" title="永久链接至标题">¶</a></h2>
 <p>基于openGL的python图形库</p>
 </div>
 <div class="section" id="pyinstaller">
-<span id="pyinstaller"></span><h2>pyinstaller<a class="headerlink" href="#pyinstaller" title="永久链接至标题">¶</a></h2>
+<h2>pyinstaller<a class="headerlink" href="#pyinstaller" title="永久链接至标题">¶</a></h2>
 <p>用于打包python程序</p>
+</div>
+<div class="section" id="print">
+<h2>print<a class="headerlink" href="#print" title="永久链接至标题">¶</a></h2>
+<p>从本行开始位置输出
+print(&quot;\r&gt;&gt; 1/100&quot;, end='')</p>
 </div>
 </div>
 
@@ -201,7 +214,7 @@
         <a href="../cpp/index.html" class="btn btn-neutral float-right" title="语法基础 C++" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="virtualenv.html" class="btn btn-neutral" title="virtual environments" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="django.html" class="btn btn-neutral float-left" title="django" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -226,29 +239,16 @@
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/GA.js"></script>
-        <script type="text/javascript" src="../_static/GA.vicc.wang.js"></script>
-        <script async="async" type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

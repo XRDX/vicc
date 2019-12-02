@@ -17,13 +17,23 @@
   
 
   
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/GA.js"></script>
+        <script type="text/javascript" src="../../_static/GA.vicc.wang.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/my_style.css" type="text/css" />
@@ -31,21 +41,16 @@
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="Gradient Descent For Linear Regression" href="Gradient Descent For Linear Regression.html" />
     <link rel="prev" title="Gradient Descent" href="Gradient Descent.html" /> 
-
-  
-  <script src="../../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -180,7 +185,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="gradient-descent-intuition">
-<span id="gradient-descent-intuition"></span><h1>Gradient Descent Intuition<a class="headerlink" href="#gradient-descent-intuition" title="永久链接至标题">¶</a></h1>
+<h1>Gradient Descent Intuition<a class="headerlink" href="#gradient-descent-intuition" title="永久链接至标题">¶</a></h1>
 <p>In this video we explored the scenario where we used one parameter \theta_1θ1 and plotted its cost function to implement a gradient descent. Our formula for a single parameter was :</p>
 <p>Repeat until convergence:</p>
 <p>
@@ -189,7 +194,7 @@ $$
 $$<p>Regardless of the slope's sign for (\frac{d}{d\theta_1} J(\theta_1)), (\theta_1) eventually converges to its minimum value. The following graph shows that when the slope is negative, the value of (\theta_1) increases and when it is positive, the value of (\theta_1) decreases.</p>
 </p><p>On a side note, we should adjust our parameter α to ensure that the gradient descent algorithm converges in a reasonable time. Failure to converge or too much time to obtain the minimum value imply that our step size is wrong.</p>
 <div class="section" id="how-does-gradient-descent-converge-with-a-fixed-step-size">
-<span id="how-does-gradient-descent-converge-with-a-fixed-step-size"></span><h2>How does gradient descent converge with a fixed step size α?<a class="headerlink" href="#how-does-gradient-descent-converge-with-a-fixed-step-size" title="永久链接至标题">¶</a></h2>
+<h2>How does gradient descent converge with a fixed step size α?<a class="headerlink" href="#how-does-gradient-descent-converge-with-a-fixed-step-size" title="永久链接至标题">¶</a></h2>
 <p>
 The intuition behind the convergence is that \(\frac{d}{d\theta_1} J(\theta_1)\) approaches 0 as we approach the bottom of our convex function. At the minimum, the derivative will always be 0 and thus we get:
 </p></div>
@@ -206,7 +211,7 @@ The intuition behind the convergence is that \(\frac{d}{d\theta_1} J(\theta_1)\)
         <a href="Gradient Descent For Linear Regression.html" class="btn btn-neutral float-right" title="Gradient Descent For Linear Regression" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="Gradient Descent.html" class="btn btn-neutral" title="Gradient Descent" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="Gradient Descent.html" class="btn btn-neutral float-left" title="Gradient Descent" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -231,29 +236,16 @@ The intuition behind the convergence is that \(\frac{d}{d\theta_1} J(\theta_1)\)
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../_static/language_data.js"></script>
-        <script type="text/javascript" src="../../_static/GA.js"></script>
-        <script type="text/javascript" src="../../_static/GA.vicc.wang.js"></script>
-        <script async="async" type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-
-  
-
-  <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

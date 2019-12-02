@@ -17,13 +17,23 @@
   
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/GA.js"></script>
+        <script type="text/javascript" src="../_static/GA.vicc.wang.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/my_style.css" type="text/css" />
@@ -31,21 +41,16 @@
     <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="使用PIL批量生成图片" href="pil.html" />
     <link rel="prev" title="上传自己的模块到 pypi" href="pypi.html" /> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -93,10 +98,10 @@
 <li class="toctree-l2"><a class="reference internal" href="pip.html">pip手册</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pypi.html">上传自己的模块到 pypi</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Scapy 爬虫框架</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#">安装</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">安装</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#scrapy">第一个 Scrapy 例子</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#scrapy">Scrapy项目</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#">创建项目</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Scrapy项目</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id3">创建项目</a></li>
 </ul>
 </li>
 </ul>
@@ -106,6 +111,7 @@
 <li class="toctree-l2"><a class="reference internal" href="keep_on_top.html">保持窗口在最前</a></li>
 <li class="toctree-l2"><a class="reference internal" href="virtualenv.html">virtual environments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="virtualenv.html#activate">activate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyodide.html">pyodide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="others.html">Python 的一些库</a></li>
 </ul>
 </li>
@@ -178,12 +184,12 @@
            <div itemprop="articleBody">
             
   <div class="section" id="scapy">
-<span id="scapy"></span><h1>Scapy 爬虫框架<a class="headerlink" href="#scapy" title="永久链接至标题">¶</a></h1>
+<h1>Scapy 爬虫框架<a class="headerlink" href="#scapy" title="永久链接至标题">¶</a></h1>
 <p>Scrapy 是用 Python 实现的一个为了爬取网站数据、提取结构性数据而编写的应用框架。</p>
 <p>Scrapy 常应用在包括数据挖掘，信息处理或存储历史数据等一系列的程序中。</p>
 <p>通常我们可以很简单的通过 Scrapy 框架实现一个爬虫，抓取指定网站的内容或图片。</p>
-<div class="section" id="">
-<span id="id1"></span><h2>安装<a class="headerlink" href="#" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id1">
+<h2>安装<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip install scrapy
 </pre></div>
 </div>
@@ -221,7 +227,7 @@ Microsoft Visual Studio 14.0 Window 10 SDK</p>
 <p>解决办法：安装Microsoft Visual Studio 14.0 Window 10 SDK</p>
 </div>
 <div class="section" id="scrapy">
-<span id="scrapy"></span><h2>第一个 Scrapy 例子<a class="headerlink" href="#scrapy" title="永久链接至标题">¶</a></h2>
+<h2>第一个 Scrapy 例子<a class="headerlink" href="#scrapy" title="永久链接至标题">¶</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scrapy</span>
 
 <span class="k">class</span> <span class="nc">QuotesSpider</span><span class="p">(</span><span class="n">scrapy</span><span class="o">.</span><span class="n">Spider</span><span class="p">):</span>
@@ -248,10 +254,10 @@ Microsoft Visual Studio 14.0 Window 10 SDK</p>
 </div>
 <p>因为历史原因（原文），输出为json格式，文本中非英文字符的的utf-8文本会以“\uXXXX”的形式显示</p>
 </div>
-<div class="section" id="scrapy">
-<span id="id2"></span><h2>Scrapy项目<a class="headerlink" href="#scrapy" title="永久链接至标题">¶</a></h2>
-<div class="section" id="">
-<span id="id3"></span><h3>创建项目<a class="headerlink" href="#" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id2">
+<h2>Scrapy项目<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id3">
+<h3>创建项目<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>scrapy startproject tutorial
 </pre></div>
 </div>
@@ -291,9 +297,9 @@ Microsoft Visual Studio 14.0 Window 10 SDK</p>
 </pre></div>
 </div>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: 爬虫的名字，必须唯一。</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">start_requests()</span></code>: 必须是一个可迭代的函数，可以是数组，也可以是生成器，爬虫入口</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">parse()</span></code>: 默认解析器名称，常用作回调函数</p></li>
+<li><code class="docutils literal notranslate"><span class="pre">name</span></code>: 爬虫的名字，必须唯一。</li>
+<li><code class="docutils literal notranslate"><span class="pre">start_requests()</span></code>: 必须是一个可迭代的函数，可以是数组，也可以是生成器，爬虫入口</li>
+<li><code class="docutils literal notranslate"><span class="pre">parse()</span></code>: 默认解析器名称，常用作回调函数</li>
 </ul>
 <p>如何运行爬虫呢</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>scrapy crawl quotes
@@ -314,7 +320,7 @@ Microsoft Visual Studio 14.0 Window 10 SDK</p>
         <a href="pil.html" class="btn btn-neutral float-right" title="使用PIL批量生成图片" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="pypi.html" class="btn btn-neutral" title="上传自己的模块到 pypi" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="pypi.html" class="btn btn-neutral float-left" title="上传自己的模块到 pypi" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -339,29 +345,16 @@ Microsoft Visual Studio 14.0 Window 10 SDK</p>
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/GA.js"></script>
-        <script type="text/javascript" src="../_static/GA.vicc.wang.js"></script>
-        <script async="async" type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

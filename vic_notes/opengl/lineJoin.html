@@ -17,13 +17,23 @@
   
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/GA.js"></script>
+        <script type="text/javascript" src="../_static/GA.vicc.wang.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/my_style.css" type="text/css" />
@@ -31,21 +41,16 @@
     <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="机器学习 Machine Learning" href="../machine_learning/index.html" />
     <link rel="prev" title="抗锯齿（转）" href="anti-aliasing.html" /> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -95,7 +100,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">图形学 OpenGL</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="anti-aliasing.html">抗锯齿（转）</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">线段连接问题 Line Join</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#">线条的基本要素</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">线条的基本要素</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#linewidth">线条粗细 LineWidth</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#linejoin">线段连接 LineJoin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#type">线段连接的类型 Type</a><ul>
@@ -104,10 +109,10 @@
 <li class="toctree-l4"><a class="reference internal" href="#round">round</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#miter">简化的miter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">简化的miter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#border">边界条件 border</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#">连接点在中间</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#">连接点在外侧</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">连接点在中间</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">连接点在外侧</a></li>
 </ul>
 </li>
 </ul>
@@ -180,29 +185,29 @@
            <div itemprop="articleBody">
             
   <div class="section" id="line-join">
-<span id="line-join"></span><h1>线段连接问题 Line Join<a class="headerlink" href="#line-join" title="永久链接至标题">¶</a></h1>
+<h1>线段连接问题 Line Join<a class="headerlink" href="#line-join" title="永久链接至标题">¶</a></h1>
 <p>OpenGL 中提供了一些基础的图形绘制功能</p>
 <ul class="simple">
-<li><p>GL_LINE: 绘制线条</p></li>
-<li><p>GL_LINE_LOOP: 绘制循环线条</p></li>
-<li><p>GL_TRIANGLE: 绘制三角形</p></li>
+<li>GL_LINE: 绘制线条</li>
+<li>GL_LINE_LOOP: 绘制循环线条</li>
+<li>GL_TRIANGLE: 绘制三角形</li>
 </ul>
 <p>有了这些功能，画线条看起来像是非常简单的一件事情，让我们来看看如何在OpenGL中绘制“线条”，以及把线条连接起来。</p>
-<div class="section" id="">
-<span id="id1"></span><h2>线条的基本要素<a class="headerlink" href="#" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id1">
+<h2>线条的基本要素<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p>2个顶点确定一个线条，这是我们所熟知的数学概念。绘制一个线条，最基本的就是要确定2个端点，我们用下面这两组坐标来定义这个线条。</p>
 <ul class="simple">
-<li><p>(x1, y1)</p></li>
-<li><p>(x2, y2)</p></li>
+<li>(x1, y1)</li>
+<li>(x2, y2)</li>
 </ul>
 <p>除此之外呢，作为计算机图形，还增加了以下属性，来让我们能够看清这条线段</p>
 <ul class="simple">
-<li><p>线条的样式，比如颜色、透明度</p></li>
-<li><p>线条的粗细程度</p></li>
+<li>线条的样式，比如颜色、透明度</li>
+<li>线条的粗细程度</li>
 </ul>
 </div>
 <div class="section" id="linewidth">
-<span id="linewidth"></span><h2>线条粗细 LineWidth<a class="headerlink" href="#linewidth" title="永久链接至标题">¶</a></h2>
+<h2>线条粗细 LineWidth<a class="headerlink" href="#linewidth" title="永久链接至标题">¶</a></h2>
 <p>在OpenGL中，GL_LINE用于绘制线条，用linewidth属性来制定线条的宽度。在实际上，在OpenGL中，线条的宽度被限制了，大概是20个像素。这样如果需要画一条非常粗的线，就不能使用线段方法了。</p>
 <p><img alt="line_width" src="../_images/line_width.png" /></p>
 <p>设置的宽度为绿色框宽度，实际为红色宽度，达不到我们画粗线的目标。实际上，在OpenGl中，宽度限制为：GL_LINE_WIDTH_RANGE ，可以通过glGet查询。</p>
@@ -211,7 +216,7 @@
 <p>很容易理解，用2个三角形即可绘制一条任意的线段。</p>
 </div>
 <div class="section" id="linejoin">
-<span id="linejoin"></span><h2>线段连接 LineJoin<a class="headerlink" href="#linejoin" title="永久链接至标题">¶</a></h2>
+<h2>线段连接 LineJoin<a class="headerlink" href="#linejoin" title="永久链接至标题">¶</a></h2>
 <p>绘制一个长方形，我们需要找出4个点，然后用GL_LINE_LOOP将这4个点首尾连接起来。就组成了一个长方形。</p>
 <p><img alt="line_rect" src="../_images/line_rect.png" /></p>
 <p>到目前为止，一切都还很正常，朝着我们预期的目标发展。接下来，我们把线条的宽度增大，就出现了下面的情况</p>
@@ -221,48 +226,48 @@
 <p>相邻的每个点都用一条线段连接，但是线段的连接处却没有图形，也就形成了这样缺角的问题。更严重的是，其中一些地方，还重复绘制了，和我们预期的图形完全不一样。这就是我们要解决的问题，线段连接问题。</p>
 </div>
 <div class="section" id="type">
-<span id="type"></span><h2>线段连接的类型 Type<a class="headerlink" href="#type" title="永久链接至标题">¶</a></h2>
+<h2>线段连接的类型 Type<a class="headerlink" href="#type" title="永久链接至标题">¶</a></h2>
 <p>线段连接有多种方式，一般有3种方法，分别称之为<code class="docutils literal notranslate"><span class="pre">bevel</span></code>,<code class="docutils literal notranslate"><span class="pre">miter</span></code>,<code class="docutils literal notranslate"><span class="pre">round</span></code>，他们的效果分别是这样子的。</p>
 <div class="section" id="bevel">
-<span id="bevel"></span><h3>bevel<a class="headerlink" href="#bevel" title="永久链接至标题">¶</a></h3>
+<h3>bevel<a class="headerlink" href="#bevel" title="永久链接至标题">¶</a></h3>
 <p><img alt="bevel" src="../_images/bevel.png" /></p>
 <p>将突出的点连接起来，图中的黑色三角形。实际在处理时，不会单独绘制这个三角形，二十将线段的图形分为了灰色线段的这几个三角形来处理。</p>
 </div>
 <div class="section" id="miter">
-<span id="miter"></span><h3>miter<a class="headerlink" href="#miter" title="永久链接至标题">¶</a></h3>
+<h3>miter<a class="headerlink" href="#miter" title="永久链接至标题">¶</a></h3>
 <p><img alt="miter" src="../_images/miter.png" /></p>
 <p>更常用的是miter，将外接的延长线绘制出来。</p>
 </div>
 <div class="section" id="round">
-<span id="round"></span><h3>round<a class="headerlink" href="#round" title="永久链接至标题">¶</a></h3>
+<h3>round<a class="headerlink" href="#round" title="永久链接至标题">¶</a></h3>
 <p><img alt="round" src="../_images/round.png" /></p>
 <p>round，顾名思义，就是使用圆角连接。当然，圆角也是通过一大堆的三角形来绘制的。</p>
 </div>
 </div>
-<div class="section" id="miter">
-<span id="id2"></span><h2>简化的miter<a class="headerlink" href="#miter" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id2">
+<h2>简化的miter<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>这几个连接的方式基本类似，我就简单说明一下miter如何去计算，其他的都类似。</p>
 <p><img alt="miter_calc" src="../_images/miter_calc.png" /></p>
 <p>观察图形及辅助性，这里最最关键的是要计算出紫色的这个向量，然后就可以计算出内外2个相交点。而要计算出紫色向量，就要去计算出2条边的法向量。</p>
 <p>计算步骤：</p>
 <ol class="simple">
-<li><p>计算2条边的单位法向量，旋转90°</p></li>
-<li><p>法向量的长度为线宽的一半</p></li>
-<li><p>紫色向量的方向为2个法向量之和的方向</p></li>
-<li><p>紫色向量长度计算（法向量在紫色向量上的投影长度 / 法向量长度 = 法向量长度 / 紫色向量长度）</p></li>
+<li>计算2条边的单位法向量，旋转90°</li>
+<li>法向量的长度为线宽的一半</li>
+<li>紫色向量的方向为2个法向量之和的方向</li>
+<li>紫色向量长度计算（法向量在紫色向量上的投影长度 / 法向量长度 = 法向量长度 / 紫色向量长度）</li>
 </ol>
 <p>计算细节不在这里说明，要指出的是，在计算时要注意两条边的法向量的方向，确保是同时向外或者向内。如果是闭合图形，我们就可以循环计算所有的点，使用计算后的点来绘制图形。</p>
 </div>
 <div class="section" id="border">
-<span id="border"></span><h2>边界条件 border<a class="headerlink" href="#border" title="永久链接至标题">¶</a></h2>
+<h2>边界条件 border<a class="headerlink" href="#border" title="永久链接至标题">¶</a></h2>
 <p>要指出的是，在计算边界点的时候，需要考虑一下边界条件。当3个点都在同一条直线上，或近似在一条直线上时，该如何处理？</p>
 <p>分两种情况来考虑。</p>
-<div class="section" id="">
-<span id="id3"></span><h3>连接点在中间<a class="headerlink" href="#" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id3">
+<h3>连接点在中间<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
 <p>紫色向量长度等于法向量长度</p>
 </div>
-<div class="section" id="">
-<span id="id4"></span><h3>连接点在外侧<a class="headerlink" href="#" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id4">
+<h3>连接点在外侧<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
 <p>如果用上述方法计算，会发现补齐的部分可以延伸到无限长的位置，这个时候，我们就要设定一个数值，当延伸的长度比值大于这个数值时，取消向外延伸的部分。</p>
 <p><img alt="miter_calc" src="../_images/miter_calc2.png" /></p>
 <p>以上就是关于线段连接的处理说明。</p>
@@ -281,7 +286,7 @@
         <a href="../machine_learning/index.html" class="btn btn-neutral float-right" title="机器学习 Machine Learning" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="anti-aliasing.html" class="btn btn-neutral" title="抗锯齿（转）" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="anti-aliasing.html" class="btn btn-neutral float-left" title="抗锯齿（转）" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -306,29 +311,16 @@
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/GA.js"></script>
-        <script type="text/javascript" src="../_static/GA.vicc.wang.js"></script>
-        <script async="async" type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

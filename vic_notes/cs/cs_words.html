@@ -17,13 +17,23 @@
   
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/GA.js"></script>
+        <script type="text/javascript" src="../_static/GA.vicc.wang.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/my_style.css" type="text/css" />
@@ -31,21 +41,16 @@
     <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="地图偏移" href="map_shift.html" />
     <link rel="prev" title="橡皮鸭调试法" href="rubber_duck.html" /> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -91,24 +96,24 @@
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">计算机知识 Computer Science</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="rubber_duck.html">橡皮鸭调试法</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">计算机词汇</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#">计算中那些拗口的词汇</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">计算中那些拗口的词汇</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#handle">句柄 handle</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#socket">套接字 socket</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#robust">鲁棒性 robust</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#macro">宏 Macro</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#context">上下文 context</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#default">缺省 default</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#">浮点</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">浮点</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#offline">脱机 Offline</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ramrom">RAM跟ROM这俩词。</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#">内存泄漏</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">内存泄漏</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#void">反射，依赖注入，void（这个怎么翻译成中文就怎么别扭）</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#case">用例 case。</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#html">HTML中常见标签英文对照表</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#">台湾地区的翻译</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#">大陆台湾计算机术语对照表</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">台湾地区的翻译</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id6">大陆台湾计算机术语对照表</a></li>
 </ul>
 </li>
 </ul>
@@ -187,74 +192,74 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="">
-<span id="id1"></span><h1>计算机词汇<a class="headerlink" href="#" title="永久链接至标题">¶</a></h1>
+  <div class="section" id="id1">
+<h1>计算机词汇<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <p>“理解了计算机词汇，也就理解了一半的计算机知识”</p>
 <p>“准确使用计算机词汇，利人利己”</p>
 <p>准确的计算机词汇让人能够更容易的理解深奥的含义。有的时候，翻译者拍脑袋想出来的词语却加大了学习的难度，又因为一系列历史原因，各种书籍上也一直沿用了这些说法，导致改动越来越难。</p>
 <p>直到后来接触了英文，才慢慢理解了这些概念，不得不说如果熟练掌握英文，那么在编程领域还是非常有优势的。有时候就会想，如果中文能在计算机发展史上占据重要的一份，那么就不会有这么多拗口的计算机词汇了。</p>
-<div class="section" id="">
-<span id="id2"></span><h2>计算中那些拗口的词汇<a class="headerlink" href="#" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id2">
+<h2>计算中那些拗口的词汇<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <div class="section" id="handle">
-<span id="handle"></span><h3>句柄 handle<a class="headerlink" href="#handle" title="永久链接至标题">¶</a></h3>
+<h3>句柄 handle<a class="headerlink" href="#handle" title="永久链接至标题">¶</a></h3>
 <p>file handle 为什么译为「文件句柄」？和「句」有什么关系？
 file handle 之类的翻译做「文件句柄」，完全就是乱来。handle 就是「把手」，什么门的把手、锅的把手、锤子的把手都是handle，可以理解为用来方便控制某个东西的东西。所以file handle是用来控制file的东西。要控制哪个object就用哪个handle.</p>
 <p>参考翻译：文件操作符、文件处理器</p>
 </div>
 <div class="section" id="socket">
-<span id="socket"></span><h3>套接字 socket<a class="headerlink" href="#socket" title="永久链接至标题">¶</a></h3>
+<h3>套接字 socket<a class="headerlink" href="#socket" title="永久链接至标题">¶</a></h3>
 <p>socket的英文原义是“孔”或“插座”,这个多好理解，套什么接什么字
 实际上，套接管可以理解为“将两个管子的接口包裹住用以将两个管口连接在一起套筒。”这样，是不是觉得套接管的功能作用和socket在计算机领域的作用类似了呢？顺便，你也可以看看socket pipe在google图片的搜索结果。</p>
 <p>参考翻译：通道，</p>
 </div>
 <div class="section" id="robust">
-<span id="robust"></span><h3>鲁棒性 robust<a class="headerlink" href="#robust" title="永久链接至标题">¶</a></h3>
+<h3>鲁棒性 robust<a class="headerlink" href="#robust" title="永久链接至标题">¶</a></h3>
 <p>第一次看到的时候完全不理解，鲁和棒字都好理解，放在一起就不理解了</p>
 <p>参考翻译：健壮性</p>
 </div>
 <div class="section" id="macro">
-<span id="macro"></span><h3>宏 Macro<a class="headerlink" href="#macro" title="永久链接至标题">¶</a></h3>
+<h3>宏 Macro<a class="headerlink" href="#macro" title="永久链接至标题">¶</a></h3>
 <p>大概见多了，竟然觉得习惯了
 参考翻译：指令</p>
 </div>
 <div class="section" id="context">
-<span id="context"></span><h3>上下文 context<a class="headerlink" href="#context" title="永久链接至标题">¶</a></h3>
+<h3>上下文 context<a class="headerlink" href="#context" title="永久链接至标题">¶</a></h3>
 <p>就是情景、环境之类的意思。进程切换时就要保存这个环境，以便下次切换回来时能够继续正常执行。进程的上下文包括各种寄存器的值、程序代码、进程控制信息（主要是Process Control Block）等等。其他地方也有上下文这个概念，含义都差不多。</p>
 <p>参考翻译：运行环境</p>
 </div>
 <div class="section" id="default">
-<span id="default"></span><h3>缺省 default<a class="headerlink" href="#default" title="永久链接至标题">¶</a></h3>
+<h3>缺省 default<a class="headerlink" href="#default" title="永久链接至标题">¶</a></h3>
 <p>一开始还以为是不能省去的意思……….后来才知道原来就是默认……</p>
 </div>
-<div class="section" id="">
-<span id="id3"></span><h3>浮点<a class="headerlink" href="#" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id3">
+<h3>浮点<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
 <p>原文是floating point，至于为什么叫floating point，了解下IEEE754就明白了</p>
 </div>
 <div class="section" id="offline">
-<span id="offline"></span><h3>脱机 Offline<a class="headerlink" href="#offline" title="永久链接至标题">¶</a></h3>
+<h3>脱机 Offline<a class="headerlink" href="#offline" title="永久链接至标题">¶</a></h3>
 <p>这个词出现时可能还没有网络，那时是终端机或者局域网，所以变成“脱机”了。其实“离线”就挺好，“联机”与“脱机”仍存是因为微软IE一直在沿用该翻译……</p>
 </div>
 <div class="section" id="ramrom">
-<span id="ramrom"></span><h3>RAM跟ROM这俩词。<a class="headerlink" href="#ramrom" title="永久链接至标题">¶</a></h3>
+<h3>RAM跟ROM这俩词。<a class="headerlink" href="#ramrom" title="永久链接至标题">¶</a></h3>
 <p>自从手机开始飙参数之后，“手机内存”和“内部存储空间”这两件事我就没跟人说明白过………
 我一般使用的译法是「手机运存」和「手机闪存」，或者后者直接叫「内置/虚拟SD卡」，这样基本没什么歧义。</p>
 </div>
-<div class="section" id="">
-<span id="id4"></span><h3>内存泄漏<a class="headerlink" href="#" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id4">
+<h3>内存泄漏<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
 <p>内存泄漏也称作“存储渗漏”，用动态存储分配函数动态开辟的空间，在使用完毕后未释放，结果导致一直占据该内存单元。直到程序结束。（其实说白了就是该内存空间使用完毕之后未回收）即所谓内存泄漏。</p>
 </div>
 <div class="section" id="void">
-<span id="void"></span><h3>反射，依赖注入，void（这个怎么翻译成中文就怎么别扭）<a class="headerlink" href="#void" title="永久链接至标题">¶</a></h3>
+<h3>反射，依赖注入，void（这个怎么翻译成中文就怎么别扭）<a class="headerlink" href="#void" title="永久链接至标题">¶</a></h3>
 <p>反射和依赖注入，用原文写一样很莫名其妙，完全是因为当年的构架师为了显得自己很牛叉装逼发明出来的词.其实就是runtime instantiation…</p>
 </div>
 <div class="section" id="case">
-<span id="case"></span><h3>用例 case。<a class="headerlink" href="#case" title="永久链接至标题">¶</a></h3>
+<h3>用例 case。<a class="headerlink" href="#case" title="永久链接至标题">¶</a></h3>
 <p>它的英语叫use case。话说这个英文术语我觉得也不好，遇到好几次才确定use是个名词。</p>
 <p>参考翻译：情况</p>
 </div>
 </div>
 <div class="section" id="html">
-<span id="html"></span><h2>HTML中常见标签英文对照表<a class="headerlink" href="#html" title="永久链接至标题">¶</a></h2>
+<h2>HTML中常见标签英文对照表<a class="headerlink" href="#html" title="永久链接至标题">¶</a></h2>
 <table border="1" class="docutils">
 <thead>
 <tr>
@@ -466,11 +471,11 @@ file handle 之类的翻译做「文件句柄」，完全就是乱来。handle �
 </tr>
 </tbody>
 </table></div>
-<div class="section" id="">
-<span id="id5"></span><h2>台湾地区的翻译<a class="headerlink" href="#" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id5">
+<h2>台湾地区的翻译<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
 <p>台湾地区的计算机和大陆是独立发展的，所以演化出了独立的一套计算机术语，理解这些术语能帮助我们在一些情况下快速的理解计算机知识。</p>
-<div class="section" id="">
-<span id="id6"></span><h3>大陆台湾计算机术语对照表<a class="headerlink" href="#" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id6">
+<h3>大陆台湾计算机术语对照表<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
 <table border="1" class="docutils">
 <thead>
 <tr>
@@ -951,7 +956,7 @@ file handle 之类的翻译做「文件句柄」，完全就是乱来。handle �
         <a href="map_shift.html" class="btn btn-neutral float-right" title="地图偏移" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="rubber_duck.html" class="btn btn-neutral" title="橡皮鸭调试法" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="rubber_duck.html" class="btn btn-neutral float-left" title="橡皮鸭调试法" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -976,29 +981,16 @@ file handle 之类的翻译做「文件句柄」，完全就是乱来。handle �
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/GA.js"></script>
-        <script type="text/javascript" src="../_static/GA.vicc.wang.js"></script>
-        <script async="async" type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

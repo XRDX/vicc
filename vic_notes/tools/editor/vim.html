@@ -17,13 +17,23 @@
   
 
   
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/GA.js"></script>
+        <script type="text/javascript" src="../../_static/GA.vicc.wang.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/my_style.css" type="text/css" />
@@ -31,21 +41,16 @@
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="latex" href="latex.html" />
     <link rel="prev" title="Visual Studio Code" href="visual_studio_code.html" /> 
-
-  
-  <script src="../../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -97,10 +102,11 @@
 <li class="toctree-l3"><a class="reference internal" href="sublime.html">Sublime Text</a></li>
 <li class="toctree-l3"><a class="reference internal" href="visual_studio_code.html">Visual Studio Code</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">vim</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#">模式切换</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#">移动</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#">操作</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#">录制动作</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#youcompleteme">安装youcompleteme</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id1">模式切换</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">移动</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">操作</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">录制动作</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#vimrc">vimrc配置</a></li>
 </ul>
 </li>
@@ -180,34 +186,52 @@
            <div itemprop="articleBody">
             
   <div class="section" id="vim">
-<span id="vim"></span><h1>vim<a class="headerlink" href="#vim" title="永久链接至标题">¶</a></h1>
+<h1>vim<a class="headerlink" href="#vim" title="永久链接至标题">¶</a></h1>
 <p>vim是一个独特又古老的编辑器，号称最强大的代码编辑工具</p>
 <p><img alt="vim官网" src="https://www.vim.org/" /></p>
-<div class="section" id="">
-<span id="id1"></span><h2>模式切换<a class="headerlink" href="#" title="永久链接至标题">¶</a></h2>
-<p>i
-esc
-v</p>
+<div class="section" id="youcompleteme">
+<h2>安装youcompleteme<a class="headerlink" href="#youcompleteme" title="永久链接至标题">¶</a></h2>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo apt-get install vim-addon-manager
+sudo apt-get install vim-youcompleteme
+vam install youcompleteme
+vim ~/.vimrc
+</pre></div>
 </div>
-<div class="section" id="">
-<span id="id2"></span><h2>移动<a class="headerlink" href="#" title="永久链接至标题">¶</a></h2>
+<p>ycm使用全局配置</p>
+<div class="highlight-vimrc notranslate"><div class="highlight"><pre><span></span>let g:ycm_global_ycm_extra_conf = &#39;/usr/lib/ycmd/ycm_extra_conf.py&#39;
+</pre></div>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>模式切换<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>i - 插入模式
+v - 选择模式
+<c-v> - 竖排选择模式
+esc - 退出插入或者选择模式</p>
+</div>
+<div class="section" id="id2">
+<h2>移动<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>hjkl 来移动光标
-w
-b
-%</p>
+w - 前进1个单词
+b - 后退1个单词
+%
+0 - 一行的初始位置
+$ - 一行的最后位置
+gg - 跳到第一行
+G - 跳到最后一行</p>
 </div>
-<div class="section" id="">
-<span id="id3"></span><h2>操作<a class="headerlink" href="#" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id3">
+<h2>操作<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>y 复制
 p 粘贴</p>
-<p>gg
-G</p>
 </div>
-<div class="section" id="">
-<span id="id4"></span><h2>录制动作<a class="headerlink" href="#" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id4">
+<h2>录制动作<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>q[a-z] - 录制动作并保存到序号a-z中
+&#64;[a-z] - 执行序号a-z的动作</p>
 </div>
 <div class="section" id="vimrc">
-<span id="vimrc"></span><h2>vimrc配置<a class="headerlink" href="#vimrc" title="永久链接至标题">¶</a></h2>
+<h2>vimrc配置<a class="headerlink" href="#vimrc" title="永久链接至标题">¶</a></h2>
 </div>
 </div>
 
@@ -222,7 +246,7 @@ G</p>
         <a href="latex.html" class="btn btn-neutral float-right" title="latex" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="visual_studio_code.html" class="btn btn-neutral" title="Visual Studio Code" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="visual_studio_code.html" class="btn btn-neutral float-left" title="Visual Studio Code" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -247,29 +271,16 @@ G</p>
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../_static/language_data.js"></script>
-        <script type="text/javascript" src="../../_static/GA.js"></script>
-        <script type="text/javascript" src="../../_static/GA.vicc.wang.js"></script>
-        <script async="async" type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-
-  
-
-  <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

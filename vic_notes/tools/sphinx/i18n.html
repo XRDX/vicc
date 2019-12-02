@@ -1,0 +1,279 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>&lt;no title&gt; &mdash; 维克笔记  文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/GA.js"></script>
+        <script type="text/javascript" src="../../_static/GA.vicc.wang.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/my_style.css" type="text/css" />
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="reStructuredText 格式说明" href="../reStructuredText.html" />
+    <link rel="prev" title="recommonmark" href="recommonmark.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> 维克笔记
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目录结构</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../linux/index.html">操作系统 Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../raspberry/index.html">折腾树莓派 Raspberry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../math/index.html">数学知识 Mathematics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cs/index.html">计算机知识 Computer Science</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/index.html">程序应用 Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpp/index.html">语法基础 C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">工具 Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opengl/index.html">图形学 OpenGL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../machine_learning/index.html">机器学习 Machine Learning</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">维克笔记</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">工具 Tools</a> &raquo;</li>
+        
+          <li><a href="index.html">Sphinx 自动文档生成工具</a> &raquo;</li>
+        
+      <li>&lt;no title&gt;</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <p>Translating with sphinx-intl
+Quick guide
+sphinx-intl is a useful tool to work with Sphinx translation flow. This section describe an easy way to translate with sphinx-intl.</p>
+<p>Install sphinx-intl.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ pip install sphinx-intl
+</pre></div>
+</div>
+<p>Add configurations to conf.py.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">locale_dirs</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;locale/&#39;</span><span class="p">]</span>   <span class="c1"># path is example but recommended.</span>
+<span class="n">gettext_compact</span> <span class="o">=</span> <span class="bp">False</span>     <span class="c1"># optional.</span>
+</pre></div>
+</div>
+<p>This case-study assumes that locale_dirs is set to locale/ and gettext_compact is set to False (the Sphinx document is already configured as such).</p>
+<p>Extract translatable messages into pot files.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ make gettext
+</pre></div>
+</div>
+<p>The generated pot files will be placed in the _build/gettext directory.</p>
+<p>Generate po files.</p>
+<p>We’ll use the pot files generated in the above step.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ sphinx-intl update -p _build/gettext -l de -l ja
+</pre></div>
+</div>
+<p>Once completed, the generated po files will be placed in the below directories:</p>
+<p>./locale/de/LC_MESSAGES/
+./locale/ja/LC_MESSAGES/</p>
+<p>Translate po files.</p>
+<p>AS noted above, these are located in the ./locale/<lang>/LC_MESSAGES directory. An example of one such file, from Sphinx, builders.po, is given below.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span># a5600c3d2e3d48fc8c261ea0284db79b
+#: ../../builders.rst:4
+msgid &quot;Available builders&quot;
+msgstr &quot;&lt;FILL HERE BY TARGET LANGUAGE&gt;&quot;
+Another case, msgid is multi-line text and contains reStructuredText syntax:
+
+# 302558364e1d41c69b3277277e34b184
+#: ../../builders.rst:9
+msgid &quot;&quot;
+&quot;These are the built-in Sphinx builders. More builders can be added by &quot;
+&quot;:ref:`extensions &lt;extensions&gt;`.&quot;
+msgstr &quot;&quot;
+&quot;FILL HERE BY TARGET LANGUAGE FILL HERE BY TARGET LANGUAGE FILL HERE &quot;
+&quot;BY TARGET LANGUAGE :ref:`EXTENSIONS &lt;extensions&gt;` FILL HERE.&quot;
+</pre></div>
+</div>
+<p>Please be careful not to break reST notation. Most po-editors will help you with that.</p>
+<p>Build translated document.</p>
+<p>You need a language parameter in conf.py or you may also specify the parameter on the command line.</p>
+<p>For for BSD/GNU make, run:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ make -e <span class="nv">SPHINXOPTS</span><span class="o">=</span><span class="s2">&quot;-D language=&#39;de&#39;&quot;</span> html
+</pre></div>
+</div>
+<p>For Windows cmd.exe, run:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>&gt; <span class="nb">set</span> <span class="nv">SPHINXOPTS</span><span class="o">=</span>-D <span class="nv">language</span><span class="o">=</span>de
+&gt; .<span class="se">\m</span>ake.bat html
+</pre></div>
+</div>
+<p>For PowerShell, run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">Set</span><span class="o">-</span><span class="n">Item</span> <span class="n">env</span><span class="p">:</span><span class="n">SPHINXOPTS</span> <span class="s2">&quot;-D language=de&quot;</span>
+<span class="o">&gt;</span> <span class="o">.</span>\<span class="n">make</span><span class="o">.</span><span class="n">bat</span> <span class="n">html</span>
+</pre></div>
+</div>
+<p>Congratulations! You got the translated documentation in the _build/html directory.</p>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../reStructuredText.html" class="btn btn-neutral float-right" title="reStructuredText 格式说明" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="recommonmark.html" class="btn btn-neutral float-left" title="recommonmark" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Vic
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

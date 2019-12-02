@@ -17,13 +17,23 @@
   
 
   
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/GA.js"></script>
+        <script type="text/javascript" src="../../_static/GA.vicc.wang.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/my_style.css" type="text/css" />
@@ -31,21 +41,16 @@
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="screen" href="screen.html" />
     <link rel="prev" title="Linux 小工具" href="index.html" /> 
-
-  
-  <script src="../../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -89,6 +94,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../user.html">Create a Sudo User</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../file.html">Linux 文件管理命令</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../disk.html">Linux 磁盘分区、格式化、目录挂载</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../etc.html">/etc</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Linux 小工具</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Nginx</a></li>
 <li class="toctree-l3"><a class="reference internal" href="screen.html">screen</a></li>
@@ -98,7 +104,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../makefile.html">makefile</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../makefile.html#">在其他目录执行</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../makefile.html#id3">在其他目录执行</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../raspberry/index.html">折腾树莓派 Raspberry</a></li>
@@ -176,13 +182,27 @@
            <div itemprop="articleBody">
             
   <div class="section" id="nginx">
-<span id="nginx"></span><h1>Nginx<a class="headerlink" href="#nginx" title="永久链接至标题">¶</a></h1>
+<h1>Nginx<a class="headerlink" href="#nginx" title="永久链接至标题">¶</a></h1>
 <p>Nginx的发音是：Engine X</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo nginx -t
 sudo nginx -s reload
 </pre></div>
 </div>
-<p>nginx的配置文件在`etc/nginx</p>
+<p>nginx的配置文件在<code class="docutils literal notranslate"><span class="pre">/etc/nginx/</span></code></p>
+<div class="highlight-config notranslate"><div class="highlight"><pre><span></span>
+server {
+        listen 8001;
+        listen [::]:8001;
+
+        server_name _;
+
+        location / {
+                proxy_pass http://localhost:8090;
+        }
+
+}
+</pre></div>
+</div>
 </div>
 
 
@@ -196,7 +216,7 @@ sudo nginx -s reload
         <a href="screen.html" class="btn btn-neutral float-right" title="screen" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral" title="Linux 小工具" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral float-left" title="Linux 小工具" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -221,29 +241,16 @@ sudo nginx -s reload
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../_static/language_data.js"></script>
-        <script type="text/javascript" src="../../_static/GA.js"></script>
-        <script type="text/javascript" src="../../_static/GA.vicc.wang.js"></script>
-        <script async="async" type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-
-  
-
-  <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

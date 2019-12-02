@@ -17,35 +17,40 @@
   
 
   
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/GA.js"></script>
+        <script type="text/javascript" src="../../_static/GA.vicc.wang.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/my_style.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="Nginx" href="nginx.html" />
-    <link rel="prev" title="Linux 磁盘分区、格式化、目录挂载" href="../disk.html" /> 
-
-  
-  <script src="../../_static/js/modernizr.min.js"></script>
-
+    <link rel="prev" title="/etc" href="../etc.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -89,6 +94,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../user.html">Create a Sudo User</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../file.html">Linux 文件管理命令</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../disk.html">Linux 磁盘分区、格式化、目录挂载</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../etc.html">/etc</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Linux 小工具</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="nginx.html">Nginx</a></li>
 <li class="toctree-l3"><a class="reference internal" href="screen.html">screen</a></li>
@@ -98,7 +104,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../makefile.html">makefile</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../makefile.html#">在其他目录执行</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../makefile.html#id3">在其他目录执行</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../raspberry/index.html">折腾树莓派 Raspberry</a></li>
@@ -179,8 +185,8 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="nginx.html">Nginx</a></li>
 <li class="toctree-l1"><a class="reference internal" href="screen.html">screen</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="screen.html#">快捷键</a></li>
-<li class="toctree-l2"><a class="reference internal" href="screen.html#">窗口相关</a></li>
+<li class="toctree-l2"><a class="reference internal" href="screen.html#id1">快捷键</a></li>
+<li class="toctree-l2"><a class="reference internal" href="screen.html#id2">窗口相关</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="zsh.html">zsh</a><ul>
@@ -193,6 +199,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="others.html">其他一些命令</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="others.html#cat">cat</a></li>
 <li class="toctree-l2"><a class="reference internal" href="others.html#top">top</a></li>
 </ul>
 </li>
@@ -211,7 +218,7 @@
         <a href="nginx.html" class="btn btn-neutral float-right" title="Nginx" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../disk.html" class="btn btn-neutral" title="Linux 磁盘分区、格式化、目录挂载" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../etc.html" class="btn btn-neutral float-left" title="/etc" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -236,29 +243,16 @@
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../_static/language_data.js"></script>
-        <script type="text/javascript" src="../../_static/GA.js"></script>
-        <script type="text/javascript" src="../../_static/GA.vicc.wang.js"></script>
-        <script async="async" type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-
-  
-
-  <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

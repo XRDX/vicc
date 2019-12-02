@@ -17,35 +17,40 @@
   
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/GA.js"></script>
+        <script type="text/javascript" src="../_static/GA.vicc.wang.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/my_style.css" type="text/css" />
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
-    <link rel="next" title="Python 的一些库" href="others.html" />
+    <link rel="next" title="pyodide" href="pyodide.html" />
     <link rel="prev" title="保持窗口在最前" href="keep_on_top.html" /> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -108,6 +113,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#activate">activate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyodide.html">pyodide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="others.html">Python 的一些库</a></li>
 </ul>
 </li>
@@ -180,21 +186,21 @@
            <div itemprop="articleBody">
             
   <div class="section" id="virtual-environments">
-<span id="virtual-environments"></span><h1>virtual environments<a class="headerlink" href="#virtual-environments" title="永久链接至标题">¶</a></h1>
+<h1>virtual environments<a class="headerlink" href="#virtual-environments" title="永久链接至标题">¶</a></h1>
 <div class="section" id="virtualenv">
-<span id="virtualenv"></span><h2>virtualenv<a class="headerlink" href="#virtualenv" title="永久链接至标题">¶</a></h2>
+<h2>virtualenv<a class="headerlink" href="#virtualenv" title="永久链接至标题">¶</a></h2>
 <div class="section" id="install">
-<span id="install"></span><h3>install<a class="headerlink" href="#install" title="永久链接至标题">¶</a></h3>
+<h3>install<a class="headerlink" href="#install" title="永久链接至标题">¶</a></h3>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip install virtualenv
 </pre></div>
 </div>
 </div>
 </div>
 <div class="section" id="venv">
-<span id="venv"></span><h2>venv<a class="headerlink" href="#venv" title="永久链接至标题">¶</a></h2>
+<h2>venv<a class="headerlink" href="#venv" title="永久链接至标题">¶</a></h2>
 <p>New in version 3.3.</p>
 <div class="section" id="create-virtual-environments">
-<span id="create-virtual-environments"></span><h3>Create virtual environments<a class="headerlink" href="#create-virtual-environments" title="永久链接至标题">¶</a></h3>
+<h3>Create virtual environments<a class="headerlink" href="#create-virtual-environments" title="永久链接至标题">¶</a></h3>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python3 -m venv /path/to/new/virtual/environment
 </pre></div>
 </div>
@@ -206,7 +212,7 @@
 </div>
 </div>
 <div class="section" id="activate">
-<span id="activate"></span><h1>activate<a class="headerlink" href="#activate" title="永久链接至标题">¶</a></h1>
+<h1>activate<a class="headerlink" href="#activate" title="永久链接至标题">¶</a></h1>
 <p>Once a virtual environment has been created, it can be “activated” using a script in the virtual environment’s binary directory. The invocation of the script is platform-specific (<venv> must be replaced by the path of the directory containing the virtual environment):</p>
 <table border="1" class="docutils">
 <thead>
@@ -254,10 +260,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="others.html" class="btn btn-neutral float-right" title="Python 的一些库" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pyodide.html" class="btn btn-neutral float-right" title="pyodide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="keep_on_top.html" class="btn btn-neutral" title="保持窗口在最前" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="keep_on_top.html" class="btn btn-neutral float-left" title="保持窗口在最前" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -282,29 +288,16 @@
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/GA.js"></script>
-        <script type="text/javascript" src="../_static/GA.vicc.wang.js"></script>
-        <script async="async" type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

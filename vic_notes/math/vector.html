@@ -17,13 +17,23 @@
   
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/GA.js"></script>
+        <script type="text/javascript" src="../_static/GA.vicc.wang.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/my_style.css" type="text/css" />
@@ -31,21 +41,16 @@
     <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="矩阵 Matrix" href="matrix.html" />
     <link rel="prev" title="数学知识 Mathematics" href="index.html" /> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -89,13 +94,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../raspberry/index.html">折腾树莓派 Raspberry</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">数学知识 Mathematics</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">向量 Vector</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#">向量与标量运算</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#">向量取反</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#">向量加减</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#">长度（向量的模）</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#">向量相乘</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#">点乘</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#">叉乘</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">向量与标量运算</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">向量取反</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">向量加减</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">长度（向量的模）</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">向量相乘</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">点乘</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">叉乘</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="matrix.html">矩阵 Matrix</a></li>
@@ -173,7 +178,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="vector">
-<span id="vector"></span><h1>向量 Vector<a class="headerlink" href="#vector" title="永久链接至标题">¶</a></h1>
+<h1>向量 Vector<a class="headerlink" href="#vector" title="永久链接至标题">¶</a></h1>
 <p>向量最基本的定义就是一个方向。或者更正式的说，向量有一个方向（Direction）和大小（Magnitude，也称之为长度）。可以把向量想像成一个藏宝图上的指示：“向左走十步，向北走三步，然后向右走五步”；“左”就是方向，“十步”就是向量的长度。那么这个藏宝图的指示一共有三个向量。向量可以在任意维度（Dimension）上，但是我们通常只使用2~4维。如果一个向量有两个维度，它表示一个平面的方向（想像一下2D的图像），当它有三个维度的时候，它可以表达一个3D世界的方向。</p>
 <p>下图展示了三个向量，每个向量在2D图像中都用一个箭头<code class="docutils literal notranslate"><span class="pre">(x,y)</span></code>表示。我们在2D图片中展示这些向量，因为这样子会更直观一点。由于向量表示的是方向，起始于何处并不会改变它的值。</p>
 <p><img alt="vectors" src="../_images/vectors.png" /></p>
@@ -181,19 +186,19 @@
 <p><img alt="vector2" src="../_images/vectors-2.png" /></p>
 <p>注：把2D向量当做z坐标轴为0的3D向量。</p>
 <p>由于向量是一个方向，所以有些时候会很难形象地将它们用位置表示出来。为了让其更为直观，通常设定这个方向的原点为(0,0,0)（在2D世界中，这个原点就是(0,0)），然后指向一个方向，对应一个点，使其变为位置向量（Position Vector）。比如上图中位置向量(3,2)在图像中的起点会是(0,0)，并会指向(3,2)。</p>
-<div class="section" id="">
-<span id="id1"></span><h2>向量与标量运算<a class="headerlink" href="#" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id1">
+<h2>向量与标量运算<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p>标量(Scalar)只是一个数字（或者说是仅有一个分量的向量）。当把一个向量加、减、乘或除一个标量，我们可以简单的把向量的每个分量分别进行该运算。对于加法来说会像这样：</p>
 <p><img alt="vector3" src="../_images/vectors-3.png" /></p>
 <p>其中的+可以是+，-，·或÷，其中·是乘号。注意，-和÷运算时不能颠倒（标量 -/÷向量），它为颠倒的运算是没有定义的。</p>
 </div>
-<div class="section" id="">
-<span id="id2"></span><h2>向量取反<a class="headerlink" href="#" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id2">
+<h2>向量取反<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>对一个向量取反（Negate）会将其方向逆转。一个向东北的向量取反后就指向西南方向了。我们在一个向量的每个分量前加负号就可以实现取反了（或者说用-1数乘该向量）：</p>
 <p><img alt="vector" src="../_images/vectors-4.png" /></p>
 </div>
-<div class="section" id="">
-<span id="id3"></span><h2>向量加减<a class="headerlink" href="#" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id3">
+<h2>向量加减<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>向量的加法可以被定义为是分量的(Component-wise)相加，即将一个向量中的每一个分量加上另一个向量的对应分量：</p>
 <p><img alt="vector" src="../_images/vectors-5.png" /></p>
 <p>向量v = (4, 2)和k = (1, 2)可以直观地表示为：</p>
@@ -203,19 +208,19 @@
 <p>两个向量的相减会得到这两个向量指向位置的差。这在我们想要获取两点的差会非常有用。</p>
 <p><img alt="vector" src="../_images/vectors-8.png" /></p>
 </div>
-<div class="section" id="">
-<span id="id4"></span><h2>长度（向量的模）<a class="headerlink" href="#" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id4">
+<h2>长度（向量的模）<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <p>我们使用勾股定理(Pythagoras Theorem)来获取向量的长度(Length)/大小(Magnitude)。如果你把向量的x与y分量画出来，该向量会和x与y分量为边形成一个三角形:</p>
 <p><img alt="vector" src="../_images/vectors-9.png" /></p>
 <p>因为两条边（x和y）是已知的，如果希望知道斜边v¯的长度，我们可以直接通过勾股定理来计算：</p>
 <p><img alt="vector" src="../_images/vectors-10.png" /></p>
 </div>
-<div class="section" id="">
-<span id="id5"></span><h2>向量相乘<a class="headerlink" href="#" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id5">
+<h2>向量相乘<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
 <p>两个向量相乘是一种很奇怪的情况。普通的乘法在向量上是没有定义的，因为它在视觉上是没有意义的。但是在相乘的时候我们有两种特定情况可以选择：一个是点乘(Dot Product)，记作v¯⋅k¯，另一个是叉乘(Cross Product)，记作v¯×k¯。</p>
 </div>
-<div class="section" id="">
-<span id="id6"></span><h2>点乘<a class="headerlink" href="#" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id6">
+<h2>点乘<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
 <p>两个向量的点乘等于它们的数乘结果乘以两个向量之间夹角的余弦值。可能听起来有点费解，我们来看一下公式：</p>
 <p><img alt="vector" src="../_images/vectors-11.png" /></p>
 <p>它们之间的夹角记作θ。为什么这很有用？想象如果v¯和k¯都是单位向量，它们的长度会等于1。这样公式会有效简化成：</p>
@@ -225,8 +230,8 @@
 <p><img alt="vector" src="../_images/vectors-13.png" /></p>
 <p>要计算两个单位向量间的夹角，我们可以使用反余弦函数cos−1 ，可得结果是143.1度。现在我们很快就计算出了这两个向量的夹角。点乘会在计算光照的时候非常有用。</p>
 </div>
-<div class="section" id="">
-<span id="id7"></span><h2>叉乘<a class="headerlink" href="#" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id7">
+<h2>叉乘<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
 <p>叉乘只在3D空间中有定义，它需要两个不平行向量作为输入，生成一个正交于两个输入向量的第三个向量。如果输入的两个向量也是正交的，那么叉乘之后将会产生3个互相正交的向量。接下来的教程中这会非常有用。下面的图片展示了3D空间中叉乘的样子：</p>
 <p><img alt="vector" src="../_images/vectors-14.png" /></p>
 <p>不同于其他运算，如果你没有钻研过线性代数，可能会觉得叉乘很反直觉，所以只记住公式就没问题啦（记不住也没问题）。下面你会看到两个正交向量A和B叉积：</p>
@@ -246,7 +251,7 @@
         <a href="matrix.html" class="btn btn-neutral float-right" title="矩阵 Matrix" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral" title="数学知识 Mathematics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral float-left" title="数学知识 Mathematics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -271,29 +276,16 @@
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/GA.js"></script>
-        <script type="text/javascript" src="../_static/GA.vicc.wang.js"></script>
-        <script async="async" type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

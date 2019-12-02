@@ -1,0 +1,256 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Settings &mdash; 维克笔记  文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/GA.js"></script>
+        <script type="text/javascript" src="../_static/GA.vicc.wang.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/my_style.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> 维克笔记
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目录结构</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../linux/index.html">操作系统 Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">折腾树莓派 Raspberry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../math/index.html">数学知识 Mathematics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cs/index.html">计算机知识 Computer Science</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">程序应用 Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cpp/index.html">语法基础 C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/index.html">工具 Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../opengl/index.html">图形学 OpenGL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../machine_learning/index.html">机器学习 Machine Learning</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">维克笔记</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Settings</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="settings">
+<h1>Settings<a class="headerlink" href="#settings" title="永久链接至标题">¶</a></h1>
+<div class="section" id="wifi">
+<h2>wifi<a class="headerlink" href="#wifi" title="永久链接至标题">¶</a></h2>
+<p>参考链接
+https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md</p>
+<p>查找wifi</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo iwlist wlan0 scan
+</pre></div>
+</div>
+<p>添加wifi</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo vim /etc/wpa_supplicant/wpa_supplicant.conf
+</pre></div>
+</div>
+<p>在末尾加上以下内容，如果有多个wifi，可以添加多个</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>network={
+        ssid=&quot;ssid_name&quot;
+        key_mgmt=WPA-PSK
+        psk=&quot;password&quot;
+}
+</pre></div>
+</div>
+<p>错误的调试
+如果出现连接不成功的情况，有很大的可能是由于配置文件配置错误的原因。</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo wpa_supplicant -c /etc/wpa_supplicant/wpa_supplicant.conf  -i wlan0
+</pre></div>
+</div>
+<p>通过wpa_supplicant的直接连接，如果配置文件出现问题，则会直接提示配置文件的错误详情。</p>
+<p>如果出现一下结果，则一般代表配置文件没有问题</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Successfully initialized wpa_supplicant
+nl80211: Driver does not support authentication/association or connect commands
+wlan0: Failed to initialize driver interface
+</pre></div>
+</div>
+<p>重启服务</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo service networking restart
+sudo ifconfig wlan0 down
+sudo ifconfig wlan0 up
+</pre></div>
+</div>
+</div>
+<div class="section" id="wap-cli">
+<h2>wap_cli<a class="headerlink" href="#wap-cli" title="永久链接至标题">¶</a></h2>
+<p>wpa_cli #进入交互模式，然后依次执行以下命令，这些命令都支持 Tab 补全
+scan #扫描附近的 WIFI 热点
+scan_results #列出扫描到的热点信息，不出意外，肯定能看到你的热点的 ssid 了吧
+add_network #添加一个网络，会提示一个 0，表示新添加的网络 id 是 0
+set_network 0 ssid &quot;YOUR_AP_SSID&quot; #把 ssid 保存进去
+set_network 0 psk &quot;PASSWORD&quot; #把密码保存进去
+enable_network 0 #启用网络 0，不出意外，会提示连接成功
+save_config #保存配置
+quit #退出 wpa_cli 交互模式</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Vic
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

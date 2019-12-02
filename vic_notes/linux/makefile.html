@@ -17,13 +17,23 @@
   
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/GA.js"></script>
+        <script type="text/javascript" src="../_static/GA.vicc.wang.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/my_style.css" type="text/css" />
@@ -31,21 +41,16 @@
     <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="折腾树莓派 Raspberry" href="../raspberry/index.html" />
     <link rel="prev" title="其他一些命令" href="tools/others.html" /> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -91,11 +96,11 @@
 <li class="toctree-l2"><a class="reference internal" href="disk.html">Linux 磁盘分区、格式化、目录挂载</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tools/index.html">Linux 小工具</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">makefile</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#">第一个例子</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#">多个目标</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">第一个例子</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">多个目标</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#">在其他目录执行</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">在其他目录执行</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../raspberry/index.html">折腾树莓派 Raspberry</a></li>
@@ -171,10 +176,10 @@
            <div itemprop="articleBody">
             
   <div class="section" id="makefile">
-<span id="makefile"></span><h1>makefile<a class="headerlink" href="#makefile" title="永久链接至标题">¶</a></h1>
+<h1>makefile<a class="headerlink" href="#makefile" title="永久链接至标题">¶</a></h1>
 <p>make是Linux下的一个工具，可以帮我们自动构建项目，一般是c或者c++项目。但是我们也可以利用这个工具来做一些自动化构建，你所需要的，只是在目录下创建一个<code class="docutils literal notranslate"><span class="pre">makefile</span></code>文件。</p>
-<div class="section" id="">
-<span id="id1"></span><h2>第一个例子<a class="headerlink" href="#" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id1">
+<h2>第一个例子<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <div class="highlight-makefile notranslate"><div class="highlight"><pre><span></span><span class="nf">hello</span><span class="o">:</span>
     @echo <span class="s2">&quot;Hello World&quot;</span>
 </pre></div>
@@ -184,8 +189,8 @@ Hello World
 </pre></div>
 </div>
 </div>
-<div class="section" id="">
-<span id="id2"></span><h2>多个目标<a class="headerlink" href="#" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id2">
+<h2>多个目标<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>如果一件事情需要多个步骤来完成，那么我们需要下面的结构</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>目标： 前置目标
     执行的命令1
@@ -216,8 +221,8 @@ Hello World
 </div>
 </div>
 </div>
-<div class="section" id="">
-<span id="id3"></span><h1>在其他目录执行<a class="headerlink" href="#" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id3">
+<h1>在其他目录执行<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h1>
 <p>如更新其他目录下的git库，使用&amp;&amp;来连接命令</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>update:
     @echo <span class="s2">&quot;update git&quot;</span>
@@ -237,7 +242,7 @@ Hello World
         <a href="../raspberry/index.html" class="btn btn-neutral float-right" title="折腾树莓派 Raspberry" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="tools/others.html" class="btn btn-neutral" title="其他一些命令" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="tools/others.html" class="btn btn-neutral float-left" title="其他一些命令" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -262,29 +267,16 @@ Hello World
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/GA.js"></script>
-        <script type="text/javascript" src="../_static/GA.vicc.wang.js"></script>
-        <script async="async" type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

@@ -17,13 +17,23 @@
   
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/GA.js"></script>
+        <script type="text/javascript" src="../_static/GA.vicc.wang.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/my_style.css" type="text/css" />
@@ -31,21 +41,16 @@
     <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="Scapy 爬虫框架" href="scrapy.html" />
     <link rel="prev" title="pip手册" href="pip.html" /> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -92,7 +97,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">程序应用 Python</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="pip.html">pip手册</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">上传自己的模块到 pypi</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#">注册账号</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">注册账号</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#twine">安装twine</a></li>
 </ul>
 </li>
@@ -102,6 +107,7 @@
 <li class="toctree-l2"><a class="reference internal" href="keep_on_top.html">保持窗口在最前</a></li>
 <li class="toctree-l2"><a class="reference internal" href="virtualenv.html">virtual environments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="virtualenv.html#activate">activate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyodide.html">pyodide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="others.html">Python 的一些库</a></li>
 </ul>
 </li>
@@ -174,13 +180,13 @@
            <div itemprop="articleBody">
             
   <div class="section" id="pypi">
-<span id="pypi"></span><h1>上传自己的模块到 pypi<a class="headerlink" href="#pypi" title="永久链接至标题">¶</a></h1>
+<h1>上传自己的模块到 pypi<a class="headerlink" href="#pypi" title="永久链接至标题">¶</a></h1>
 <p>我们知道我们可以通过pip命令来快速安装python的模块，那么有没有办法可以上传自己的模块到pypi上呢，这样我们也可以通过pip来安装和更新模块</p>
-<div class="section" id="">
-<span id="id1"></span><h2>注册账号<a class="headerlink" href="#" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id1">
+<h2>注册账号<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 </div>
 <div class="section" id="twine">
-<span id="twine"></span><h2>安装twine<a class="headerlink" href="#twine" title="永久链接至标题">¶</a></h2>
+<h2>安装twine<a class="headerlink" href="#twine" title="永久链接至标题">¶</a></h2>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip install twine
 </pre></div>
 </div>
@@ -230,7 +236,7 @@ twine upload dist/* -u VicWang -p PY********
         <a href="scrapy.html" class="btn btn-neutral float-right" title="Scapy 爬虫框架" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="pip.html" class="btn btn-neutral" title="pip手册" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="pip.html" class="btn btn-neutral float-left" title="pip手册" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -255,29 +261,16 @@ twine upload dist/* -u VicWang -p PY********
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/GA.js"></script>
-        <script type="text/javascript" src="../_static/GA.vicc.wang.js"></script>
-        <script async="async" type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>
